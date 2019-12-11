@@ -104,21 +104,18 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             try
             {
 
-                if (dodajLicnePodatke(k.podaci))
+                if (!dodajLicnePodatke(k.podaci))
                     throw new Exception("Pogresni podaci");
-                if (dodajAutentifikaciju(k.authPodaci))
+                if (!dodajAutentifikaciju(k.authPodaci))
                     throw new Exception("Pogresni auth podaci");
 
 
-                var query = new Neo4jClient.Cypher.CypherQuery("CREATE(Korisnik1: Korisnik{ })",
-                                                                new Dictionary<string, object>(), CypherResultMode.Set);
-                ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query);
-
-                query = new Neo4jClient.Cypher.CypherQuery("CREATE(Korisnik1) -[a: MOJA_AUTENTIFIKACIJA]->(Auth1)",
-                                                                new Dictionary<string, object>(), CypherResultMode.Set);
-                ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query);
-
-                query = new Neo4jClient.Cypher.CypherQuery("CREATE(Korisnik1) -[p: MOJI_PODACI]->(LP1)",
+                var query = new Neo4jClient.Cypher.CypherQuery(
+                    "MATCH (Auth1:Autentifikacija {email : '"+k.authPodaci.email+"'}) " +
+                    "MATCH (LP1:LicniPodaci {ime:'" + k.podaci.ime + "',prezime:'" + k.podaci.prezime + "',datumRodjenja:'" + k.podaci.datumRodjenja + "'}) " +
+                    "CREATE(Korisnik1: Korisnik{ }) " +
+                    "CREATE(Korisnik1) -[a: MOJA_AUTENTIFIKACIJA]->(Auth1) " +
+                    "CREATE(Korisnik1) -[p: MOJI_PODACI]->(LP1) RETURN Korisnik1 ",
                                                                 new Dictionary<string, object>(), CypherResultMode.Set);
                 ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query);
 
