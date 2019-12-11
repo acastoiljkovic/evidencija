@@ -103,8 +103,11 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                dodajLicnePodatke(k.podaci);
-                dodajAutentifikaciju(k.authPodaci);
+
+                if (dodajLicnePodatke(k.podaci))
+                    throw new Exception("Pogresni podaci");
+                if (dodajAutentifikaciju(k.authPodaci))
+                    throw new Exception("Pogresni auth podaci");
 
 
                 var query = new Neo4jClient.Cypher.CypherQuery("CREATE(Korisnik1: Korisnik{ })",
