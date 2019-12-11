@@ -90,7 +90,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 sifra="asd"
             })
                 )
-                MessageBox.Show("Uspesno dodati podaci");
+                MessageBox.Show("Uspesno dodata autentifikacija");
             else
                 MessageBox.Show("Neuspesno dodati podaci");
 
