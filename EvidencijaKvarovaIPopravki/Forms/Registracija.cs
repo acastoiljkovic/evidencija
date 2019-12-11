@@ -45,6 +45,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
+            
             if (
             DomainModel.DataSet.Instace.dodajKorisnika(new Korisnik()
             {
@@ -68,9 +69,9 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 },
                 kvarovi = null
             }))
-                MessageBox.Show("Uspesno");
+                MessageBox.Show("Uspesno dodat korisnik!");
             else
-                MessageBox.Show("Neuspesno");
+                MessageBox.Show("Neuspesno kreirnaje korisnika !");
         }
     }
 }
