@@ -11,6 +11,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         public String ime { get; set; }
         public String prezime { get; set; }
         public String datumRodjenja { get; set; }
+        public int MyProperty { get; set; }
         public String telefon { get; set; }
         public Test()
         {
