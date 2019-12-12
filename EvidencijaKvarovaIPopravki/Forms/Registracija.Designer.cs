@@ -66,7 +66,7 @@
             this.dateVremePopravke.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateVremePopravke.Name = "dateVremePopravke";
             this.dateVremePopravke.Size = new System.Drawing.Size(212, 29);
-            this.dateVremePopravke.TabIndex = 43;
+            this.dateVremePopravke.TabIndex = 108;
             // 
             // metroLabel8
             // 
@@ -83,9 +83,9 @@
             // 
             // 
             this.txtPrezime.CustomButton.Image = null;
-            this.txtPrezime.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtPrezime.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtPrezime.CustomButton.Name = "";
-            this.txtPrezime.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtPrezime.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtPrezime.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPrezime.CustomButton.TabIndex = 1;
             this.txtPrezime.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -102,7 +102,7 @@
             this.txtPrezime.SelectionStart = 0;
             this.txtPrezime.ShortcutsEnabled = true;
             this.txtPrezime.Size = new System.Drawing.Size(176, 22);
-            this.txtPrezime.TabIndex = 36;
+            this.txtPrezime.TabIndex = 102;
             this.txtPrezime.UseSelectable = true;
             this.txtPrezime.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPrezime.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -113,9 +113,9 @@
             // 
             // 
             this.txtIme.CustomButton.Image = null;
-            this.txtIme.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtIme.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtIme.CustomButton.Name = "";
-            this.txtIme.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtIme.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtIme.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtIme.CustomButton.TabIndex = 1;
             this.txtIme.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -132,7 +132,7 @@
             this.txtIme.SelectionStart = 0;
             this.txtIme.ShortcutsEnabled = true;
             this.txtIme.Size = new System.Drawing.Size(176, 22);
-            this.txtIme.TabIndex = 35;
+            this.txtIme.TabIndex = 101;
             this.txtIme.UseSelectable = true;
             this.txtIme.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtIme.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -143,9 +143,9 @@
             // 
             // 
             this.txtKorisnickoIme.CustomButton.Image = null;
-            this.txtKorisnickoIme.CustomButton.Location = new System.Drawing.Point(116, 1);
+            this.txtKorisnickoIme.CustomButton.Location = new System.Drawing.Point(154, 1);
             this.txtKorisnickoIme.CustomButton.Name = "";
-            this.txtKorisnickoIme.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.txtKorisnickoIme.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtKorisnickoIme.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtKorisnickoIme.CustomButton.TabIndex = 1;
             this.txtKorisnickoIme.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -162,7 +162,7 @@
             this.txtKorisnickoIme.SelectionStart = 0;
             this.txtKorisnickoIme.ShortcutsEnabled = true;
             this.txtKorisnickoIme.Size = new System.Drawing.Size(176, 23);
-            this.txtKorisnickoIme.TabIndex = 34;
+            this.txtKorisnickoIme.TabIndex = 100;
             this.txtKorisnickoIme.UseSelectable = true;
             this.txtKorisnickoIme.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKorisnickoIme.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -258,9 +258,9 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtEmail.CustomButton.Name = "";
-            this.txtEmail.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtEmail.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtEmail.CustomButton.TabIndex = 1;
             this.txtEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -277,7 +277,7 @@
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
             this.txtEmail.Size = new System.Drawing.Size(176, 22);
-            this.txtEmail.TabIndex = 48;
+            this.txtEmail.TabIndex = 107;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -288,9 +288,9 @@
             // 
             // 
             this.txtUlicaIBroj.CustomButton.Image = null;
-            this.txtUlicaIBroj.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtUlicaIBroj.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtUlicaIBroj.CustomButton.Name = "";
-            this.txtUlicaIBroj.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtUlicaIBroj.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtUlicaIBroj.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtUlicaIBroj.CustomButton.TabIndex = 1;
             this.txtUlicaIBroj.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -307,7 +307,7 @@
             this.txtUlicaIBroj.SelectionStart = 0;
             this.txtUlicaIBroj.ShortcutsEnabled = true;
             this.txtUlicaIBroj.Size = new System.Drawing.Size(176, 22);
-            this.txtUlicaIBroj.TabIndex = 49;
+            this.txtUlicaIBroj.TabIndex = 106;
             this.txtUlicaIBroj.UseSelectable = true;
             this.txtUlicaIBroj.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUlicaIBroj.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -318,9 +318,9 @@
             // 
             // 
             this.txtGrad.CustomButton.Image = null;
-            this.txtGrad.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtGrad.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtGrad.CustomButton.Name = "";
-            this.txtGrad.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtGrad.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtGrad.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtGrad.CustomButton.TabIndex = 1;
             this.txtGrad.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -337,7 +337,7 @@
             this.txtGrad.SelectionStart = 0;
             this.txtGrad.ShortcutsEnabled = true;
             this.txtGrad.Size = new System.Drawing.Size(176, 22);
-            this.txtGrad.TabIndex = 50;
+            this.txtGrad.TabIndex = 105;
             this.txtGrad.UseSelectable = true;
             this.txtGrad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGrad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -348,9 +348,9 @@
             // 
             // 
             this.txtLozinkaPonovo.CustomButton.Image = null;
-            this.txtLozinkaPonovo.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtLozinkaPonovo.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtLozinkaPonovo.CustomButton.Name = "";
-            this.txtLozinkaPonovo.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtLozinkaPonovo.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtLozinkaPonovo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtLozinkaPonovo.CustomButton.TabIndex = 1;
             this.txtLozinkaPonovo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -367,7 +367,7 @@
             this.txtLozinkaPonovo.SelectionStart = 0;
             this.txtLozinkaPonovo.ShortcutsEnabled = true;
             this.txtLozinkaPonovo.Size = new System.Drawing.Size(176, 22);
-            this.txtLozinkaPonovo.TabIndex = 51;
+            this.txtLozinkaPonovo.TabIndex = 104;
             this.txtLozinkaPonovo.UseSelectable = true;
             this.txtLozinkaPonovo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLozinkaPonovo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -378,9 +378,9 @@
             // 
             // 
             this.txtLozinka.CustomButton.Image = null;
-            this.txtLozinka.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtLozinka.CustomButton.Location = new System.Drawing.Point(156, 2);
             this.txtLozinka.CustomButton.Name = "";
-            this.txtLozinka.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtLozinka.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtLozinka.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtLozinka.CustomButton.TabIndex = 1;
             this.txtLozinka.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -397,7 +397,7 @@
             this.txtLozinka.SelectionStart = 0;
             this.txtLozinka.ShortcutsEnabled = true;
             this.txtLozinka.Size = new System.Drawing.Size(176, 22);
-            this.txtLozinka.TabIndex = 52;
+            this.txtLozinka.TabIndex = 103;
             this.txtLozinka.UseSelectable = true;
             this.txtLozinka.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLozinka.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -408,9 +408,9 @@
             // 
             // 
             this.txtNazivModela.CustomButton.Image = null;
-            this.txtNazivModela.CustomButton.Location = new System.Drawing.Point(117, 2);
+            this.txtNazivModela.CustomButton.Location = new System.Drawing.Point(185, 2);
             this.txtNazivModela.CustomButton.Name = "";
-            this.txtNazivModela.CustomButton.Size = new System.Drawing.Size(13, 14);
+            this.txtNazivModela.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.txtNazivModela.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtNazivModela.CustomButton.TabIndex = 1;
             this.txtNazivModela.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -427,7 +427,7 @@
             this.txtNazivModela.SelectionStart = 0;
             this.txtNazivModela.ShortcutsEnabled = true;
             this.txtNazivModela.Size = new System.Drawing.Size(205, 22);
-            this.txtNazivModela.TabIndex = 56;
+            this.txtNazivModela.TabIndex = 109;
             this.txtNazivModela.UseSelectable = true;
             this.txtNazivModela.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNazivModela.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -509,6 +509,7 @@
             this.btnDodajRadionicu.TabIndex = 61;
             this.btnDodajRadionicu.Text = "Dodaj radionicu";
             this.btnDodajRadionicu.UseSelectable = true;
+            this.btnDodajRadionicu.Click += new System.EventHandler(this.btnDodajRadionicu_Click);
             // 
             // Registracija
             // 

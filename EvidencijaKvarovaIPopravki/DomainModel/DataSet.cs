@@ -166,6 +166,41 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
+        public string proveriDaLiPostoji(string email, string korisnickoIme)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {korisnickoIme: '" + korisnickoIme + "'}) return n",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Autentifikacija> auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+
+                if(auth.Count() > 0)
+                {
+                    return "Korisnicko ime je zauzeto!";
+                }
+                else
+                {
+                    query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {email: '" + email + "'}) return n",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<Autentifikacija> auth2 = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+                    if(auth2.Count() > 0)
+                    {
+                        return "Korisnik s tim email-om je vec kreiran!";
+                    }
+                    else
+                    {
+                        return "Provera uspesno prosla!";
+                    }
+                }
+
+                
+            }
+            catch(Exception e)
+            {
+                return "Greska!";
+            }
+        }
+
         public bool dodajAutentifikaciju(Autentifikacija a)
         {
             try

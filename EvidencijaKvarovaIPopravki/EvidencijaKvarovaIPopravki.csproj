@@ -86,6 +86,12 @@
     <Compile Include="Forms\DodajDeo.Designer.cs">
       <DependentUpon>DodajDeo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DodajRadionicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodajRadionicu.Designer.cs">
+      <DependentUpon>DodajRadionicu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DostupniDelovi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DodajDeo.resx">
       <DependentUpon>DodajDeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodajRadionicu.resx">
+      <DependentUpon>DodajRadionicu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DostupniDelovi.resx">
       <DependentUpon>DostupniDelovi.cs</DependentUpon>

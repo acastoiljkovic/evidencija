@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EvidencijaKvarovaIPopravki.DomainModel;
+using MetroFramework;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -58,38 +59,49 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
-            
-            if (
-            DomainModel.DataSet.Instace.dodajKorisnika(new Korisnik()
+            string provera = DomainModel.DataSet.Instace.proveriDaLiPostoji(txtEmail.Text, txtKorisnickoIme.Text);
+            //MetroMessageBox.Show(this, provera);
+            MessageBox.Show(provera);
+            if (provera.Equals("Provera uspesno prosla!"))
             {
-                podaci = new LicniPodaci()
+                if (
+                DomainModel.DataSet.Instace.dodajKorisnika(new Korisnik()
                 {
-                    Adresa = new Adresa()
+                    podaci = new LicniPodaci()
                     {
-                        Grad = txtGrad.Text,
-                        UlicaIBroj = txtUlicaIBroj.Text
+                        Adresa = new Adresa()
+                        {
+                            Grad = txtGrad.Text,
+                            UlicaIBroj = txtUlicaIBroj.Text
+                        },
+                        ime = txtIme.Text,
+                        prezime = txtPrezime.Text,
+                        telefon = "4567890",
+                        datumRodjenja = dateVremePopravke.Text
                     },
-                    ime = txtIme.Text,
-                    prezime = txtPrezime.Text,
-                    telefon = "4567890",
-                    datumRodjenja = dateVremePopravke.Text
-                },
-                authPodaci = new Autentifikacija()
-                {
-                    email = txtEmail.Text,
-                    korisnickoIme = txtKorisnickoIme.Text,
-                    sifra = txtLozinka.Text
-                },
-                kvarovi = null
-            }))
-                MessageBox.Show("Uspesno dodat korisnik!");
-            else
-                MessageBox.Show("Neuspesno kreirnaje korisnika !");
+                    authPodaci = new Autentifikacija()
+                    {
+                        email = txtEmail.Text,
+                        korisnickoIme = txtKorisnickoIme.Text,
+                        sifra = txtLozinka.Text
+                    },
+                    kvarovi = null
+                }))
+                    MessageBox.Show("Uspesno dodat korisnik!");
+                else
+                    MessageBox.Show("Neuspesno kreirnaje korisnika !");
+            }
         }
 
         private void chkZaposleni_CheckedChanged(object sender, EventArgs e)
         {
             PrikaziSakrij();
+        }
+
+        private void btnDodajRadionicu_Click(object sender, EventArgs e)
+        {
+            var Forma = new DodajRadionicu();
+            Forma.ShowDialog();
         }
     }
 }
