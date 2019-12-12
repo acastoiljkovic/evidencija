@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.gridPopravkeKorisnika = new MetroFramework.Controls.MetroGrid();
@@ -48,7 +48,13 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pboxProfil = new System.Windows.Forms.PictureBox();
+            this.txtIme = new MetroFramework.Controls.MetroLabel();
+            this.txtPrezime = new MetroFramework.Controls.MetroLabel();
+            this.txtEmail = new MetroFramework.Controls.MetroLabel();
+            this.txtTelefon = new MetroFramework.Controls.MetroLabel();
+            this.txtGrad = new MetroFramework.Controls.MetroLabel();
+            this.txtDatum = new MetroFramework.Controls.MetroLabel();
+            this.txtUlicaIBroj = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravkeKorisnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -56,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxProfil)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -79,37 +84,37 @@
             this.gridPopravkeKorisnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridPopravkeKorisnika.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridPopravkeKorisnika.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPopravkeKorisnika.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPopravkeKorisnika.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridPopravkeKorisnika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridPopravkeKorisnika.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPopravkeKorisnika.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridPopravkeKorisnika.EnableHeadersVisualStyles = false;
             this.gridPopravkeKorisnika.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridPopravkeKorisnika.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridPopravkeKorisnika.Location = new System.Drawing.Point(13, 309);
             this.gridPopravkeKorisnika.Name = "gridPopravkeKorisnika";
             this.gridPopravkeKorisnika.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPopravkeKorisnika.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPopravkeKorisnika.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridPopravkeKorisnika.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridPopravkeKorisnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPopravkeKorisnika.Size = new System.Drawing.Size(488, 245);
@@ -265,19 +270,102 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // pboxProfil
+            // txtIme
             // 
-            this.pboxProfil.Location = new System.Drawing.Point(338, 63);
-            this.pboxProfil.Name = "pboxProfil";
-            this.pboxProfil.Size = new System.Drawing.Size(163, 180);
-            this.pboxProfil.TabIndex = 0;
-            this.pboxProfil.TabStop = false;
+            this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtIme.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtIme.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtIme.Location = new System.Drawing.Point(277, 63);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(224, 21);
+            this.txtIme.TabIndex = 23;
+            this.txtIme.Text = "Ime";
+            this.txtIme.UseStyleColors = true;
+            // 
+            // txtPrezime
+            // 
+            this.txtPrezime.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPrezime.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtPrezime.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtPrezime.Location = new System.Drawing.Point(277, 84);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(224, 21);
+            this.txtPrezime.TabIndex = 24;
+            this.txtPrezime.Text = "Prezime";
+            this.txtPrezime.UseStyleColors = true;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtEmail.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtEmail.Location = new System.Drawing.Point(277, 112);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(224, 21);
+            this.txtEmail.TabIndex = 25;
+            this.txtEmail.Text = "E-mail";
+            this.txtEmail.UseStyleColors = true;
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtTelefon.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTelefon.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtTelefon.Location = new System.Drawing.Point(277, 149);
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.Size = new System.Drawing.Size(224, 21);
+            this.txtTelefon.TabIndex = 26;
+            this.txtTelefon.Text = "Kontakt telefon";
+            this.txtTelefon.UseStyleColors = true;
+            // 
+            // txtGrad
+            // 
+            this.txtGrad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtGrad.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtGrad.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtGrad.Location = new System.Drawing.Point(277, 186);
+            this.txtGrad.Name = "txtGrad";
+            this.txtGrad.Size = new System.Drawing.Size(224, 21);
+            this.txtGrad.TabIndex = 27;
+            this.txtGrad.Text = "Grad";
+            this.txtGrad.UseStyleColors = true;
+            // 
+            // txtDatum
+            // 
+            this.txtDatum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDatum.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtDatum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtDatum.Location = new System.Drawing.Point(277, 234);
+            this.txtDatum.Name = "txtDatum";
+            this.txtDatum.Size = new System.Drawing.Size(224, 21);
+            this.txtDatum.TabIndex = 28;
+            this.txtDatum.Text = "Datum rodjenja";
+            this.txtDatum.UseStyleColors = true;
+            // 
+            // txtUlicaIBroj
+            // 
+            this.txtUlicaIBroj.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtUlicaIBroj.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtUlicaIBroj.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtUlicaIBroj.Location = new System.Drawing.Point(277, 207);
+            this.txtUlicaIBroj.Name = "txtUlicaIBroj";
+            this.txtUlicaIBroj.Size = new System.Drawing.Size(224, 21);
+            this.txtUlicaIBroj.TabIndex = 29;
+            this.txtUlicaIBroj.Text = "Ulica i broj";
+            this.txtUlicaIBroj.UseStyleColors = true;
             // 
             // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 614);
+            this.Controls.Add(this.txtUlicaIBroj);
+            this.Controls.Add(this.txtDatum);
+            this.Controls.Add(this.txtGrad);
+            this.Controls.Add(this.txtTelefon);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPrezime);
+            this.Controls.Add(this.txtIme);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel11);
@@ -294,8 +382,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gridPopravkeKorisnika);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.pboxProfil);
             this.Name = "Profil";
+            this.Load += new System.EventHandler(this.Profil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravkeKorisnika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -303,14 +391,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxProfil)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pboxProfil;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroGrid gridPopravkeKorisnika;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -327,5 +412,12 @@
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private MetroFramework.Controls.MetroLabel txtIme;
+        private MetroFramework.Controls.MetroLabel txtPrezime;
+        private MetroFramework.Controls.MetroLabel txtEmail;
+        private MetroFramework.Controls.MetroLabel txtTelefon;
+        private MetroFramework.Controls.MetroLabel txtGrad;
+        private MetroFramework.Controls.MetroLabel txtDatum;
+        private MetroFramework.Controls.MetroLabel txtUlicaIBroj;
     }
 }

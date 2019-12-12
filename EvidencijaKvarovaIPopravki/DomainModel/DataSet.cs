@@ -12,6 +12,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
     {
         private static DataSet _instance = null;
         private static GraphClient client;
+        public Osoba PrijavljenKorisnik { get; set; }
         public static DataSet Instace
         {
             get
@@ -25,6 +26,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         }
         private DataSet()
         {
+            PrijavljenKorisnik = null;
             client = new GraphClient(new Uri("http://localhost:7474/db/data"), "admin", "admin");
             try
             {
@@ -36,7 +38,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
 
         }
-        public Korisnik GetKorisnik(int id)
+        public Korisnik vratiKorisnika(int id)
         {
             try
             {
@@ -169,7 +171,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             try
             {
                 var query = new Neo4jClient.Cypher.CypherQuery(
-                    "CREATE(Auth1: Autentifikacija{ korisnickoIme: '"+a.korisnickoIme+"',email: '"+a.email+"',sifra: '"+a.email+"'}) RETURN Auth1",
+                    "CREATE(Auth1: Autentifikacija{ korisnickoIme: '"+a.korisnickoIme+"',email: '"+a.email+"',sifra: '"+a.sifra+"'}) RETURN Auth1",
                                                                 new Dictionary<string, object>(), CypherResultMode.Set);
                 ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query);
                 return true;
@@ -177,6 +179,74 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public String prijavaKorisnika(Osoba o)
+        {
+            try
+            {
+                // korisnik je uneo mail za prijavljivanje
+                if (o.authPodaci.email != null)
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {email: '" + o.authPodaci.email + "'}) return n",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<Autentifikacija> auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+                    if (auth.Count() == 0)
+                    {
+
+                        // korisnik je uneo korisnicko ime za prijavljivanje
+                        if (o.authPodaci.korisnickoIme != null)
+                        {
+                            query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {korisnickoIme: '" + o.authPodaci.korisnickoIme + "'}) return n",
+                                new Dictionary<string, object>(), CypherResultMode.Set);
+                            auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+                            if (auth.Count() == 0)
+                            {
+                                return "Nepostojece korisnicko ime !";
+                            }
+                            else
+                            {
+                                if (auth[0].sifra == o.authPodaci.sifra)
+                                {
+                                    query = new Neo4jClient.Cypher.CypherQuery(
+                                        "MATCH (n {korisnickoIme: '" + o.authPodaci.korisnickoIme + "'})<-[:MOJA_AUTENTIFIKACIJA]-(m) return ID(m)",
+                                        new Dictionary<string, object>(), CypherResultMode.Set);
+                                    int id = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).First();
+                                    PrijavljenKorisnik = vratiKorisnika(id);
+                                    return "Uspesno prijavljivanje !";
+                                }
+                                else
+                                {
+                                    return "Pogresna sifra za dato korisnicko ime !";
+                                }
+                            }
+                        }
+                        return "Nepostojeca email adresa !";
+                    }
+                    else
+                    {
+                        if (auth[0].sifra == o.authPodaci.sifra)
+                        {
+                            query = new Neo4jClient.Cypher.CypherQuery(
+                                        "MATCH (n {email: '" + o.authPodaci.email + "'})<-[:MOJA_AUTENTIFIKACIJA]-(m) return ID(m)",
+                                new Dictionary<string,object>(),CypherResultMode.Set);
+                            int id = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).First();
+                            PrijavljenKorisnik = vratiKorisnika(id);
+                            return "Uspesno prijavljivanje !";
+                        }
+                        else
+                        {
+                            return "Pogresna sifra za datu email adresu !";
+                        }
+                    }
+                }
+                return "Podaci nisu prosledjeni !";
+
+            }
+            catch(Exception e)
+            {
+                return "Greska priliko izvrsavanja upita !";
             }
         }
     }

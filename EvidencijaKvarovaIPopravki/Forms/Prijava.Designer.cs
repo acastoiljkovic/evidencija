@@ -147,6 +147,7 @@
             this.btnPotvrdi.TabIndex = 59;
             this.btnPotvrdi.Text = "Potvrdi";
             this.btnPotvrdi.UseSelectable = true;
+            this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
             // 
             // Prijava
             // 
