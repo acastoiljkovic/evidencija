@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
-    public partial class DostupniDelovi : MetroFramework.Forms.MetroForm
+    public partial class PrijavaKvara : MetroFramework.Forms.MetroForm
     {
-        public DostupniDelovi()
+        public PrijavaKvara()
         {
             InitializeComponent();
-        }
-
-        private void btnDodajDeo_Click(object sender, EventArgs e)
-        {
-            var Forma = new DodajDeo();
-            Forma.ShowDialog();
         }
     }
 }

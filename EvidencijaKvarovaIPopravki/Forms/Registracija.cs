@@ -41,6 +41,19 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 lblNazivModela.Visible = true;
                 txtNazivModela.Visible = true;
             }
+            if (!chkZaposleni.Checked)
+            {
+                lblZaposleni.Visible = false;
+                comboBoxRadionica.Visible = false;
+                btnDodajRadionicu.Visible = false;
+            }
+            else
+            {
+                lblZaposleni.Visible = true;
+                comboBoxRadionica.Visible = true;
+                btnDodajRadionicu.Visible = true;
+            }
+
         }
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
@@ -72,6 +85,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 MessageBox.Show("Uspesno dodat korisnik!");
             else
                 MessageBox.Show("Neuspesno kreirnaje korisnika !");
+        }
+
+        private void chkZaposleni_CheckedChanged(object sender, EventArgs e)
+        {
+            PrikaziSakrij();
         }
     }
 }

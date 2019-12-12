@@ -95,5 +95,17 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 MessageBox.Show("Neuspesno dodati podaci");
 
         }
+
+        private void btnRadionica_Click(object sender, EventArgs e)
+        {
+            var Forma = new Radionica();
+            Forma.ShowDialog();
+        }
+
+        private void btnPrijaviKvar_Click(object sender, EventArgs e)
+        {
+            var Forma = new PrijavaKvara();
+            Forma.ShowDialog();
+        }
     }
 }

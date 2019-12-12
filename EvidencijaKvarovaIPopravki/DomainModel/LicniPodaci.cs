@@ -8,7 +8,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 {
     public class LicniPodaci
     {
-        public Guid id { get; }
+        public Guid id { get; set; }
         public string ime { get; set; }
         public string prezime { get; set; }
         public Adresa Adresa { get; set; }
