@@ -11,5 +11,6 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         public string korisnickoIme { get; set; }
         public string email { get; set; }
         public string sifra { get; set; }
+
     }
 }

@@ -48,9 +48,6 @@
             this.txtGrad = new MetroFramework.Controls.MetroTextBox();
             this.txtLozinkaPonovo = new MetroFramework.Controls.MetroTextBox();
             this.txtLozinka = new MetroFramework.Controls.MetroTextBox();
-            this.txtNazivModela = new MetroFramework.Controls.MetroTextBox();
-            this.lblNazivModela = new MetroFramework.Controls.MetroLabel();
-            this.chkModel = new MetroFramework.Controls.MetroCheckBox();
             this.btnPotvrdi = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chkZaposleni = new MetroFramework.Controls.MetroCheckBox();
@@ -402,59 +399,9 @@
             this.txtLozinka.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtLozinka.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtNazivModela
-            // 
-            // 
-            // 
-            // 
-            this.txtNazivModela.CustomButton.Image = null;
-            this.txtNazivModela.CustomButton.Location = new System.Drawing.Point(185, 2);
-            this.txtNazivModela.CustomButton.Name = "";
-            this.txtNazivModela.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.txtNazivModela.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNazivModela.CustomButton.TabIndex = 1;
-            this.txtNazivModela.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtNazivModela.CustomButton.UseSelectable = true;
-            this.txtNazivModela.CustomButton.Visible = false;
-            this.txtNazivModela.Lines = new string[0];
-            this.txtNazivModela.Location = new System.Drawing.Point(258, 365);
-            this.txtNazivModela.MaxLength = 32767;
-            this.txtNazivModela.Name = "txtNazivModela";
-            this.txtNazivModela.PasswordChar = '\0';
-            this.txtNazivModela.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNazivModela.SelectedText = "";
-            this.txtNazivModela.SelectionLength = 0;
-            this.txtNazivModela.SelectionStart = 0;
-            this.txtNazivModela.ShortcutsEnabled = true;
-            this.txtNazivModela.Size = new System.Drawing.Size(205, 22);
-            this.txtNazivModela.TabIndex = 109;
-            this.txtNazivModela.UseSelectable = true;
-            this.txtNazivModela.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtNazivModela.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lblNazivModela
-            // 
-            this.lblNazivModela.AutoSize = true;
-            this.lblNazivModela.Location = new System.Drawing.Point(63, 368);
-            this.lblNazivModela.Name = "lblNazivModela";
-            this.lblNazivModela.Size = new System.Drawing.Size(93, 19);
-            this.lblNazivModela.TabIndex = 55;
-            this.lblNazivModela.Text = "Naziv modela:";
-            // 
-            // chkModel
-            // 
-            this.chkModel.AutoSize = true;
-            this.chkModel.Location = new System.Drawing.Point(63, 333);
-            this.chkModel.Name = "chkModel";
-            this.chkModel.Size = new System.Drawing.Size(240, 15);
-            this.chkModel.TabIndex = 54;
-            this.chkModel.Text = "Prijavljujete se za konkretni model vozila?";
-            this.chkModel.UseSelectable = true;
-            this.chkModel.CheckedChanged += new System.EventHandler(this.chkModel_CheckedChanged);
-            // 
             // btnPotvrdi
             // 
-            this.btnPotvrdi.Location = new System.Drawing.Point(345, 533);
+            this.btnPotvrdi.Location = new System.Drawing.Point(345, 470);
             this.btnPotvrdi.Name = "btnPotvrdi";
             this.btnPotvrdi.Size = new System.Drawing.Size(118, 23);
             this.btnPotvrdi.TabIndex = 57;
@@ -474,7 +421,7 @@
             // chkZaposleni
             // 
             this.chkZaposleni.AutoSize = true;
-            this.chkZaposleni.Location = new System.Drawing.Point(63, 402);
+            this.chkZaposleni.Location = new System.Drawing.Point(63, 337);
             this.chkZaposleni.Name = "chkZaposleni";
             this.chkZaposleni.Size = new System.Drawing.Size(177, 15);
             this.chkZaposleni.TabIndex = 58;
@@ -486,7 +433,7 @@
             // 
             this.comboBoxRadionica.FormattingEnabled = true;
             this.comboBoxRadionica.ItemHeight = 23;
-            this.comboBoxRadionica.Location = new System.Drawing.Point(258, 430);
+            this.comboBoxRadionica.Location = new System.Drawing.Point(258, 365);
             this.comboBoxRadionica.Name = "comboBoxRadionica";
             this.comboBoxRadionica.Size = new System.Drawing.Size(205, 29);
             this.comboBoxRadionica.TabIndex = 59;
@@ -495,7 +442,7 @@
             // lblZaposleni
             // 
             this.lblZaposleni.AutoSize = true;
-            this.lblZaposleni.Location = new System.Drawing.Point(63, 430);
+            this.lblZaposleni.Location = new System.Drawing.Point(63, 365);
             this.lblZaposleni.Name = "lblZaposleni";
             this.lblZaposleni.Size = new System.Drawing.Size(188, 19);
             this.lblZaposleni.TabIndex = 60;
@@ -503,7 +450,7 @@
             // 
             // btnDodajRadionicu
             // 
-            this.btnDodajRadionicu.Location = new System.Drawing.Point(345, 481);
+            this.btnDodajRadionicu.Location = new System.Drawing.Point(345, 416);
             this.btnDodajRadionicu.Name = "btnDodajRadionicu";
             this.btnDodajRadionicu.Size = new System.Drawing.Size(118, 23);
             this.btnDodajRadionicu.TabIndex = 61;
@@ -515,15 +462,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 598);
+            this.ClientSize = new System.Drawing.Size(540, 507);
             this.Controls.Add(this.btnDodajRadionicu);
             this.Controls.Add(this.lblZaposleni);
             this.Controls.Add(this.comboBoxRadionica);
             this.Controls.Add(this.chkZaposleni);
             this.Controls.Add(this.btnPotvrdi);
-            this.Controls.Add(this.txtNazivModela);
-            this.Controls.Add(this.lblNazivModela);
-            this.Controls.Add(this.chkModel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtLozinka);
             this.Controls.Add(this.txtLozinkaPonovo);
@@ -574,9 +518,6 @@
         private MetroFramework.Controls.MetroTextBox txtLozinkaPonovo;
         private MetroFramework.Controls.MetroTextBox txtLozinka;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroTextBox txtNazivModela;
-        private MetroFramework.Controls.MetroLabel lblNazivModela;
-        private MetroFramework.Controls.MetroCheckBox chkModel;
         private MetroFramework.Controls.MetroButton btnPotvrdi;
         private MetroFramework.Controls.MetroCheckBox chkZaposleni;
         private MetroFramework.Controls.MetroComboBox comboBoxRadionica;

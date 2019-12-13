@@ -26,22 +26,12 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void Registracija_Load(object sender, EventArgs e)
         {
-            chkModel.Checked = false;
+            chkZaposleni.Checked = false;
             PrikaziSakrij();
         }
 
         private void PrikaziSakrij()
         {
-            if (!chkModel.Checked)
-            {
-                lblNazivModela.Visible = false;
-                txtNazivModela.Visible = false;
-            }
-            else
-            {
-                lblNazivModela.Visible = true;
-                txtNazivModela.Visible = true;
-            }
             if (!chkZaposleni.Checked)
             {
                 lblZaposleni.Visible = false;
@@ -60,37 +50,50 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
             string provera = DomainModel.DataSet.Instace.proveriDaLiPostoji(txtEmail.Text, txtKorisnickoIme.Text);
-            //MetroMessageBox.Show(this, provera);
-            MessageBox.Show(provera);
+
             if (provera.Equals("Provera uspesno prosla!"))
             {
-                if (
-                DomainModel.DataSet.Instace.dodajKorisnika(new Korisnik()
-                {
-                    podaci = new LicniPodaci()
-                    {
-                        Adresa = new Adresa()
-                        {
-                            Grad = txtGrad.Text,
-                            UlicaIBroj = txtUlicaIBroj.Text
-                        },
-                        ime = txtIme.Text,
-                        prezime = txtPrezime.Text,
-                        telefon = "4567890",
-                        datumRodjenja = dateVremePopravke.Text
-                    },
-                    authPodaci = new Autentifikacija()
-                    {
-                        email = txtEmail.Text,
-                        korisnickoIme = txtKorisnickoIme.Text,
-                        sifra = txtLozinka.Text
-                    },
-                    kvarovi = null
-                }))
-                    MessageBox.Show("Uspesno dodat korisnik!");
+                if (!txtLozinka.Text.Equals(txtLozinkaPonovo.Text))
+                    MetroMessageBox.Show(this, "Lozinke ne odgovaraju jedna drugoj!", "Obavestenje");
                 else
-                    MessageBox.Show("Neuspesno kreirnaje korisnika !");
+                {
+                    string indikatorOsobe;
+                    if (chkZaposleni.Checked)
+                        indikatorOsobe = "zaposleni";
+                    else
+                        indikatorOsobe = "korisnik";
+                    if (
+                    DomainModel.DataSet.Instace.dodajKorisnika(new Korisnik()
+                    {
+                        indikator = indikatorOsobe,
+                        podaci = new LicniPodaci()
+                        {
+                            Adresa = new Adresa()
+                            {
+                                Grad = txtGrad.Text,
+                                UlicaIBroj = txtUlicaIBroj.Text
+                            },
+                            ime = txtIme.Text,
+                            prezime = txtPrezime.Text,
+                            telefon = "4567890",
+                            datumRodjenja = dateVremePopravke.Text
+                            
+                        },
+                        authPodaci = new Autentifikacija()
+                        {
+                            email = txtEmail.Text,
+                            korisnickoIme = txtKorisnickoIme.Text,
+                            sifra = txtLozinka.Text
+                        },
+                        kvarovi = null
+                    }))
+                        MetroMessageBox.Show(this, "Uspesno dodat korisnik!", "Obavestenje");
+                    else
+                        MetroMessageBox.Show(this, "Neuspesno kreirnaje korisnika !", "Obavestenje");
+                }
             }
+            else
+                MetroMessageBox.Show(this, provera, "Obavestenje");
         }
 
         private void chkZaposleni_CheckedChanged(object sender, EventArgs e)

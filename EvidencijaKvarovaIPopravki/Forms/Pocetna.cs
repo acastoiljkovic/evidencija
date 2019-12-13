@@ -28,6 +28,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new Registracija();
             Forma.ShowDialog();
+            PrikaziSakrij();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -40,10 +41,30 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new Prijava();
             Forma.ShowDialog();
+            PrikaziSakrij();
+        }
+
+        private void PrikaziSakrij()
+        {
+            if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
+            {
+                btnKreirajNalog.Visible = false;
+                btnUlogujSe.Visible = false;
+                btnOdjaviSe.Visible = true;
+                btnProfil.Visible = true;
+            }
+            else
+            {
+                btnKreirajNalog.Visible = true;
+                btnUlogujSe.Visible = true;
+                btnOdjaviSe.Visible = false;
+                btnProfil.Visible = false;
+            }
         }
 
         private void Pocetna_Load(object sender, EventArgs e)
         {
+            PrikaziSakrij();
             metroTabControl1.SelectedTab = TabPopravke;
             foreach(Kvar k in DomainModel.DataSet.Instace.vratiSveKvarove())
             {

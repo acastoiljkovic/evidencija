@@ -9,6 +9,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 {
     public class Osoba
     {
+        public string indikator { get; set; }//korisnik/zaposleni
         public LicniPodaci podaci { get; set; }
         public Autentifikacija authPodaci { get; set; }
         public List<Kvar> kvarovi { get; set; }
