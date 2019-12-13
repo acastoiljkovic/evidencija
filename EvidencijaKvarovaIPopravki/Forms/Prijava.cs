@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Forms;
+using MetroFramework;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -19,8 +21,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
-            // TODO: Add login
-            MessageBox.Show(DomainModel.DataSet.Instace.prijavaKorisnika(new DomainModel.Osoba()
+            MetroMessageBox.Show(this,DomainModel.DataSet.Instace.prijavaKorisnika(new DomainModel.Osoba()
             {
                 authPodaci = new DomainModel.Autentifikacija()
                 {
@@ -29,7 +30,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                     sifra = txtLozinka.Text
                 }
             }
-            )
+            ),"Obavestenje"
             );
             if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
                 this.Close();
