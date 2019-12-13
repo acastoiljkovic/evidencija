@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.gridPopravkeKorisnika = new MetroFramework.Controls.MetroGrid();
@@ -84,37 +84,37 @@
             this.gridPopravkeKorisnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridPopravkeKorisnika.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridPopravkeKorisnika.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPopravkeKorisnika.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPopravkeKorisnika.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridPopravkeKorisnika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridPopravkeKorisnika.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPopravkeKorisnika.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridPopravkeKorisnika.EnableHeadersVisualStyles = false;
             this.gridPopravkeKorisnika.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridPopravkeKorisnika.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridPopravkeKorisnika.Location = new System.Drawing.Point(13, 309);
             this.gridPopravkeKorisnika.Name = "gridPopravkeKorisnika";
             this.gridPopravkeKorisnika.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPopravkeKorisnika.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPopravkeKorisnika.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridPopravkeKorisnika.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridPopravkeKorisnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPopravkeKorisnika.Size = new System.Drawing.Size(488, 245);
@@ -278,6 +278,7 @@
             this.txtIme.Location = new System.Drawing.Point(277, 63);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(224, 21);
+            this.txtIme.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtIme.TabIndex = 23;
             this.txtIme.Text = "Ime";
             this.txtIme.UseStyleColors = true;
@@ -290,6 +291,7 @@
             this.txtPrezime.Location = new System.Drawing.Point(277, 84);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(224, 21);
+            this.txtPrezime.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtPrezime.TabIndex = 24;
             this.txtPrezime.Text = "Prezime";
             this.txtPrezime.UseStyleColors = true;
@@ -302,6 +304,7 @@
             this.txtEmail.Location = new System.Drawing.Point(277, 112);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(224, 21);
+            this.txtEmail.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtEmail.TabIndex = 25;
             this.txtEmail.Text = "E-mail";
             this.txtEmail.UseStyleColors = true;
@@ -314,6 +317,7 @@
             this.txtTelefon.Location = new System.Drawing.Point(277, 149);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(224, 21);
+            this.txtTelefon.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtTelefon.TabIndex = 26;
             this.txtTelefon.Text = "Kontakt telefon";
             this.txtTelefon.UseStyleColors = true;
@@ -326,6 +330,7 @@
             this.txtGrad.Location = new System.Drawing.Point(277, 186);
             this.txtGrad.Name = "txtGrad";
             this.txtGrad.Size = new System.Drawing.Size(224, 21);
+            this.txtGrad.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtGrad.TabIndex = 27;
             this.txtGrad.Text = "Grad";
             this.txtGrad.UseStyleColors = true;
@@ -338,6 +343,7 @@
             this.txtDatum.Location = new System.Drawing.Point(277, 234);
             this.txtDatum.Name = "txtDatum";
             this.txtDatum.Size = new System.Drawing.Size(224, 21);
+            this.txtDatum.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtDatum.TabIndex = 28;
             this.txtDatum.Text = "Datum rodjenja";
             this.txtDatum.UseStyleColors = true;
@@ -350,6 +356,7 @@
             this.txtUlicaIBroj.Location = new System.Drawing.Point(277, 207);
             this.txtUlicaIBroj.Name = "txtUlicaIBroj";
             this.txtUlicaIBroj.Size = new System.Drawing.Size(224, 21);
+            this.txtUlicaIBroj.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtUlicaIBroj.TabIndex = 29;
             this.txtUlicaIBroj.Text = "Ulica i broj";
             this.txtUlicaIBroj.UseStyleColors = true;
@@ -383,6 +390,7 @@
             this.Controls.Add(this.gridPopravkeKorisnika);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Profil";
+            this.Style = MetroFramework.MetroColorStyle.Silver;
             this.Load += new System.EventHandler(this.Profil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravkeKorisnika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

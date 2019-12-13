@@ -6,6 +6,60 @@ using System.Threading.Tasks;
 using Neo4jClient;
 using Neo4jClient.Cypher;
 
+// TODO :
+// 1. Da se disableju dugmici u zavisnosti od toga ko je prijavljen
+//
+//  ------------------ POCETNA ---------------------
+//  - pocetna ( loguje se i kreraj nalog , nezavisno od tipa korisnika )
+//  - tabovi na pocetnoj da se promene ( popravke( kvarovi ), Radionice, da se izbace Zaposleni i Model Vozila  )
+//  - ako si zaposleni i imas radionicu onda da se prikazuje dugme radionica inace da se ne prikazuje
+//  - profil dugme da ide gore i da se vidi samo ako si prijavljen
+//  - filter za kvarove i za radionice
+//  - pametno trazenje, dok se kuca on da trazi ( trazenje u dataGrdiView , a ne iz baze )
+//  - dugme popravka da se izbaci i da se napravi kad se klikne kvar iz dataGridView da otvori formu sa podacima za taj kvar
+//  - kada se klikne na radionicu iz dataGridView da se otvori forma sa podacima o radionici
+//  - kada si prijavljen kao zaposleni umesto taba radionice napraviti tab nesvrstani kvarovi koji izlistava sve kvarove koji nemaju radionice
+//  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
+//  - obrisati dugme dodaj kvar
+//  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
+//
+//
+//  ------------------- PROFIL ----------------------
+//  - dugme i forma za izmeni profil
+//  - forma izmeni profil se prilagodjava tipu osobe
+//  - nova forma za izmeni lozinku, poziva se iz forme profil, preko dugmeta izmeni lozinku
+//  - trenutna profil forma je za osobu tipa korisnik, a ako je tipa zaposleni forma se menja
+//  - treba dodati radionicu u kojoj radi
+//  
+//
+//
+//  ------------------- KREIRANJE NALOGA -------------
+//  - lozinka mora da bude ista u oba slucaja
+//  - menja se klasa Osoba, dodaje se tip, da li je Radnik ili je Korisnik tipa string ( string tip = "korisnik"/"zaposleni";)
+//  - sa forme se brise modelVozila
+//  - menjaju se skripte, kreira se KOorisnik kad nije cekirano Prijavljuje se kao zaposleni, odnosno kreira se 
+//      zaposleni kada je cekirano i dodaje mu se radionica koju je selektovao
+//  - radionica mora da bude selektovana, dodati proveru na stranici
+//
+//
+//  ------------------- PRIJAVI KVAR -------
+//  - dodati textBox za naziv kvara
+//  - izmeniti postojeci textBox da bude kratak opis kvara
+//  - skripta koja prijavljenom korisniku dodaje kvar koji nema ni jednu radionicu
+//  - selekcija da li korisnik oce da bira radionicu ili da radionice biraju njega
+//  - ukoliko odabere radionicu skripta pravi odmah vezu izmedju kvara i radionice  
+//
+//  ------------------- RADIONICA ------------
+//  - u radionicu treba lista kvarova koja nema zaposlenog da radi na kvaru
+//  - lista kvarova koji se trenutno popravljaju
+//  - pametno bi bilo da se izbace delovi !!!!!
+//  - dugme i forma za izmeni radionicus
+//
+//  ------------------- KREIRAJ RADIONICU ------------
+//  - da ostane samo naziv, grad i ulica
+
+
+
 namespace EvidencijaKvarovaIPopravki.DomainModel
 {
     public class DataSet
