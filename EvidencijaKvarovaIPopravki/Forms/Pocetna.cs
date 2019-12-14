@@ -76,6 +76,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
             //}
             gridPopravke.DataSource = DomainModel.DataSet.Instace.vratiSveKvarove();
             gridRadionice.DataSource = DomainModel.DataSet.Instace.vratiSveRadionice();
+            gridRadionice.Columns[0].Visible = false;
         }
 
         private void btnPopravka_Click(object sender, EventArgs e)

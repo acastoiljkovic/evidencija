@@ -16,6 +16,7 @@ using Neo4jClient.Cypher;
 //  - kada si prijavljen kao zaposleni umesto taba radionice napraviti tab nesvrstani kvarovi koji izlistava sve kvarove koji nemaju radionice
 //  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
+//  - kad se doda radionica i vrati na pocetnu ne prikazu se radionice koje su dodate
 //
 //
 //  ------------------- PROFIL ----------------------
@@ -147,20 +148,16 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             {
                 //verovatno moze optimalnije
                 List<Radionica> radionice = new List<Radionica>();
-                var query = new Neo4jClient.Cypher.CypherQuery("match (r:Radionica)-[a:NALAZI_SE]->(adresa) return ID(r)",
+                var query = new Neo4jClient.Cypher.CypherQuery("match (r:Radionica)-[a:NALAZI_SE]->(adresa) return r",
                                                 new Dictionary<string, object>(), CypherResultMode.Set);
-                List<int> radioniceIndeksi = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).ToList();
+                List<Radionica> radioniceList = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
                 
-                foreach (int i in radioniceIndeksi)
+                foreach (Radionica i in radioniceList)
                 {
-                    query = new Neo4jClient.Cypher.CypherQuery("match(n:Radionica) where(id(n)="+ i +") return n",
+                    query = new Neo4jClient.Cypher.CypherQuery("match (r:Radionica)-[a:NALAZI_SE]->(adresa) return adresa",
                                 new Dictionary<string, object>(), CypherResultMode.Set);
-                    Radionica r = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList()[0];
-
-                    query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + i + ") match (n)-[a:NALAZI_SE]->(adresa) return adresa",
-                                new Dictionary<string, object>(), CypherResultMode.Set);
-                    r.Adresa = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList()[0];
-                    radionice.Add(r);
+                    i.Adresa = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList()[0];
+                    radionice.Add(i);
                 }
 
                 return radionice;
@@ -257,7 +254,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
-        public string proveriDaLiPostoji(string email, string korisnickoIme)
+        public string proveriDaLiPostojiKorisnik(string email, string korisnickoIme)
         {
             try
             {

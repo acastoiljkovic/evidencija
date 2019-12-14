@@ -49,7 +49,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
-            string provera = DomainModel.DataSet.Instace.proveriDaLiPostoji(txtEmail.Text, txtKorisnickoIme.Text);
+            string provera = DomainModel.DataSet.Instace.proveriDaLiPostojiKorisnik(txtEmail.Text, txtKorisnickoIme.Text);
 
             if (provera.Equals("Provera uspesno prosla!"))
             {
