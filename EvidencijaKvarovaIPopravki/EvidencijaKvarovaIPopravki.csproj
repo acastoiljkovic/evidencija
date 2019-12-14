@@ -98,6 +98,12 @@
     <Compile Include="Forms\DostupniDelovi.Designer.cs">
       <DependentUpon>DostupniDelovi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\IzmeniProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IzmeniProfil.Designer.cs">
+      <DependentUpon>IzmeniProfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KvarPopravka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +140,11 @@
     <Compile Include="Forms\Profil.Designer.cs">
       <DependentUpon>Profil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Radionica.cs">
+    <Compile Include="Forms\RadionicaPrikaz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Radionica.Designer.cs">
-      <DependentUpon>Radionica.cs</DependentUpon>
+    <Compile Include="Forms\RadionicaPrikaz.Designer.cs">
+      <DependentUpon>RadionicaPrikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Registracija.cs">
       <SubType>Form</SubType>
@@ -160,6 +166,9 @@
     <EmbeddedResource Include="Forms\DostupniDelovi.resx">
       <DependentUpon>DostupniDelovi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IzmeniProfil.resx">
+      <DependentUpon>IzmeniProfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KvarPopravka.resx">
       <DependentUpon>KvarPopravka.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,8 +187,8 @@
     <EmbeddedResource Include="Forms\Profil.resx">
       <DependentUpon>Profil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Radionica.resx">
-      <DependentUpon>Radionica.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RadionicaPrikaz.resx">
+      <DependentUpon>RadionicaPrikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>

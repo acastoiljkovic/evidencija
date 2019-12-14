@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
-    public partial class Radionica : MetroFramework.Forms.MetroForm
+    public partial class IzmeniProfil : MetroFramework.Forms.MetroForm
     {
-        public Radionica()
+        public IzmeniProfil()
         {
             InitializeComponent();
-        }
-
-        private void btnDelovi_Click(object sender, EventArgs e)
-        {
-            var Forma = new DostupniDelovi();
-            Forma.ShowDialog();
         }
     }
 }

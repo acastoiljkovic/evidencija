@@ -45,6 +45,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtOcena = new MetroFramework.Controls.MetroLabel();
+            this.txtPopust = new MetroFramework.Controls.MetroLabel();
+            this.txtModelVozila = new MetroFramework.Controls.MetroLabel();
+            this.txtVremePopravke = new MetroFramework.Controls.MetroLabel();
+            this.txtVremePrijave = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -224,11 +229,81 @@
             this.metroLabel2.Text = "Ocena:";
             this.metroLabel2.UseStyleColors = true;
             // 
+            // txtOcena
+            // 
+            this.txtOcena.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtOcena.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtOcena.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtOcena.Location = new System.Drawing.Point(263, 213);
+            this.txtOcena.Name = "txtOcena";
+            this.txtOcena.Size = new System.Drawing.Size(224, 21);
+            this.txtOcena.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtOcena.TabIndex = 51;
+            this.txtOcena.Text = "Ocena";
+            this.txtOcena.UseStyleColors = true;
+            // 
+            // txtPopust
+            // 
+            this.txtPopust.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPopust.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtPopust.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtPopust.Location = new System.Drawing.Point(263, 174);
+            this.txtPopust.Name = "txtPopust";
+            this.txtPopust.Size = new System.Drawing.Size(224, 21);
+            this.txtPopust.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtPopust.TabIndex = 50;
+            this.txtPopust.Text = "Popust koji je ostvaren";
+            this.txtPopust.UseStyleColors = true;
+            // 
+            // txtModelVozila
+            // 
+            this.txtModelVozila.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtModelVozila.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtModelVozila.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtModelVozila.Location = new System.Drawing.Point(263, 137);
+            this.txtModelVozila.Name = "txtModelVozila";
+            this.txtModelVozila.Size = new System.Drawing.Size(224, 21);
+            this.txtModelVozila.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtModelVozila.TabIndex = 49;
+            this.txtModelVozila.Text = "Model vozila";
+            this.txtModelVozila.UseStyleColors = true;
+            // 
+            // txtVremePopravke
+            // 
+            this.txtVremePopravke.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtVremePopravke.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtVremePopravke.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtVremePopravke.Location = new System.Drawing.Point(263, 100);
+            this.txtVremePopravke.Name = "txtVremePopravke";
+            this.txtVremePopravke.Size = new System.Drawing.Size(224, 21);
+            this.txtVremePopravke.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtVremePopravke.TabIndex = 48;
+            this.txtVremePopravke.Text = "Vreme popravke";
+            this.txtVremePopravke.UseStyleColors = true;
+            // 
+            // txtVremePrijave
+            // 
+            this.txtVremePrijave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtVremePrijave.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtVremePrijave.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtVremePrijave.Location = new System.Drawing.Point(263, 63);
+            this.txtVremePrijave.Name = "txtVremePrijave";
+            this.txtVremePrijave.Size = new System.Drawing.Size(224, 21);
+            this.txtVremePrijave.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtVremePrijave.TabIndex = 47;
+            this.txtVremePrijave.Text = "Vreme prijave";
+            this.txtVremePrijave.UseStyleColors = true;
+            // 
             // KvarPopravka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 450);
+            this.Controls.Add(this.txtOcena);
+            this.Controls.Add(this.txtPopust);
+            this.Controls.Add(this.txtModelVozila);
+            this.Controls.Add(this.txtVremePopravke);
+            this.Controls.Add(this.txtVremePrijave);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
@@ -276,5 +351,10 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel txtOcena;
+        private MetroFramework.Controls.MetroLabel txtPopust;
+        private MetroFramework.Controls.MetroLabel txtModelVozila;
+        private MetroFramework.Controls.MetroLabel txtVremePopravke;
+        private MetroFramework.Controls.MetroLabel txtVremePrijave;
     }
 }

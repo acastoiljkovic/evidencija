@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EvidencijaKvarovaIPopravki.DomainModel;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -15,6 +16,15 @@ namespace EvidencijaKvarovaIPopravki.Forms
         public KvarPopravka()
         {
             InitializeComponent();
+        }
+
+        public KvarPopravka(Kvar k)
+        {
+            InitializeComponent();
+            txtVremePrijave.Text = k.vremePrijaveKvara;
+            txtVremePopravke.Text = k.vremeIspravkeKvara;
+            txtModelVozila.Text = k.modelVozila;
+            txtOcena.Text = k.ocena.ToString();
         }
     }
 }

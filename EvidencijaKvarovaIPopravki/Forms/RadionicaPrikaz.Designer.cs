@@ -1,6 +1,6 @@
 ﻿namespace EvidencijaKvarovaIPopravki.Forms
 {
-    partial class Radionica
+    partial class RadionicaPrikaz
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Radionica));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadionicaPrikaz));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,6 +47,8 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.txtUlicaIBroj = new MetroFramework.Controls.MetroLabel();
+            this.txtGrad = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -248,11 +250,39 @@
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroLabel1.UseStyleColors = true;
             // 
+            // txtUlicaIBroj
+            // 
+            this.txtUlicaIBroj.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtUlicaIBroj.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtUlicaIBroj.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtUlicaIBroj.Location = new System.Drawing.Point(219, 100);
+            this.txtUlicaIBroj.Name = "txtUlicaIBroj";
+            this.txtUlicaIBroj.Size = new System.Drawing.Size(224, 21);
+            this.txtUlicaIBroj.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtUlicaIBroj.TabIndex = 41;
+            this.txtUlicaIBroj.Text = "Ulica i broj";
+            this.txtUlicaIBroj.UseStyleColors = true;
+            // 
+            // txtGrad
+            // 
+            this.txtGrad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtGrad.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtGrad.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtGrad.Location = new System.Drawing.Point(219, 74);
+            this.txtGrad.Name = "txtGrad";
+            this.txtGrad.Size = new System.Drawing.Size(224, 21);
+            this.txtGrad.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtGrad.TabIndex = 42;
+            this.txtGrad.Text = "Grad ";
+            this.txtGrad.UseStyleColors = true;
+            // 
             // Radionica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 543);
+            this.Controls.Add(this.txtGrad);
+            this.Controls.Add(this.txtUlicaIBroj);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnDelovi);
             this.Controls.Add(this.metroLabel3);
@@ -290,6 +320,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.PictureBox pictureBox7;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel txtUlicaIBroj;
+        private MetroFramework.Controls.MetroLabel txtGrad;
 
     }
 }

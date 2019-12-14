@@ -31,6 +31,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
             PrikaziSakrij();
         }
 
+        //btnProfil
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var Forma = new Profil();
@@ -46,6 +47,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void PrikaziSakrij()
         {
+            gridPopravke.Columns[0].Visible = false;
             if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
                 btnKreirajNalog.Visible = false;
@@ -66,12 +68,14 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             PrikaziSakrij();
             metroTabControl1.SelectedTab = TabPopravke;
-            foreach(Kvar k in DomainModel.DataSet.Instace.vratiSveKvarove())
-            {
-                DataGridViewRow rw = (DataGridViewRow)gridPopravke.Rows[0].Clone();
-                rw.Cells[0].Value = k.naziv;
-                gridPopravke.Rows.Add(rw);
-            }
+            //foreach(Kvar k in DomainModel.DataSet.Instace.vratiSveKvarove())
+            //{
+            //    DataGridViewRow rw = (DataGridViewRow)gridPopravke.Rows[0].Clone();
+            //    rw.Cells[0].Value = k.naziv;
+            //    gridPopravke.Rows.Add(rw);
+            //}
+            gridPopravke.DataSource = DomainModel.DataSet.Instace.vratiSveKvarove();
+            gridRadionice.DataSource = DomainModel.DataSet.Instace.vratiSveRadionice();
         }
 
         private void btnPopravka_Click(object sender, EventArgs e)
@@ -119,13 +123,36 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnRadionica_Click(object sender, EventArgs e)
         {
-            var Forma = new Radionica();
+            var Forma = new RadionicaPrikaz();
             Forma.ShowDialog();
         }
 
         private void btnPrijaviKvar_Click(object sender, EventArgs e)
         {
             var Forma = new PrijavaKvara();
+            Forma.ShowDialog();
+        }
+
+        private void gridPopravke_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnOdjaviSe_Click(object sender, EventArgs e)
+        {
+            DomainModel.DataSet.Instace.PrijavljenKorisnik = null;
+            PrikaziSakrij();
+        }
+
+        private void gridPopravke_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var Forma = new KvarPopravka((Kvar)gridPopravke.Rows[e.RowIndex].DataBoundItem);
+            Forma.ShowDialog();
+        }
+
+        private void gridRadionice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var Forma = new RadionicaPrikaz((Radionica)gridRadionice.Rows[e.RowIndex].DataBoundItem);
             Forma.ShowDialog();
         }
     }
