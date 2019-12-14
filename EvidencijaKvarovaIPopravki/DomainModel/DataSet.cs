@@ -13,7 +13,6 @@ using Neo4jClient.Cypher;
 //  - ako si zaposleni i imas radionicu onda da se prikazuje dugme radionica inace da se ne prikazuje
 //  - filter za kvarove i za radionice
 //  - pametno trazenje, dok se kuca on da trazi ( trazenje u dataGrdiView , a ne iz baze )
-//  - -----mozda ja lose kreiram radionicu u lokalnu bazu, skloni komentare pa probaj kod tebe -----kada se klikne na radionicu iz dataGridView da se otvori forma sa podacima o radionici
 //  - kada si prijavljen kao zaposleni umesto taba radionice napraviti tab nesvrstani kvarovi koji izlistava sve kvarove koji nemaju radionice
 //  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
@@ -146,17 +145,23 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n:Radionica) RETURN n",
+                //verovatno moze optimalnije
+                List<Radionica> radionice = new List<Radionica>();
+                var query = new Neo4jClient.Cypher.CypherQuery("match (r:Radionica)-[a:NALAZI_SE]->(adresa) return ID(r)",
                                                 new Dictionary<string, object>(), CypherResultMode.Set);
-                List<Radionica> radionice = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+                List<int> radioniceIndeksi = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).ToList();
+                
+                foreach (int i in radioniceIndeksi)
+                {
+                    query = new Neo4jClient.Cypher.CypherQuery("match(n:Radionica) where(id(n)="+ i +") return n",
+                                new Dictionary<string, object>(), CypherResultMode.Set);
+                    Radionica r = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList()[0];
 
-                //foreach (Radionica r in radionice)
-                //{
-                //    query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + r.id + ") match (n)-[a:NALAZI_SE]->(adresa) return adresa",
-                //                new Dictionary<string, object>(), CypherResultMode.Set);
-                //    r.Adresa = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList()[0];
-
-                //}
+                    query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + i + ") match (n)-[a:NALAZI_SE]->(adresa) return adresa",
+                                new Dictionary<string, object>(), CypherResultMode.Set);
+                    r.Adresa = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList()[0];
+                    radionice.Add(r);
+                }
 
                 return radionice;
             }
@@ -231,10 +236,32 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
+        public bool dodajRadionicu(Radionica r)
+        {
+            try
+            {
+                dodajAdresu(r.Adresa);
+
+                var query = new Neo4jClient.Cypher.CypherQuery(
+                    "MATCH(Addr1:Adresa {UlicaIBroj: '" + r.Adresa.UlicaIBroj + "'})" +
+                    "CREATE(R1: Radionica{ naziv: '" + r.naziv + "'})" +
+                    " CREATE (R1)-[r:NALAZI_SE]->(Addr1) RETURN R1",
+                                                                new Dictionary<string, object>(), CypherResultMode.Set);
+                ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query);
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         public string proveriDaLiPostoji(string email, string korisnickoIme)
         {
             try
             {
+                //moze jednim upitom koristeci where, ali ne bismo znali da li je nevalidno korisnickoIme ili email
                 var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {korisnickoIme: '" + korisnickoIme + "'}) return n",
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Autentifikacija> auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
@@ -261,6 +288,31 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 
             }
             catch(Exception e)
+            {
+                return "Greska!";
+            }
+        }
+
+        public string proveriDaLiPostojiRadionica(string nazivRadionice)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {naziv: '" + nazivRadionice + "'}) return n",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Radionica> rad = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+
+                if (rad.Count() > 0)
+                {
+                    return "Radionica s tim nazivom vec postoji!";
+                }
+                else
+                {
+                    return "Provera uspesno prosla!";
+                }
+
+
+            }
+            catch (Exception e)
             {
                 return "Greska!";
             }

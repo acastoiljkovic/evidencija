@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using EvidencijaKvarovaIPopravki.DomainModel;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -21,6 +23,32 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new NoviKvar();
             Forma.ShowDialog();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            string provera = DomainModel.DataSet.Instace.proveriDaLiPostojiRadionica(txtNazivRadionice.Text);
+            if (provera.Equals("Provera uspesno prosla!"))
+                if (
+                        DomainModel.DataSet.Instace.dodajRadionicu(new Radionica()
+                        {
+                            Adresa = new Adresa()
+                            {
+                                Grad = txtGrad.Text,
+                                UlicaIBroj = txtUlicaIBroj.Text
+                            },
+                            naziv = txtNazivRadionice.Text,
+                            Delovi = null,
+                            Kvarovi = null,
+                            Zaposleni = null
+
+                        }))
+                    MetroMessageBox.Show(this, "Uspesno dodata radionica!", "Obavestenje");
+                else
+                    MetroMessageBox.Show(this, "Neuspesno dodavanje radionice!", "Obavestenje");
+            else
+                MetroMessageBox.Show(this, provera, "Obavestenje");
+
         }
     }
 }

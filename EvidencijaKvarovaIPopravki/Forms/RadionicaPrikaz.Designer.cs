@@ -46,7 +46,7 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblNazivRadionice = new MetroFramework.Controls.MetroLabel();
             this.txtUlicaIBroj = new MetroFramework.Controls.MetroLabel();
             this.txtGrad = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -237,18 +237,18 @@
             this.pictureBox7.TabIndex = 30;
             this.pictureBox7.TabStop = false;
             // 
-            // metroLabel1
+            // lblNazivRadionice
             // 
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel1.Location = new System.Drawing.Point(312, 33);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(254, 35);
-            this.metroLabel1.TabIndex = 29;
-            this.metroLabel1.Text = "Naziv radionice";
-            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.metroLabel1.UseStyleColors = true;
+            this.lblNazivRadionice.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblNazivRadionice.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblNazivRadionice.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblNazivRadionice.Location = new System.Drawing.Point(312, 33);
+            this.lblNazivRadionice.Name = "lblNazivRadionice";
+            this.lblNazivRadionice.Size = new System.Drawing.Size(254, 35);
+            this.lblNazivRadionice.TabIndex = 29;
+            this.lblNazivRadionice.Text = "Naziv radionice";
+            this.lblNazivRadionice.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblNazivRadionice.UseStyleColors = true;
             // 
             // txtUlicaIBroj
             // 
@@ -276,7 +276,7 @@
             this.txtGrad.Text = "Grad ";
             this.txtGrad.UseStyleColors = true;
             // 
-            // Radionica
+            // RadionicaPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -294,8 +294,8 @@
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.metroLabel1);
-            this.Name = "Radionica";
+            this.Controls.Add(this.lblNazivRadionice);
+            this.Name = "RadionicaPrikaz";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -319,7 +319,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel lblNazivRadionice;
         private MetroFramework.Controls.MetroLabel txtUlicaIBroj;
         private MetroFramework.Controls.MetroLabel txtGrad;
 
