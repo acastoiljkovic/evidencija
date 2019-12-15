@@ -44,13 +44,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 comboBoxRadionica.Visible = true;
                 btnDodajRadionicu.Visible = true;
             }
-
         }
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
             string provera = DomainModel.DataSet.Instace.proveriDaLiPostojiKorisnik(txtEmail.Text, txtKorisnickoIme.Text);
-
             if (provera.Equals("Provera uspesno prosla!"))
             {
                 if (!txtLozinka.Text.Equals(txtLozinkaPonovo.Text))
@@ -59,37 +57,79 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 {
                     string indikatorOsobe;
                     if (chkZaposleni.Checked)
-                        indikatorOsobe = "zaposleni";
-                    else
-                        indikatorOsobe = "korisnik";
-                    if (
-                    DomainModel.DataSet.Instace.dodajKorisnika(new Korisnik()
                     {
-                        indikator = indikatorOsobe,
-                        podaci = new LicniPodaci()
-                        {
-                            Adresa = new Adresa()
+                        indikatorOsobe = "zaposleni";
+                        if(comboBoxRadionica.SelectedItem != null){
+                            if (
+                            DomainModel.DataSet.Instace.dodajZaposlenog(new Osoba()
                             {
-                                Grad = txtGrad.Text,
-                                UlicaIBroj = txtUlicaIBroj.Text
-                            },
-                            ime = txtIme.Text,
-                            prezime = txtPrezime.Text,
-                            telefon = "4567890",
-                            datumRodjenja = dateVremePopravke.Text
-                            
-                        },
-                        authPodaci = new Autentifikacija()
-                        {
-                            email = txtEmail.Text,
-                            korisnickoIme = txtKorisnickoIme.Text,
-                            sifra = txtLozinka.Text
-                        },
-                        kvarovi = null
-                    }))
-                        MetroMessageBox.Show(this, "Uspesno dodat korisnik!", "Obavestenje");
+                                indikator = indikatorOsobe,
+                                podaci = new LicniPodaci()
+                                {
+                                    Adresa = new Adresa()
+                                    {
+                                        Grad = txtGrad.Text,
+                                        UlicaIBroj = txtUlicaIBroj.Text
+                                    },
+                                    ime = txtIme.Text,
+                                    prezime = txtPrezime.Text,
+                                    telefon = "4567890",
+                                    datumRodjenja = dateVremePopravke.Text
+
+                                },
+                                authPodaci = new Autentifikacija()
+                                {
+                                    email = txtEmail.Text,
+                                    korisnickoIme = txtKorisnickoIme.Text,
+                                    sifra = txtLozinka.Text
+                                },
+                                kvarovi = null
+                            }, comboBoxRadionica.SelectedItem.ToString()))
+                            {
+                                MetroMessageBox.Show(this, "Uspesno dodat zaposleni!", "Obavestenje");
+                                this.Close();
+                            }
+                            else
+                                MetroMessageBox.Show(this, "Neuspesno kreirnaje zaposlenog !", "Obavestenje");
+                        }
+                        else
+                            MetroMessageBox.Show(this, "Odaberite radionicu, ili ukoliko je nema u listi kreirajte !", "Obavestenje");
+                    }
                     else
-                        MetroMessageBox.Show(this, "Neuspesno kreirnaje korisnika !", "Obavestenje");
+                    {
+                        indikatorOsobe = "korisnik";
+                        if (
+                        DomainModel.DataSet.Instace.dodajKorisnika(new Osoba()
+                        {
+                            indikator = indikatorOsobe,
+                            podaci = new LicniPodaci()
+                            {
+                                Adresa = new Adresa()
+                                {
+                                    Grad = txtGrad.Text,
+                                    UlicaIBroj = txtUlicaIBroj.Text
+                                },
+                                ime = txtIme.Text,
+                                prezime = txtPrezime.Text,
+                                telefon = "4567890",
+                                datumRodjenja = dateVremePopravke.Text
+
+                            },
+                            authPodaci = new Autentifikacija()
+                            {
+                                email = txtEmail.Text,
+                                korisnickoIme = txtKorisnickoIme.Text,
+                                sifra = txtLozinka.Text
+                            },
+                            kvarovi = null
+                        }))
+                        {
+                            MetroMessageBox.Show(this, "Uspesno dodat korisnik!", "Obavestenje");
+                            this.Close();
+                        }
+                        else
+                            MetroMessageBox.Show(this, "Neuspesno kreirnaje korisnika !", "Obavestenje");
+                    }
                 }
             }
             else
@@ -105,6 +145,15 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new DodajRadionicu();
             Forma.ShowDialog();
+        }
+
+        private void Registracija_Activated(object sender, EventArgs e)
+        {
+            comboBoxRadionica.Items.Clear();
+            foreach (Radionica r in DomainModel.DataSet.Instace.vratiSveRadionice())
+            {
+                comboBoxRadionica.Items.Add(r.naziv);
+            }
         }
     }
 }

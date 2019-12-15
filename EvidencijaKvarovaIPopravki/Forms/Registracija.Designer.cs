@@ -70,7 +70,7 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.Location = new System.Drawing.Point(63, 177);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(107, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(106, 19);
             this.metroLabel8.TabIndex = 41;
             this.metroLabel8.Text = "Ponovite lozinku:";
             // 
@@ -489,6 +489,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel2);
             this.Name = "Registracija";
+            this.Activated += new System.EventHandler(this.Registracija_Activated);
             this.Load += new System.EventHandler(this.Registracija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

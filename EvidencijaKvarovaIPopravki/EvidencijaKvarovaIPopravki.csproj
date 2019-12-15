@@ -66,14 +66,11 @@
     <Compile Include="DomainModel\Adresa.cs" />
     <Compile Include="DomainModel\Autentifikacija.cs" />
     <Compile Include="DomainModel\DataSet.cs" />
-    <Compile Include="DomainModel\Korisnik.cs" />
     <Compile Include="DomainModel\LicniPodaci.cs" />
     <Compile Include="DomainModel\Osoba.cs" />
     <Compile Include="DomainModel\Kvar.cs" />
     <Compile Include="DomainModel\Deo.cs" />
     <Compile Include="DomainModel\Radionica.cs" />
-    <Compile Include="DomainModel\Test.cs" />
-    <Compile Include="DomainModel\Zaposleni.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

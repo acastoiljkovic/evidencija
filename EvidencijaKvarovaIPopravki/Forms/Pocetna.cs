@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 using EvidencijaKvarovaIPopravki.DomainModel;
 
 namespace EvidencijaKvarovaIPopravki.Forms
@@ -50,10 +51,18 @@ namespace EvidencijaKvarovaIPopravki.Forms
             gridPopravke.Columns[0].Visible = false;
             if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
+                if (DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator == "zaposleni")
+                {
+                    btnRadionica.Visible = true;
+                }
+                else
+                {
+                    btnRadionica.Visible = false;
+                }
+                btnProfil.Visible = true;
                 btnKreirajNalog.Visible = false;
                 btnUlogujSe.Visible = false;
                 btnOdjaviSe.Visible = true;
-                btnProfil.Visible = true;
             }
             else
             {
@@ -61,9 +70,17 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 btnUlogujSe.Visible = true;
                 btnOdjaviSe.Visible = false;
                 btnProfil.Visible = false;
+                btnRadionica.Visible = false;
             }
+            ucitajGridData();
         }
 
+        public void ucitajGridData()
+        {
+            gridPopravke.DataSource = DomainModel.DataSet.Instace.vratiSveKvarove();
+            gridRadionice.DataSource = DomainModel.DataSet.Instace.vratiSveRadionice();
+            gridRadionice.Columns[0].Visible = false;
+        }
         private void Pocetna_Load(object sender, EventArgs e)
         {
             PrikaziSakrij();
@@ -74,9 +91,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
             //    rw.Cells[0].Value = k.naziv;
             //    gridPopravke.Rows.Add(rw);
             //}
-            gridPopravke.DataSource = DomainModel.DataSet.Instace.vratiSveKvarove();
-            gridRadionice.DataSource = DomainModel.DataSet.Instace.vratiSveRadionice();
-            gridRadionice.Columns[0].Visible = false;
+            
         }
 
         private void btnPopravka_Click(object sender, EventArgs e)
@@ -124,8 +139,15 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnRadionica_Click(object sender, EventArgs e)
         {
-            var Forma = new RadionicaPrikaz();
-            Forma.ShowDialog();
+            if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
+            {
+                var Forma = new RadionicaPrikaz(DomainModel.DataSet.Instace.vratiRadionicuRadnik(DomainModel.DataSet.Instace.PrijavljenKorisnik));
+                Forma.ShowDialog();
+            }
+            else
+            {
+                MetroMessageBox.Show(this,"Niste zaposleni ni u jednoj radionici !","Obavestenje");
+            }
         }
 
         private void btnPrijaviKvar_Click(object sender, EventArgs e)

@@ -43,7 +43,10 @@ namespace EvidencijaKvarovaIPopravki.Forms
                             Zaposleni = null
 
                         }))
+                {
                     MetroMessageBox.Show(this, "Uspesno dodata radionica!", "Obavestenje");
+                    this.Close();
+                }
                 else
                     MetroMessageBox.Show(this, "Neuspesno dodavanje radionice!", "Obavestenje");
             else

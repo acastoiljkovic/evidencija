@@ -18,16 +18,16 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         public List<string> komentari { get; set; }
         public List<string> saveti { get; set; }
         // korisnik kod koga se javio kvar
-        public Korisnik Korisnik { get; set; }
+        public Osoba Korisnik { get; set; }
         public Radionica Radionica { get; set; }//konkretna radionica u lancu radionica
         // zaposleni koji rade na kvaru 
-        public List<Zaposleni> ListaZaposlenih { get; set; }
+        public List<Osoba> ListaZaposlenih { get; set; }
         public List<Deo> Delovi { get; set; }
 
         public Kvar()
         {
             Delovi = new List<Deo>();
-            ListaZaposlenih = new List<Zaposleni>();
+            ListaZaposlenih = new List<Osoba>();
             komentari = new List<string>();
             saveti = new List<string>();
         }
