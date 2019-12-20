@@ -49,6 +49,7 @@
             this.tbTelefon = new MetroFramework.Controls.MetroTextBox();
             this.tbEmail = new MetroFramework.Controls.MetroTextBox();
             this.tbUlicaIBroj = new MetroFramework.Controls.MetroTextBox();
+            this.btnPotvrdi = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -74,7 +75,7 @@
             this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel11.Location = new System.Drawing.Point(54, 81);
+            this.metroLabel11.Location = new System.Drawing.Point(54, 78);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(118, 21);
             this.metroLabel11.TabIndex = 41;
@@ -86,7 +87,7 @@
             this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel10.Location = new System.Drawing.Point(54, 109);
+            this.metroLabel10.Location = new System.Drawing.Point(54, 106);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(118, 21);
             this.metroLabel10.TabIndex = 40;
@@ -98,7 +99,7 @@
             this.metroLabel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel9.Location = new System.Drawing.Point(54, 146);
+            this.metroLabel9.Location = new System.Drawing.Point(54, 143);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(118, 21);
             this.metroLabel9.TabIndex = 39;
@@ -110,7 +111,7 @@
             this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel8.Location = new System.Drawing.Point(54, 183);
+            this.metroLabel8.Location = new System.Drawing.Point(54, 180);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(118, 21);
             this.metroLabel8.TabIndex = 38;
@@ -122,7 +123,7 @@
             this.metroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel7.Location = new System.Drawing.Point(54, 204);
+            this.metroLabel7.Location = new System.Drawing.Point(54, 201);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(118, 21);
             this.metroLabel7.TabIndex = 37;
@@ -134,7 +135,7 @@
             this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel6.Location = new System.Drawing.Point(54, 231);
+            this.metroLabel6.Location = new System.Drawing.Point(54, 228);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(118, 21);
             this.metroLabel6.TabIndex = 36;
@@ -146,7 +147,7 @@
             this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel3.Location = new System.Drawing.Point(54, 60);
+            this.metroLabel3.Location = new System.Drawing.Point(54, 57);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(118, 21);
             this.metroLabel3.TabIndex = 35;
@@ -204,7 +205,7 @@
             // 
             // 
             this.tbIme.CustomButton.Image = null;
-            this.tbIme.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbIme.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbIme.CustomButton.Name = "";
             this.tbIme.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbIme.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -222,7 +223,7 @@
             this.tbIme.SelectionLength = 0;
             this.tbIme.SelectionStart = 0;
             this.tbIme.ShortcutsEnabled = true;
-            this.tbIme.Size = new System.Drawing.Size(75, 23);
+            this.tbIme.Size = new System.Drawing.Size(147, 23);
             this.tbIme.TabIndex = 49;
             this.tbIme.UseSelectable = true;
             this.tbIme.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -234,7 +235,7 @@
             // 
             // 
             this.tbPrezime.CustomButton.Image = null;
-            this.tbPrezime.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbPrezime.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbPrezime.CustomButton.Name = "";
             this.tbPrezime.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbPrezime.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -252,7 +253,7 @@
             this.tbPrezime.SelectionLength = 0;
             this.tbPrezime.SelectionStart = 0;
             this.tbPrezime.ShortcutsEnabled = true;
-            this.tbPrezime.Size = new System.Drawing.Size(75, 23);
+            this.tbPrezime.Size = new System.Drawing.Size(147, 23);
             this.tbPrezime.TabIndex = 53;
             this.tbPrezime.UseSelectable = true;
             this.tbPrezime.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -264,7 +265,7 @@
             // 
             // 
             this.tbGrad.CustomButton.Image = null;
-            this.tbGrad.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbGrad.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbGrad.CustomButton.Name = "";
             this.tbGrad.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbGrad.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -282,7 +283,7 @@
             this.tbGrad.SelectionLength = 0;
             this.tbGrad.SelectionStart = 0;
             this.tbGrad.ShortcutsEnabled = true;
-            this.tbGrad.Size = new System.Drawing.Size(75, 23);
+            this.tbGrad.Size = new System.Drawing.Size(147, 23);
             this.tbGrad.TabIndex = 54;
             this.tbGrad.UseSelectable = true;
             this.tbGrad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -294,7 +295,7 @@
             // 
             // 
             this.tbDatumRodjenja.CustomButton.Image = null;
-            this.tbDatumRodjenja.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbDatumRodjenja.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbDatumRodjenja.CustomButton.Name = "";
             this.tbDatumRodjenja.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbDatumRodjenja.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -312,7 +313,7 @@
             this.tbDatumRodjenja.SelectionLength = 0;
             this.tbDatumRodjenja.SelectionStart = 0;
             this.tbDatumRodjenja.ShortcutsEnabled = true;
-            this.tbDatumRodjenja.Size = new System.Drawing.Size(75, 23);
+            this.tbDatumRodjenja.Size = new System.Drawing.Size(147, 23);
             this.tbDatumRodjenja.TabIndex = 55;
             this.tbDatumRodjenja.UseSelectable = true;
             this.tbDatumRodjenja.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -324,7 +325,7 @@
             // 
             // 
             this.tbTelefon.CustomButton.Image = null;
-            this.tbTelefon.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbTelefon.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbTelefon.CustomButton.Name = "";
             this.tbTelefon.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbTelefon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -342,7 +343,7 @@
             this.tbTelefon.SelectionLength = 0;
             this.tbTelefon.SelectionStart = 0;
             this.tbTelefon.ShortcutsEnabled = true;
-            this.tbTelefon.Size = new System.Drawing.Size(75, 23);
+            this.tbTelefon.Size = new System.Drawing.Size(147, 23);
             this.tbTelefon.TabIndex = 56;
             this.tbTelefon.UseSelectable = true;
             this.tbTelefon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -354,7 +355,7 @@
             // 
             // 
             this.tbEmail.CustomButton.Image = null;
-            this.tbEmail.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbEmail.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbEmail.CustomButton.Name = "";
             this.tbEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -372,7 +373,7 @@
             this.tbEmail.SelectionLength = 0;
             this.tbEmail.SelectionStart = 0;
             this.tbEmail.ShortcutsEnabled = true;
-            this.tbEmail.Size = new System.Drawing.Size(75, 23);
+            this.tbEmail.Size = new System.Drawing.Size(147, 23);
             this.tbEmail.TabIndex = 57;
             this.tbEmail.UseSelectable = true;
             this.tbEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -384,7 +385,7 @@
             // 
             // 
             this.tbUlicaIBroj.CustomButton.Image = null;
-            this.tbUlicaIBroj.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.tbUlicaIBroj.CustomButton.Location = new System.Drawing.Point(125, 1);
             this.tbUlicaIBroj.CustomButton.Name = "";
             this.tbUlicaIBroj.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbUlicaIBroj.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -402,17 +403,28 @@
             this.tbUlicaIBroj.SelectionLength = 0;
             this.tbUlicaIBroj.SelectionStart = 0;
             this.tbUlicaIBroj.ShortcutsEnabled = true;
-            this.tbUlicaIBroj.Size = new System.Drawing.Size(75, 23);
+            this.tbUlicaIBroj.Size = new System.Drawing.Size(147, 23);
             this.tbUlicaIBroj.TabIndex = 60;
             this.tbUlicaIBroj.UseSelectable = true;
             this.tbUlicaIBroj.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbUlicaIBroj.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // btnPotvrdi
+            // 
+            this.btnPotvrdi.Location = new System.Drawing.Point(287, 279);
+            this.btnPotvrdi.Name = "btnPotvrdi";
+            this.btnPotvrdi.Size = new System.Drawing.Size(121, 23);
+            this.btnPotvrdi.TabIndex = 61;
+            this.btnPotvrdi.Text = "Potvrdi";
+            this.btnPotvrdi.UseSelectable = true;
+            this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
+            // 
             // IzmeniProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 471);
+            this.ClientSize = new System.Drawing.Size(498, 346);
+            this.Controls.Add(this.btnPotvrdi);
             this.Controls.Add(this.tbUlicaIBroj);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.tbTelefon);
@@ -466,5 +478,6 @@
         private MetroFramework.Controls.MetroTextBox tbTelefon;
         private MetroFramework.Controls.MetroTextBox tbEmail;
         private MetroFramework.Controls.MetroTextBox tbUlicaIBroj;
+        private MetroFramework.Controls.MetroButton btnPotvrdi;
     }
 }

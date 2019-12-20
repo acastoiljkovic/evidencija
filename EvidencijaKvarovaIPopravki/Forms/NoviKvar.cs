@@ -53,5 +53,10 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             PrikaziSakrij();
         }
+
+        private void btnPotvrdi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

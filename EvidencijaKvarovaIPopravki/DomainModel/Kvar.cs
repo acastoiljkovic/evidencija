@@ -19,7 +19,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         public List<string> saveti { get; set; }
         // korisnik kod koga se javio kvar
         public Osoba Korisnik { get; set; }
-        public Radionica Radionica { get; set; }//konkretna radionica u lancu radionica
+        public Radionica Radionica { get; set; }//mislim da ovo ne treba!?
         // zaposleni koji rade na kvaru 
         public List<Osoba> ListaZaposlenih { get; set; }
         public List<Deo> Delovi { get; set; }

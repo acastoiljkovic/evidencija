@@ -37,5 +37,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
             var Forma = new IzmeniProfil();
             Forma.ShowDialog();
         }
+
+        private void btnIzmeniSifru_Click(object sender, EventArgs e)
+        {
+            var Forma = new IzmeniSifru();
+            Forma.ShowDialog();
+        }
     }
 }

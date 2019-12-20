@@ -56,6 +56,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIzmeniProfil = new MetroFramework.Controls.MetroButton();
+            this.btnIzmeniSifru = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravkeKorisnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -126,7 +127,7 @@
             this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel3.Location = new System.Drawing.Point(70, 63);
+            this.metroLabel3.Location = new System.Drawing.Point(70, 100);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(118, 21);
             this.metroLabel3.TabIndex = 12;
@@ -138,7 +139,7 @@
             this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel6.Location = new System.Drawing.Point(70, 234);
+            this.metroLabel6.Location = new System.Drawing.Point(70, 271);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(118, 21);
             this.metroLabel6.TabIndex = 15;
@@ -150,7 +151,7 @@
             this.metroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel7.Location = new System.Drawing.Point(70, 207);
+            this.metroLabel7.Location = new System.Drawing.Point(70, 244);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(118, 21);
             this.metroLabel7.TabIndex = 16;
@@ -162,7 +163,7 @@
             this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel8.Location = new System.Drawing.Point(70, 186);
+            this.metroLabel8.Location = new System.Drawing.Point(70, 223);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(118, 21);
             this.metroLabel8.TabIndex = 17;
@@ -174,7 +175,7 @@
             this.metroLabel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel9.Location = new System.Drawing.Point(70, 149);
+            this.metroLabel9.Location = new System.Drawing.Point(70, 186);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(118, 21);
             this.metroLabel9.TabIndex = 18;
@@ -186,7 +187,7 @@
             this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel10.Location = new System.Drawing.Point(70, 112);
+            this.metroLabel10.Location = new System.Drawing.Point(70, 149);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(118, 21);
             this.metroLabel10.TabIndex = 19;
@@ -198,7 +199,7 @@
             this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel11.Location = new System.Drawing.Point(70, 84);
+            this.metroLabel11.Location = new System.Drawing.Point(70, 121);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(118, 21);
             this.metroLabel11.TabIndex = 20;
@@ -210,7 +211,7 @@
             this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel4.Location = new System.Drawing.Point(70, 271);
+            this.metroLabel4.Location = new System.Drawing.Point(70, 308);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(216, 21);
             this.metroLabel4.TabIndex = 21;
@@ -222,7 +223,7 @@
             this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtIme.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtIme.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtIme.Location = new System.Drawing.Point(277, 63);
+            this.txtIme.Location = new System.Drawing.Point(277, 100);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(224, 21);
             this.txtIme.Style = MetroFramework.MetroColorStyle.Silver;
@@ -235,7 +236,7 @@
             this.txtPrezime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtPrezime.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtPrezime.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtPrezime.Location = new System.Drawing.Point(277, 84);
+            this.txtPrezime.Location = new System.Drawing.Point(277, 121);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(224, 21);
             this.txtPrezime.Style = MetroFramework.MetroColorStyle.Silver;
@@ -248,7 +249,7 @@
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmail.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtEmail.Location = new System.Drawing.Point(277, 112);
+            this.txtEmail.Location = new System.Drawing.Point(277, 149);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(224, 21);
             this.txtEmail.Style = MetroFramework.MetroColorStyle.Silver;
@@ -261,7 +262,7 @@
             this.txtTelefon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtTelefon.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtTelefon.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtTelefon.Location = new System.Drawing.Point(277, 149);
+            this.txtTelefon.Location = new System.Drawing.Point(277, 186);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(224, 21);
             this.txtTelefon.Style = MetroFramework.MetroColorStyle.Silver;
@@ -274,7 +275,7 @@
             this.txtGrad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtGrad.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtGrad.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtGrad.Location = new System.Drawing.Point(277, 186);
+            this.txtGrad.Location = new System.Drawing.Point(277, 223);
             this.txtGrad.Name = "txtGrad";
             this.txtGrad.Size = new System.Drawing.Size(224, 21);
             this.txtGrad.Style = MetroFramework.MetroColorStyle.Silver;
@@ -287,7 +288,7 @@
             this.txtDatum.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDatum.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtDatum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtDatum.Location = new System.Drawing.Point(277, 234);
+            this.txtDatum.Location = new System.Drawing.Point(277, 271);
             this.txtDatum.Name = "txtDatum";
             this.txtDatum.Size = new System.Drawing.Size(224, 21);
             this.txtDatum.Style = MetroFramework.MetroColorStyle.Silver;
@@ -300,7 +301,7 @@
             this.txtUlicaIBroj.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUlicaIBroj.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtUlicaIBroj.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtUlicaIBroj.Location = new System.Drawing.Point(277, 207);
+            this.txtUlicaIBroj.Location = new System.Drawing.Point(277, 244);
             this.txtUlicaIBroj.Name = "txtUlicaIBroj";
             this.txtUlicaIBroj.Size = new System.Drawing.Size(224, 21);
             this.txtUlicaIBroj.Style = MetroFramework.MetroColorStyle.Silver;
@@ -311,7 +312,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(23, 271);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 308);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 31);
             this.pictureBox3.TabIndex = 22;
@@ -320,7 +321,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(23, 149);
+            this.pictureBox8.Location = new System.Drawing.Point(23, 186);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(41, 31);
             this.pictureBox8.TabIndex = 11;
@@ -329,7 +330,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(23, 186);
+            this.pictureBox7.Location = new System.Drawing.Point(23, 223);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(41, 31);
             this.pictureBox7.TabIndex = 10;
@@ -338,7 +339,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(23, 234);
+            this.pictureBox6.Location = new System.Drawing.Point(23, 271);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(41, 31);
             this.pictureBox6.TabIndex = 9;
@@ -347,7 +348,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 112);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 149);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 31);
             this.pictureBox2.TabIndex = 5;
@@ -356,7 +357,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 100);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 31);
             this.pictureBox1.TabIndex = 4;
@@ -364,7 +365,7 @@
             // 
             // btnIzmeniProfil
             // 
-            this.btnIzmeniProfil.Location = new System.Drawing.Point(13, 24);
+            this.btnIzmeniProfil.Location = new System.Drawing.Point(391, 36);
             this.btnIzmeniProfil.Name = "btnIzmeniProfil";
             this.btnIzmeniProfil.Size = new System.Drawing.Size(110, 23);
             this.btnIzmeniProfil.TabIndex = 40;
@@ -372,11 +373,22 @@
             this.btnIzmeniProfil.UseSelectable = true;
             this.btnIzmeniProfil.Click += new System.EventHandler(this.btnIzmeniProfil_Click);
             // 
+            // btnIzmeniSifru
+            // 
+            this.btnIzmeniSifru.Location = new System.Drawing.Point(391, 62);
+            this.btnIzmeniSifru.Name = "btnIzmeniSifru";
+            this.btnIzmeniSifru.Size = new System.Drawing.Size(110, 23);
+            this.btnIzmeniSifru.TabIndex = 41;
+            this.btnIzmeniSifru.Text = "Izmeni sifru";
+            this.btnIzmeniSifru.UseSelectable = true;
+            this.btnIzmeniSifru.Click += new System.EventHandler(this.btnIzmeniSifru_Click);
+            // 
             // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 614);
+            this.Controls.Add(this.btnIzmeniSifru);
             this.Controls.Add(this.btnIzmeniProfil);
             this.Controls.Add(this.txtUlicaIBroj);
             this.Controls.Add(this.txtDatum);
@@ -440,5 +452,6 @@
         private MetroFramework.Controls.MetroLabel txtDatum;
         private MetroFramework.Controls.MetroLabel txtUlicaIBroj;
         private MetroFramework.Controls.MetroButton btnIzmeniProfil;
+        private MetroFramework.Controls.MetroButton btnIzmeniSifru;
     }
 }

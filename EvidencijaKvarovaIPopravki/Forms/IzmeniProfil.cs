@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -26,6 +27,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
             tbDatumRodjenja.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.datumRodjenja;
             tbGrad.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.Grad;
             tbUlicaIBroj.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.UlicaIBroj;
+        }
+
+        private void btnPotvrdi_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(this, DomainModel.DataSet.Instace.IzmeniKorisnikovProfil(tbIme.Text, tbPrezime.Text, tbEmail.Text, tbTelefon.Text, tbDatumRodjenja.Text, tbGrad.Text, tbUlicaIBroj.Text), "Obavestenje");
         }
     }
 }

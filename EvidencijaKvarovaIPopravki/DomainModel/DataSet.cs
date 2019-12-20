@@ -18,9 +18,7 @@ using Neo4jClient.Cypher;
 //
 //
 //  ------------------- PROFIL ----------------------
-//  - dugme i forma za izmeni profil
 //  - forma izmeni profil se prilagodjava tipu osobe
-//  - nova forma za izmeni lozinku, poziva se iz forme profil, preko dugmeta izmeni lozinku
 //  - trenutna profil forma je za osobu tipa korisnik, a ako je tipa zaposleni forma se menja
 //  - treba dodati radionicu u kojoj radi
 //  
@@ -159,6 +157,138 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             catch(Exception e)
             {
                 return null;
+            }
+        }
+
+        public string IzmeniKorisnikovProfil(string ime, string prezime, string email, string telefon, string datumRodjenja, string grad, string ulicaIBroj)
+        {
+            try
+            {
+                if (IzmeniAutentifikaciju(email).Equals("Uspesno promenjen email!"))
+                {
+                    if (IzmeniKorisnikovePodatke(ime, prezime, telefon, grad, ulicaIBroj, datumRodjenja).Equals("Uspesno promenjeni podaci!"))
+                        return "Uspesna izmena profila!";
+                    else
+                        return "Neuspesna izmena licnih podataka, promena autentifikacije uspesna!";
+                }
+                else
+                {
+                    return IzmeniAutentifikaciju(email);
+                }
+            }
+            catch(Exception e)
+            {
+                return "Greska";
+            }
+        }
+
+        public string IzmeniAutentifikaciju(string email)
+        {
+            try
+            {
+                if (!proveraDaLiPostojiEmail(email) || PrijavljenKorisnik.authPodaci.email.Equals(email))
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery("match(k:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth) where (auth.korisnickoIme = '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "') set auth.email = '" + email + "' return auth",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<Autentifikacija> a = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+                    
+                    if (a[0].email.Equals(email))
+                        return "Uspesno promenjen email!";
+                    else
+                        return "Neuspesna promena email-a!";
+                }
+                else
+                {
+                    return "Nalog s tim email-om je vec kreiran!";
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public string IzmeniAdresu(string grad, string ulicaIBroj)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("match(lp:LicniPodaci)-[a:NALAZI_SE]->(adresa) where (lp.telefon ='" + PrijavljenKorisnik.podaci.telefon + "') set adresa.Grad='" + grad + "', adresa.UlicaIBroj = '" + ulicaIBroj + "' return adresa",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Adresa> a = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList();
+
+                if (a[0].Grad.Equals(grad) && a[0].UlicaIBroj.Equals(ulicaIBroj))
+                    return "Uspesno!";
+                else
+                    return "Neuspesna promena adrese!";
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
+
+        public string IzmenaSifre(string stara, string nova, string potvrdaNove)
+        {
+            try
+            {
+                if(!PrijavljenKorisnik.authPodaci.sifra.Equals(stara))
+                {
+                    return "Uneli ste pogresnu postojecu sifru!";
+                }
+                else if(!nova.Equals(potvrdaNove))
+                {
+                    return "Nova sifra i njena potvrda se ne poklapaju!";
+                }
+                else
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery("match(k:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth) where (auth.korisnickoIme = '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "') set auth.sifra = '" + nova + "' return auth",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<Autentifikacija> a = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+                    
+                    if (a[0].sifra.Equals(nova))
+                        return "Uspesno promenjena sifra!";
+                    else
+                        return "Neuspesna promena sifre!";
+                }
+
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public string IzmeniKorisnikovePodatke(string ime, string prezime, string telefon, string grad, string ulicaIBroj, string datumRodjenja)
+        {
+            try
+            {
+                if (IzmeniAdresu(grad, ulicaIBroj).Equals("Uspesno!"))
+                {
+                    if (!proveraDaLiPostojiTelefon(telefon) || PrijavljenKorisnik.podaci.telefon.Equals(telefon))
+                    {
+                        var query = new Neo4jClient.Cypher.CypherQuery("match(k:Korisnik)-[p:MOJI_PODACI]->(licni) where (licni.telefon = '" + PrijavljenKorisnik.podaci.telefon + "') set licni.ime = '" + ime + "', licni.prezime = '" + prezime + "', licni.Grad = '" + grad + "', licni.datumRodjenja = '" + datumRodjenja + "' return licni",
+                                new Dictionary<string, object>(), CypherResultMode.Set);
+                        List<LicniPodaci> lp = ((IRawGraphClient)client).ExecuteGetCypherResults<LicniPodaci>(query).ToList();
+
+                        if (lp[0].ime.Equals(ime) && lp[0].prezime.Equals(prezime) && lp[0].telefon.Equals(telefon) && lp[0].datumRodjenja.Equals(datumRodjenja))
+                            return "Uspesno promenjeni podaci!";
+                        else
+                            return "Neuspesna promena licnih podataka!";
+                    }
+                    else
+                    {
+                        return "Kreiran je nalog s tim brojem telefona!";
+                    }
+                }
+                else
+                {
+                    return "Neuspesna promena adrese!";
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
             }
         }
 
@@ -332,25 +462,73 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
-        public string proveriDaLiPostojiKorisnik(string email, string korisnickoIme)
+        public bool proveraDaLiPostojiKorisnickoIme(string korisnickoIme)
         {
             try
             {
-                //moze jednim upitom koristeci where, ali ne bismo znali da li je nevalidno korisnickoIme ili email
                 var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {korisnickoIme: '" + korisnickoIme + "'}) return n",
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Autentifikacija> auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
 
-                if(auth.Count() > 0)
+                if (auth.Count() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool proveraDaLiPostojiEmail(string email)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {email: '" + email + "'}) return n",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Autentifikacija> auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
+                if (auth.Count() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool proveraDaLiPostojiTelefon(string telefon)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {telefon: '" + telefon + "'}) return n",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                List<LicniPodaci> lp = ((IRawGraphClient)client).ExecuteGetCypherResults<LicniPodaci>(query).ToList();
+                if (lp.Count() > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public string proveriDaLiPostojiKorisnik(string email, string korisnickoIme)
+        {
+            try
+            {
+
+                if(proveraDaLiPostojiKorisnickoIme(korisnickoIme))
                 {
                     return "Korisnicko ime je zauzeto!";
                 }
                 else
                 {
-                    query = new Neo4jClient.Cypher.CypherQuery("MATCH (n {email: '" + email + "'}) return n",
-                        new Dictionary<string, object>(), CypherResultMode.Set);
-                    List<Autentifikacija> auth2 = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList();
-                    if(auth2.Count() > 0)
+                    if(proveraDaLiPostojiEmail(email))
                     {
                         return "Korisnik s tim email-om je vec kreiran!";
                     }
