@@ -31,5 +31,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
             }
             // TODO: dodaj popravke koje je korisnik imao do sada
         }
+
+        private void btnIzmeniProfil_Click(object sender, EventArgs e)
+        {
+            var Forma = new IzmeniProfil();
+            Forma.ShowDialog();
+        }
     }
 }

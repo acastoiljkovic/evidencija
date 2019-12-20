@@ -16,5 +16,16 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             InitializeComponent();
         }
+
+        private void IzmeniProfil_Load(object sender, EventArgs e)
+        {
+            tbIme.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.ime;
+            tbPrezime.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.prezime;
+            tbEmail.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.authPodaci.email;
+            tbTelefon.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.telefon;
+            tbDatumRodjenja.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.datumRodjenja;
+            tbGrad.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.Grad;
+            tbUlicaIBroj.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.UlicaIBroj;
+        }
     }
 }
