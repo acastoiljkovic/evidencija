@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profil));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.gridPopravkeKorisnika = new MetroFramework.Controls.MetroGrid();
@@ -57,6 +57,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIzmeniProfil = new MetroFramework.Controls.MetroButton();
             this.btnIzmeniSifru = new MetroFramework.Controls.MetroButton();
+            this.slikaRadionica = new System.Windows.Forms.PictureBox();
+            this.lblRadionica = new MetroFramework.Controls.MetroLabel();
+            this.txtRadionica = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravkeKorisnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -64,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slikaRadionica)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -71,7 +75,7 @@
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel1.Location = new System.Drawing.Point(148, 24);
+            this.metroLabel1.Location = new System.Drawing.Point(131, 24);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(254, 35);
             this.metroLabel1.TabIndex = 1;
@@ -86,40 +90,40 @@
             this.gridPopravkeKorisnika.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridPopravkeKorisnika.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridPopravkeKorisnika.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPopravkeKorisnika.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPopravkeKorisnika.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridPopravkeKorisnika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridPopravkeKorisnika.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridPopravkeKorisnika.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridPopravkeKorisnika.EnableHeadersVisualStyles = false;
             this.gridPopravkeKorisnika.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridPopravkeKorisnika.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridPopravkeKorisnika.Location = new System.Drawing.Point(13, 309);
+            this.gridPopravkeKorisnika.Location = new System.Drawing.Point(13, 326);
             this.gridPopravkeKorisnika.Name = "gridPopravkeKorisnika";
             this.gridPopravkeKorisnika.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridPopravkeKorisnika.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridPopravkeKorisnika.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gridPopravkeKorisnika.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridPopravkeKorisnika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridPopravkeKorisnika.Size = new System.Drawing.Size(488, 245);
+            this.gridPopravkeKorisnika.Size = new System.Drawing.Size(473, 245);
             this.gridPopravkeKorisnika.TabIndex = 2;
             // 
             // metroLabel3
@@ -127,7 +131,7 @@
             this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel3.Location = new System.Drawing.Point(70, 100);
+            this.metroLabel3.Location = new System.Drawing.Point(70, 87);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(118, 21);
             this.metroLabel3.TabIndex = 12;
@@ -139,7 +143,7 @@
             this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel6.Location = new System.Drawing.Point(70, 271);
+            this.metroLabel6.Location = new System.Drawing.Point(70, 256);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(118, 21);
             this.metroLabel6.TabIndex = 15;
@@ -151,7 +155,7 @@
             this.metroLabel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel7.Location = new System.Drawing.Point(70, 244);
+            this.metroLabel7.Location = new System.Drawing.Point(70, 229);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(118, 21);
             this.metroLabel7.TabIndex = 16;
@@ -163,7 +167,7 @@
             this.metroLabel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel8.Location = new System.Drawing.Point(70, 223);
+            this.metroLabel8.Location = new System.Drawing.Point(70, 208);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(118, 21);
             this.metroLabel8.TabIndex = 17;
@@ -175,7 +179,7 @@
             this.metroLabel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel9.Location = new System.Drawing.Point(70, 186);
+            this.metroLabel9.Location = new System.Drawing.Point(70, 171);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(118, 21);
             this.metroLabel9.TabIndex = 18;
@@ -187,7 +191,7 @@
             this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel10.Location = new System.Drawing.Point(70, 149);
+            this.metroLabel10.Location = new System.Drawing.Point(70, 134);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(118, 21);
             this.metroLabel10.TabIndex = 19;
@@ -199,7 +203,7 @@
             this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel11.Location = new System.Drawing.Point(70, 121);
+            this.metroLabel11.Location = new System.Drawing.Point(70, 108);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(118, 21);
             this.metroLabel11.TabIndex = 20;
@@ -211,7 +215,7 @@
             this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel4.Location = new System.Drawing.Point(70, 308);
+            this.metroLabel4.Location = new System.Drawing.Point(70, 293);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(216, 21);
             this.metroLabel4.TabIndex = 21;
@@ -223,9 +227,9 @@
             this.txtIme.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtIme.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtIme.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtIme.Location = new System.Drawing.Point(277, 100);
+            this.txtIme.Location = new System.Drawing.Point(248, 87);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(224, 21);
+            this.txtIme.Size = new System.Drawing.Size(137, 21);
             this.txtIme.Style = MetroFramework.MetroColorStyle.Silver;
             this.txtIme.TabIndex = 23;
             this.txtIme.Text = "Ime";
@@ -236,7 +240,7 @@
             this.txtPrezime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtPrezime.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtPrezime.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtPrezime.Location = new System.Drawing.Point(277, 121);
+            this.txtPrezime.Location = new System.Drawing.Point(248, 108);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(224, 21);
             this.txtPrezime.Style = MetroFramework.MetroColorStyle.Silver;
@@ -249,7 +253,7 @@
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmail.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtEmail.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtEmail.Location = new System.Drawing.Point(277, 149);
+            this.txtEmail.Location = new System.Drawing.Point(248, 134);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(224, 21);
             this.txtEmail.Style = MetroFramework.MetroColorStyle.Silver;
@@ -262,7 +266,7 @@
             this.txtTelefon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtTelefon.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtTelefon.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtTelefon.Location = new System.Drawing.Point(277, 186);
+            this.txtTelefon.Location = new System.Drawing.Point(248, 171);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(224, 21);
             this.txtTelefon.Style = MetroFramework.MetroColorStyle.Silver;
@@ -275,7 +279,7 @@
             this.txtGrad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtGrad.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtGrad.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtGrad.Location = new System.Drawing.Point(277, 223);
+            this.txtGrad.Location = new System.Drawing.Point(248, 208);
             this.txtGrad.Name = "txtGrad";
             this.txtGrad.Size = new System.Drawing.Size(224, 21);
             this.txtGrad.Style = MetroFramework.MetroColorStyle.Silver;
@@ -288,7 +292,7 @@
             this.txtDatum.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtDatum.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtDatum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtDatum.Location = new System.Drawing.Point(277, 271);
+            this.txtDatum.Location = new System.Drawing.Point(248, 256);
             this.txtDatum.Name = "txtDatum";
             this.txtDatum.Size = new System.Drawing.Size(224, 21);
             this.txtDatum.Style = MetroFramework.MetroColorStyle.Silver;
@@ -301,7 +305,7 @@
             this.txtUlicaIBroj.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUlicaIBroj.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.txtUlicaIBroj.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtUlicaIBroj.Location = new System.Drawing.Point(277, 244);
+            this.txtUlicaIBroj.Location = new System.Drawing.Point(248, 229);
             this.txtUlicaIBroj.Name = "txtUlicaIBroj";
             this.txtUlicaIBroj.Size = new System.Drawing.Size(224, 21);
             this.txtUlicaIBroj.Style = MetroFramework.MetroColorStyle.Silver;
@@ -312,7 +316,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(23, 308);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 289);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 31);
             this.pictureBox3.TabIndex = 22;
@@ -321,7 +325,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(23, 186);
+            this.pictureBox8.Location = new System.Drawing.Point(23, 167);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(41, 31);
             this.pictureBox8.TabIndex = 11;
@@ -330,7 +334,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(23, 223);
+            this.pictureBox7.Location = new System.Drawing.Point(23, 204);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(41, 31);
             this.pictureBox7.TabIndex = 10;
@@ -339,7 +343,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(23, 271);
+            this.pictureBox6.Location = new System.Drawing.Point(23, 252);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(41, 31);
             this.pictureBox6.TabIndex = 9;
@@ -348,7 +352,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 149);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 130);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 31);
             this.pictureBox2.TabIndex = 5;
@@ -357,7 +361,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 92);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 31);
             this.pictureBox1.TabIndex = 4;
@@ -375,7 +379,7 @@
             // 
             // btnIzmeniSifru
             // 
-            this.btnIzmeniSifru.Location = new System.Drawing.Point(391, 62);
+            this.btnIzmeniSifru.Location = new System.Drawing.Point(391, 65);
             this.btnIzmeniSifru.Name = "btnIzmeniSifru";
             this.btnIzmeniSifru.Size = new System.Drawing.Size(110, 23);
             this.btnIzmeniSifru.TabIndex = 41;
@@ -383,11 +387,47 @@
             this.btnIzmeniSifru.UseSelectable = true;
             this.btnIzmeniSifru.Click += new System.EventHandler(this.btnIzmeniSifru_Click);
             // 
+            // slikaRadionica
+            // 
+            this.slikaRadionica.Image = ((System.Drawing.Image)(resources.GetObject("slikaRadionica.Image")));
+            this.slikaRadionica.Location = new System.Drawing.Point(23, 58);
+            this.slikaRadionica.Name = "slikaRadionica";
+            this.slikaRadionica.Size = new System.Drawing.Size(41, 31);
+            this.slikaRadionica.TabIndex = 42;
+            this.slikaRadionica.TabStop = false;
+            // 
+            // lblRadionica
+            // 
+            this.lblRadionica.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblRadionica.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblRadionica.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblRadionica.Location = new System.Drawing.Point(70, 66);
+            this.lblRadionica.Name = "lblRadionica";
+            this.lblRadionica.Size = new System.Drawing.Size(118, 21);
+            this.lblRadionica.TabIndex = 43;
+            this.lblRadionica.Text = "Radionica";
+            this.lblRadionica.UseStyleColors = true;
+            // 
+            // txtRadionica
+            // 
+            this.txtRadionica.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtRadionica.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtRadionica.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtRadionica.Location = new System.Drawing.Point(248, 66);
+            this.txtRadionica.Name = "txtRadionica";
+            this.txtRadionica.Size = new System.Drawing.Size(135, 21);
+            this.txtRadionica.Style = MetroFramework.MetroColorStyle.Silver;
+            this.txtRadionica.TabIndex = 44;
+            this.txtRadionica.UseStyleColors = true;
+            // 
             // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 614);
+            this.ClientSize = new System.Drawing.Size(522, 603);
+            this.Controls.Add(this.txtRadionica);
+            this.Controls.Add(this.lblRadionica);
+            this.Controls.Add(this.slikaRadionica);
             this.Controls.Add(this.btnIzmeniSifru);
             this.Controls.Add(this.btnIzmeniProfil);
             this.Controls.Add(this.txtUlicaIBroj);
@@ -423,6 +463,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slikaRadionica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,5 +494,8 @@
         private MetroFramework.Controls.MetroLabel txtUlicaIBroj;
         private MetroFramework.Controls.MetroButton btnIzmeniProfil;
         private MetroFramework.Controls.MetroButton btnIzmeniSifru;
+        private System.Windows.Forms.PictureBox slikaRadionica;
+        private MetroFramework.Controls.MetroLabel lblRadionica;
+        private MetroFramework.Controls.MetroLabel txtRadionica;
     }
 }

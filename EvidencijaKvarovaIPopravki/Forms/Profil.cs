@@ -19,8 +19,12 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void Profil_Load(object sender, EventArgs e)
         {
+
             if(DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
+                //ne bi trebalo da dodje do ove forme ako je null
+                PrikaziSakrij();
+
                 txtIme.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.ime;
                 txtPrezime.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.prezime;
                 txtTelefon.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.telefon;
@@ -29,7 +33,25 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 txtUlicaIBroj.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.UlicaIBroj;
                 txtEmail.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.authPodaci.email;
             }
-            // TODO: dodaj popravke koje je korisnik imao do sada
+            gridPopravkeKorisnika.DataSource = DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi;
+        }
+
+        private void PrikaziSakrij()
+        {
+            if (DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator.Equals("zaposleni"))
+            {
+                slikaRadionica.Visible = true;
+                lblRadionica.Visible = true;
+                txtRadionica.Visible = true;
+                if (DomainModel.DataSet.Instace.vratiRadionicuRadnik(DomainModel.DataSet.Instace.PrijavljenKorisnik) != null)
+                    txtRadionica.Text = DomainModel.DataSet.Instace.vratiRadionicuRadnik(DomainModel.DataSet.Instace.PrijavljenKorisnik).naziv;
+            }
+            else
+            {
+                slikaRadionica.Visible = false;
+                lblRadionica.Visible = false;
+                txtRadionica.Visible = false;
+            }
         }
 
         private void btnIzmeniProfil_Click(object sender, EventArgs e)

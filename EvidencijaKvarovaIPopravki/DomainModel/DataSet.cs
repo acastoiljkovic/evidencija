@@ -16,13 +16,6 @@ using Neo4jClient.Cypher;
 //  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
 //
-//
-//  ------------------- PROFIL ----------------------
-//  - forma izmeni profil se prilagodjava tipu osobe
-//  - trenutna profil forma je za osobu tipa korisnik, a ako je tipa zaposleni forma se menja
-//  - treba dodati radionicu u kojoj radi
-//  
-//
 //  ------------------- PRIJAVI KVAR -------
 //  - skripta koja prijavljenom korisniku dodaje kvar koji nema ni jednu radionicu
 //  - selekcija da li korisnik oce da bira radionicu ili da radionice biraju njega
@@ -159,6 +152,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 return null;
             }
         }
+
 
         public string IzmeniKorisnikovProfil(string ime, string prezime, string email, string telefon, string datumRodjenja, string grad, string ulicaIBroj)
         {
