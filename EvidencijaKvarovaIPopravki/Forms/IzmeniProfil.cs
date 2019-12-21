@@ -32,6 +32,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
             MetroMessageBox.Show(this, DomainModel.DataSet.Instace.IzmeniKorisnikovProfil(tbIme.Text, tbPrezime.Text, tbEmail.Text, tbTelefon.Text, tbDatumRodjenja.Text, tbGrad.Text, tbUlicaIBroj.Text), "Obavestenje");
+            this.Close();
         }
     }
 }

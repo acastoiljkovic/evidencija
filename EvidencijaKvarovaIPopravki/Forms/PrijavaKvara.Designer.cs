@@ -32,9 +32,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtPrijavaKvara = new MetroFramework.Controls.MetroTextBox();
+            this.txtKomentarKvar = new MetroFramework.Controls.MetroTextBox();
             this.btnPosalji = new MetroFramework.Controls.MetroButton();
-            this.txtPretragaPopravke = new MetroFramework.Controls.MetroTextBox();
+            this.txtNazivKvara = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -75,36 +75,36 @@
             this.pictureBox4.TabIndex = 37;
             this.pictureBox4.TabStop = false;
             // 
-            // txtPrijavaKvara
+            // txtKomentarKvar
             // 
             // 
             // 
             // 
-            this.txtPrijavaKvara.CustomButton.Image = null;
-            this.txtPrijavaKvara.CustomButton.Location = new System.Drawing.Point(294, 2);
-            this.txtPrijavaKvara.CustomButton.Name = "";
-            this.txtPrijavaKvara.CustomButton.Size = new System.Drawing.Size(103, 103);
-            this.txtPrijavaKvara.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPrijavaKvara.CustomButton.TabIndex = 1;
-            this.txtPrijavaKvara.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPrijavaKvara.CustomButton.UseSelectable = true;
-            this.txtPrijavaKvara.CustomButton.Visible = false;
-            this.txtPrijavaKvara.Lines = new string[0];
-            this.txtPrijavaKvara.Location = new System.Drawing.Point(57, 125);
-            this.txtPrijavaKvara.MaxLength = 32767;
-            this.txtPrijavaKvara.Multiline = true;
-            this.txtPrijavaKvara.Name = "txtPrijavaKvara";
-            this.txtPrijavaKvara.PasswordChar = '\0';
-            this.txtPrijavaKvara.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPrijavaKvara.SelectedText = "";
-            this.txtPrijavaKvara.SelectionLength = 0;
-            this.txtPrijavaKvara.SelectionStart = 0;
-            this.txtPrijavaKvara.ShortcutsEnabled = true;
-            this.txtPrijavaKvara.Size = new System.Drawing.Size(400, 108);
-            this.txtPrijavaKvara.TabIndex = 39;
-            this.txtPrijavaKvara.UseSelectable = true;
-            this.txtPrijavaKvara.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPrijavaKvara.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKomentarKvar.CustomButton.Image = null;
+            this.txtKomentarKvar.CustomButton.Location = new System.Drawing.Point(294, 2);
+            this.txtKomentarKvar.CustomButton.Name = "";
+            this.txtKomentarKvar.CustomButton.Size = new System.Drawing.Size(103, 103);
+            this.txtKomentarKvar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtKomentarKvar.CustomButton.TabIndex = 1;
+            this.txtKomentarKvar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtKomentarKvar.CustomButton.UseSelectable = true;
+            this.txtKomentarKvar.CustomButton.Visible = false;
+            this.txtKomentarKvar.Lines = new string[0];
+            this.txtKomentarKvar.Location = new System.Drawing.Point(57, 125);
+            this.txtKomentarKvar.MaxLength = 32767;
+            this.txtKomentarKvar.Multiline = true;
+            this.txtKomentarKvar.Name = "txtKomentarKvar";
+            this.txtKomentarKvar.PasswordChar = '\0';
+            this.txtKomentarKvar.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtKomentarKvar.SelectedText = "";
+            this.txtKomentarKvar.SelectionLength = 0;
+            this.txtKomentarKvar.SelectionStart = 0;
+            this.txtKomentarKvar.ShortcutsEnabled = true;
+            this.txtKomentarKvar.Size = new System.Drawing.Size(400, 108);
+            this.txtKomentarKvar.TabIndex = 39;
+            this.txtKomentarKvar.UseSelectable = true;
+            this.txtKomentarKvar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtKomentarKvar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnPosalji
             // 
@@ -114,36 +114,37 @@
             this.btnPosalji.TabIndex = 40;
             this.btnPosalji.Text = "Posalji";
             this.btnPosalji.UseSelectable = true;
+            this.btnPosalji.Click += new System.EventHandler(this.btnPosalji_Click);
             // 
-            // txtPretragaPopravke
+            // txtNazivKvara
             // 
             // 
             // 
             // 
-            this.txtPretragaPopravke.CustomButton.Image = null;
-            this.txtPretragaPopravke.CustomButton.Location = new System.Drawing.Point(169, 1);
-            this.txtPretragaPopravke.CustomButton.Name = "";
-            this.txtPretragaPopravke.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtPretragaPopravke.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPretragaPopravke.CustomButton.TabIndex = 1;
-            this.txtPretragaPopravke.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtPretragaPopravke.CustomButton.UseSelectable = true;
-            this.txtPretragaPopravke.CustomButton.Visible = false;
-            this.txtPretragaPopravke.Lines = new string[0];
-            this.txtPretragaPopravke.Location = new System.Drawing.Point(159, 63);
-            this.txtPretragaPopravke.MaxLength = 32767;
-            this.txtPretragaPopravke.Name = "txtPretragaPopravke";
-            this.txtPretragaPopravke.PasswordChar = '\0';
-            this.txtPretragaPopravke.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPretragaPopravke.SelectedText = "";
-            this.txtPretragaPopravke.SelectionLength = 0;
-            this.txtPretragaPopravke.SelectionStart = 0;
-            this.txtPretragaPopravke.ShortcutsEnabled = true;
-            this.txtPretragaPopravke.Size = new System.Drawing.Size(191, 23);
-            this.txtPretragaPopravke.TabIndex = 41;
-            this.txtPretragaPopravke.UseSelectable = true;
-            this.txtPretragaPopravke.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtPretragaPopravke.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNazivKvara.CustomButton.Image = null;
+            this.txtNazivKvara.CustomButton.Location = new System.Drawing.Point(169, 1);
+            this.txtNazivKvara.CustomButton.Name = "";
+            this.txtNazivKvara.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNazivKvara.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNazivKvara.CustomButton.TabIndex = 1;
+            this.txtNazivKvara.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNazivKvara.CustomButton.UseSelectable = true;
+            this.txtNazivKvara.CustomButton.Visible = false;
+            this.txtNazivKvara.Lines = new string[0];
+            this.txtNazivKvara.Location = new System.Drawing.Point(159, 63);
+            this.txtNazivKvara.MaxLength = 32767;
+            this.txtNazivKvara.Name = "txtNazivKvara";
+            this.txtNazivKvara.PasswordChar = '\0';
+            this.txtNazivKvara.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNazivKvara.SelectedText = "";
+            this.txtNazivKvara.SelectionLength = 0;
+            this.txtNazivKvara.SelectionStart = 0;
+            this.txtNazivKvara.ShortcutsEnabled = true;
+            this.txtNazivKvara.Size = new System.Drawing.Size(191, 23);
+            this.txtNazivKvara.TabIndex = 41;
+            this.txtNazivKvara.UseSelectable = true;
+            this.txtNazivKvara.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNazivKvara.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel2
             // 
@@ -173,9 +174,9 @@
             this.ClientSize = new System.Drawing.Size(501, 298);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.txtPretragaPopravke);
+            this.Controls.Add(this.txtNazivKvara);
             this.Controls.Add(this.btnPosalji);
-            this.Controls.Add(this.txtPrijavaKvara);
+            this.Controls.Add(this.txtKomentarKvar);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.metroLabel1);
@@ -191,9 +192,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private MetroFramework.Controls.MetroTextBox txtPrijavaKvara;
+        private MetroFramework.Controls.MetroTextBox txtKomentarKvar;
         private MetroFramework.Controls.MetroButton btnPosalji;
-        private MetroFramework.Controls.MetroTextBox txtPretragaPopravke;
+        private MetroFramework.Controls.MetroTextBox txtNazivKvara;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

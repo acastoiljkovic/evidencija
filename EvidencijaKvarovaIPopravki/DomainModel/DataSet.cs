@@ -17,7 +17,6 @@ using Neo4jClient.Cypher;
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
 //
 //  ------------------- PRIJAVI KVAR -------
-//  - skripta koja prijavljenom korisniku dodaje kvar koji nema ni jednu radionicu
 //  - selekcija da li korisnik oce da bira radionicu ili da radionice biraju njega
 //  - ukoliko odabere radionicu skripta pravi odmah vezu izmedju kvara i radionice  
 //
@@ -59,6 +58,32 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             catch (Exception exc)
             {
                 
+            }
+
+        }
+
+        public bool dodajKvarKorisniku(Kvar k)
+        {
+            try
+            {
+                String komentari = "";
+                foreach(String kom in k.komentari)
+                {
+                    komentari += "'" + kom + "'";
+                }
+
+                var query = new Neo4jClient.Cypher.CypherQuery(
+                    "match (n:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth:Autentifikacija{korisnickoIme:'"+PrijavljenKorisnik.authPodaci.korisnickoIme+"'})" +
+                    "CREATE(k:Kvar{naziv:'"+k.naziv+"',komentar:[" +
+                    komentari +
+                    "]})" +
+                    "CREATE(n)-[kr:IMA_KVAR]->(k) RETURN n", new Dictionary<string, object>(), CypherResultMode.Set);
+                ((IRawGraphClient)client).ExecuteGetCypherResults<Osoba>(query);
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
             }
 
         }
@@ -116,7 +141,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match (n)<-[k:IMA_KVAR]-(kvar) return kvar",
+                var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match (n)-[k:IMA_KVAR]->(kvar) return kvar",
                                                                 new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Kvar> kvarovi = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList();
                 return kvarovi;

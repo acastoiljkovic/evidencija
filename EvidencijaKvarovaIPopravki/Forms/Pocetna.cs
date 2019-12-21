@@ -63,6 +63,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 btnKreirajNalog.Visible = false;
                 btnUlogujSe.Visible = false;
                 btnOdjaviSe.Visible = true;
+                btnPrijaviKvar.Visible = true;
             }
             else
             {
@@ -71,6 +72,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 btnOdjaviSe.Visible = false;
                 btnProfil.Visible = false;
                 btnRadionica.Visible = false;
+                btnPrijaviKvar.Visible = false;
             }
             ucitajGridData();
         }
