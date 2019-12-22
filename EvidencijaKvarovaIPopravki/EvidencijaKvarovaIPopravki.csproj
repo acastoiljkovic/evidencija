@@ -101,6 +101,12 @@
     <Compile Include="Forms\IzmeniProfil.Designer.cs">
       <DependentUpon>IzmeniProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\IzmeniRadionicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IzmeniRadionicu.Designer.cs">
+      <DependentUpon>IzmeniRadionicu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\IzmeniSifru.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IzmeniProfil.resx">
       <DependentUpon>IzmeniProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IzmeniRadionicu.resx">
+      <DependentUpon>IzmeniRadionicu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IzmeniSifru.resx">
       <DependentUpon>IzmeniSifru.cs</DependentUpon>

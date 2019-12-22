@@ -54,23 +54,25 @@
             this.comboBoxRadionica = new MetroFramework.Controls.MetroComboBox();
             this.lblZaposleni = new MetroFramework.Controls.MetroLabel();
             this.btnDodajRadionicu = new MetroFramework.Controls.MetroButton();
+            this.txtTelefon = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateVremePopravke
             // 
-            this.dateVremePopravke.Location = new System.Drawing.Point(251, 289);
+            this.dateVremePopravke.Location = new System.Drawing.Point(251, 324);
             this.dateVremePopravke.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateVremePopravke.Name = "dateVremePopravke";
             this.dateVremePopravke.Size = new System.Drawing.Size(212, 29);
-            this.dateVremePopravke.TabIndex = 108;
+            this.dateVremePopravke.TabIndex = 109;
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.Location = new System.Drawing.Point(63, 177);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(106, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(107, 19);
             this.metroLabel8.TabIndex = 41;
             this.metroLabel8.Text = "Ponovite lozinku:";
             // 
@@ -176,7 +178,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(63, 289);
+            this.metroLabel5.Location = new System.Drawing.Point(63, 324);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(103, 19);
             this.metroLabel5.TabIndex = 32;
@@ -401,10 +403,10 @@
             // 
             // btnPotvrdi
             // 
-            this.btnPotvrdi.Location = new System.Drawing.Point(345, 470);
+            this.btnPotvrdi.Location = new System.Drawing.Point(345, 505);
             this.btnPotvrdi.Name = "btnPotvrdi";
             this.btnPotvrdi.Size = new System.Drawing.Size(118, 23);
-            this.btnPotvrdi.TabIndex = 57;
+            this.btnPotvrdi.TabIndex = 112;
             this.btnPotvrdi.Text = "Potvrdi";
             this.btnPotvrdi.UseSelectable = true;
             this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
@@ -421,7 +423,7 @@
             // chkZaposleni
             // 
             this.chkZaposleni.AutoSize = true;
-            this.chkZaposleni.Location = new System.Drawing.Point(63, 337);
+            this.chkZaposleni.Location = new System.Drawing.Point(63, 372);
             this.chkZaposleni.Name = "chkZaposleni";
             this.chkZaposleni.Size = new System.Drawing.Size(177, 15);
             this.chkZaposleni.TabIndex = 58;
@@ -433,16 +435,16 @@
             // 
             this.comboBoxRadionica.FormattingEnabled = true;
             this.comboBoxRadionica.ItemHeight = 23;
-            this.comboBoxRadionica.Location = new System.Drawing.Point(258, 365);
+            this.comboBoxRadionica.Location = new System.Drawing.Point(258, 400);
             this.comboBoxRadionica.Name = "comboBoxRadionica";
             this.comboBoxRadionica.Size = new System.Drawing.Size(205, 29);
-            this.comboBoxRadionica.TabIndex = 59;
+            this.comboBoxRadionica.TabIndex = 110;
             this.comboBoxRadionica.UseSelectable = true;
             // 
             // lblZaposleni
             // 
             this.lblZaposleni.AutoSize = true;
-            this.lblZaposleni.Location = new System.Drawing.Point(63, 365);
+            this.lblZaposleni.Location = new System.Drawing.Point(63, 400);
             this.lblZaposleni.Name = "lblZaposleni";
             this.lblZaposleni.Size = new System.Drawing.Size(188, 19);
             this.lblZaposleni.TabIndex = 60;
@@ -450,19 +452,60 @@
             // 
             // btnDodajRadionicu
             // 
-            this.btnDodajRadionicu.Location = new System.Drawing.Point(345, 416);
+            this.btnDodajRadionicu.Location = new System.Drawing.Point(345, 451);
             this.btnDodajRadionicu.Name = "btnDodajRadionicu";
             this.btnDodajRadionicu.Size = new System.Drawing.Size(118, 23);
-            this.btnDodajRadionicu.TabIndex = 61;
+            this.btnDodajRadionicu.TabIndex = 111;
             this.btnDodajRadionicu.Text = "Dodaj radionicu";
             this.btnDodajRadionicu.UseSelectable = true;
             this.btnDodajRadionicu.Click += new System.EventHandler(this.btnDodajRadionicu_Click);
+            // 
+            // txtTelefon
+            // 
+            // 
+            // 
+            // 
+            this.txtTelefon.CustomButton.Image = null;
+            this.txtTelefon.CustomButton.Location = new System.Drawing.Point(156, 2);
+            this.txtTelefon.CustomButton.Name = "";
+            this.txtTelefon.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.txtTelefon.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTelefon.CustomButton.TabIndex = 1;
+            this.txtTelefon.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTelefon.CustomButton.UseSelectable = true;
+            this.txtTelefon.CustomButton.Visible = false;
+            this.txtTelefon.Lines = new string[0];
+            this.txtTelefon.Location = new System.Drawing.Point(251, 290);
+            this.txtTelefon.MaxLength = 32767;
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.PasswordChar = '\0';
+            this.txtTelefon.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTelefon.SelectedText = "";
+            this.txtTelefon.SelectionLength = 0;
+            this.txtTelefon.SelectionStart = 0;
+            this.txtTelefon.ShortcutsEnabled = true;
+            this.txtTelefon.Size = new System.Drawing.Size(176, 22);
+            this.txtTelefon.TabIndex = 108;
+            this.txtTelefon.UseSelectable = true;
+            this.txtTelefon.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTelefon.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(63, 290);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel3.TabIndex = 109;
+            this.metroLabel3.Text = "Telefon:";
             // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 507);
+            this.ClientSize = new System.Drawing.Size(540, 549);
+            this.Controls.Add(this.txtTelefon);
+            this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.btnDodajRadionicu);
             this.Controls.Add(this.lblZaposleni);
             this.Controls.Add(this.comboBoxRadionica);
@@ -524,5 +567,7 @@
         private MetroFramework.Controls.MetroComboBox comboBoxRadionica;
         private MetroFramework.Controls.MetroLabel lblZaposleni;
         private MetroFramework.Controls.MetroButton btnDodajRadionicu;
+        private MetroFramework.Controls.MetroTextBox txtTelefon;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

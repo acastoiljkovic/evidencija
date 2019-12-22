@@ -73,7 +73,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                                     },
                                     ime = txtIme.Text,
                                     prezime = txtPrezime.Text,
-                                    telefon = "4567890",
+                                    telefon = txtTelefon.Text,
                                     datumRodjenja = dateVremePopravke.Text
 
                                 },

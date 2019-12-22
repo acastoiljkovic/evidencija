@@ -21,7 +21,6 @@ using Neo4jClient.Cypher;
 //  - u radionicu treba lista kvarova koja nema zaposlenog da radi na kvaru
 //  - lista kvarova koji se trenutno popravljaju
 //  - pametno bi bilo da se izbace delovi !!!!!
-//  - dugme i forma za izmeni radionicus
 //  - funkcija vratiRadionicuNaziv da se sredi da vraca i kvarove radionice i delove
 //
 //  ------------------KVAR POPRAVKA -----------
@@ -335,11 +334,20 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
-        public string IzmeniAdresu(string grad, string ulicaIBroj)
+        public string IzmeniAdresu(string grad, string ulicaIBroj, string nazivRadionice)
         {
             try
             {
-                var query = new Neo4jClient.Cypher.CypherQuery("match(lp:LicniPodaci)-[a:NALAZI_SE]->(adresa) where (lp.telefon ='" + PrijavljenKorisnik.podaci.telefon + "') set adresa.Grad='" + grad + "', adresa.UlicaIBroj = '" + ulicaIBroj + "' return adresa",
+                string queryString = "";
+
+                if (nazivRadionice.Equals(""))
+                    queryString = "match(lp:LicniPodaci)-[a:NALAZI_SE]->(adresa) where (lp.telefon ='" + PrijavljenKorisnik.podaci.telefon + "')";
+                else
+                    queryString = "match(r:Radionica{naziv: '"+nazivRadionice+"'})-[n:NALAZI_SE]->(adresa)";
+
+                queryString += " set adresa.Grad='" + grad + "', adresa.UlicaIBroj = '" + ulicaIBroj + "' return adresa";
+
+                var query= new Neo4jClient.Cypher.CypherQuery(queryString,
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Adresa> a = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList();
 
@@ -390,7 +398,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                if (IzmeniAdresu(grad, ulicaIBroj).Equals("Uspesno!"))
+                if (IzmeniAdresu(grad, ulicaIBroj, "").Equals("Uspesno!"))
                 {
                     if (!proveraDaLiPostojiTelefon(telefon) || PrijavljenKorisnik.podaci.telefon.Equals(telefon))
                     {
@@ -536,16 +544,23 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             try
             {
                 dodajAdresu(p.Adresa);
-               
-                var query = new Neo4jClient.Cypher.CypherQuery(
-                    "MATCH(Addr1:Adresa {UlicaIBroj: '" + p.Adresa.UlicaIBroj + "'})" +
-                    "CREATE(LP1: LicniPodaci{ ime: '" +p.ime+"',prezime: '"+p.prezime+"'," +
-                    "telefon: '"+p.telefon+"',datumRodjenja: '"+p.datumRodjenja+"'})" +
-                    " CREATE (LP1)-[r:NALAZI_SE]->(Addr1) RETURN LP1",
-                                                                new Dictionary<string, object>(), CypherResultMode.Set);
-                ((IRawGraphClient)client).ExecuteGetCypherResults<LicniPodaci>(query);
 
-                return true;
+                if (!proveraDaLiPostojiTelefon(p.telefon))
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery(
+                        "MATCH(Addr1:Adresa {UlicaIBroj: '" + p.Adresa.UlicaIBroj + "'})" +
+                        "CREATE(LP1: LicniPodaci{ ime: '" + p.ime + "',prezime: '" + p.prezime + "'," +
+                        "telefon: '" + p.telefon + "',datumRodjenja: '" + p.datumRodjenja + "'})" +
+                        " CREATE (LP1)-[r:NALAZI_SE]->(Addr1) RETURN LP1",
+                                                                    new Dictionary<string, object>(), CypherResultMode.Set);
+                    ((IRawGraphClient)client).ExecuteGetCypherResults<LicniPodaci>(query);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {
@@ -573,15 +588,23 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 return false;
             }
         }
+        
         public bool dodajAutentifikaciju(Autentifikacija a)
         {
             try
             {
-                var query = new Neo4jClient.Cypher.CypherQuery(
-                    "CREATE(Auth1: Autentifikacija{ korisnickoIme: '" + a.korisnickoIme + "',email: '" + a.email + "',sifra: '" + a.sifra + "'}) RETURN Auth1",
-                                                                new Dictionary<string, object>(), CypherResultMode.Set);
-                ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query);
-                return true;
+                if (!proveraDaLiPostojiEmail(a.email))
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery(
+                        "CREATE(Auth1: Autentifikacija{ korisnickoIme: '" + a.korisnickoIme + "',email: '" + a.email + "',sifra: '" + a.sifra + "'}) RETURN Auth1",
+                                                                    new Dictionary<string, object>(), CypherResultMode.Set);
+                    ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {
@@ -765,5 +788,72 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 return "Greska priliko izvrsavanja upita !";
             }
         }
+
+        public string izmeniRadionicu(string stariNaziv,string noviNaziv, string grad, string ulicaIBroj)
+        {
+            if (IzmeniAdresu(grad, ulicaIBroj, stariNaziv).Equals("Uspesno!"))
+            {
+                if (stariNaziv.Equals(noviNaziv) || IzmeniNazivRadionice(stariNaziv, noviNaziv).Equals("Uspesno!"))
+                    return "Uspesna izmena radionice!";
+                else
+                    return "Radionica s tim nazivom vec postoji!";
+            }
+            else
+            {
+                return "Neuspesna izmena adrese!";
+            }
+            
+        }
+
+        public string IzmeniNazivRadionice(string stariNaziv, string noviNaziv)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("MATCH (r:Radionica {naziv: '" + noviNaziv + "'}) return r",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Radionica> rad = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+               
+                if (rad.Count() > 0)
+                    return "Radionica s tim nazivom vec postoji!";
+
+                query = new Neo4jClient.Cypher.CypherQuery("match(r:Radionica{naziv: '"+stariNaziv+"'}) set r.naziv = '"+noviNaziv+"' return r",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Radionica> r = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+
+                return "Uspesno!";
+            }
+            catch(Exception e)
+            {
+                return "Greka!";
+            }
+        }
+
+        public bool DaLiJeToRadnikovaRadionica(string nazivRadionice)
+        {
+            try
+            {
+                if (PrijavljenKorisnik != null && PrijavljenKorisnik.indikator.Equals("zaposleni"))
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery("match(r)-[a:MOJA_AUTENTIFIKACIJA]->(auth) where auth.korisnickoIme = '"+PrijavljenKorisnik.authPodaci.korisnickoIme+"' match(r)-[:RADI_U]->(radionica) where radionica.naziv = '"+nazivRadionice+"' return radionica",
+                        new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<Radionica> r = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+
+                    if (r.Count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
     }
 }

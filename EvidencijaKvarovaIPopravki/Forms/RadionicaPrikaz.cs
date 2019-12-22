@@ -13,14 +13,18 @@ namespace EvidencijaKvarovaIPopravki.Forms
 {
     public partial class RadionicaPrikaz : MetroFramework.Forms.MetroForm
     {
+        Radionica r;
+
         public RadionicaPrikaz()
         {
             InitializeComponent();
         }
 
-        public RadionicaPrikaz(Radionica r)
+        public RadionicaPrikaz(Radionica rad)
         {
             InitializeComponent();
+            r = rad;
+
             lblNazivRadionice.Text = r.naziv;
 
             txtGrad.Text = r.Adresa.Grad;
@@ -34,11 +38,26 @@ namespace EvidencijaKvarovaIPopravki.Forms
             {
                 gridZaposleniRadionica.DataSource = r.Zaposleni;
             }
+
+            if(DomainModel.DataSet.Instace.DaLiJeToRadnikovaRadionica(r.naziv))
+            {
+                btnIzmeniRadionicu.Visible = true;
+            }
+            else
+            {
+                btnIzmeniRadionicu.Visible = false;
+            }
         }
 
         private void btnDelovi_Click(object sender, EventArgs e)
         {
             var Forma = new DostupniDelovi();
+            Forma.ShowDialog();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            var Forma = new IzmeniRadionicu(r);
             Forma.ShowDialog();
         }
     }

@@ -49,6 +49,7 @@
             this.lblNazivRadionice = new MetroFramework.Controls.MetroLabel();
             this.txtUlicaIBroj = new MetroFramework.Controls.MetroLabel();
             this.txtGrad = new MetroFramework.Controls.MetroLabel();
+            this.btnIzmeniRadionicu = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -276,11 +277,22 @@
             this.txtGrad.Text = "Grad ";
             this.txtGrad.UseStyleColors = true;
             // 
+            // btnIzmeniRadionicu
+            // 
+            this.btnIzmeniRadionicu.Location = new System.Drawing.Point(713, 40);
+            this.btnIzmeniRadionicu.Name = "btnIzmeniRadionicu";
+            this.btnIzmeniRadionicu.Size = new System.Drawing.Size(128, 23);
+            this.btnIzmeniRadionicu.TabIndex = 43;
+            this.btnIzmeniRadionicu.Text = "Izmeni";
+            this.btnIzmeniRadionicu.UseSelectable = true;
+            this.btnIzmeniRadionicu.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // RadionicaPrikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 543);
+            this.Controls.Add(this.btnIzmeniRadionicu);
             this.Controls.Add(this.txtGrad);
             this.Controls.Add(this.txtUlicaIBroj);
             this.Controls.Add(this.pictureBox3);
@@ -322,6 +334,7 @@
         private MetroFramework.Controls.MetroLabel lblNazivRadionice;
         private MetroFramework.Controls.MetroLabel txtUlicaIBroj;
         private MetroFramework.Controls.MetroLabel txtGrad;
+        private MetroFramework.Controls.MetroButton btnIzmeniRadionicu;
 
     }
 }
