@@ -105,7 +105,7 @@
             this.txtKomentarKvar.SelectionStart = 0;
             this.txtKomentarKvar.ShortcutsEnabled = true;
             this.txtKomentarKvar.Size = new System.Drawing.Size(400, 108);
-            this.txtKomentarKvar.TabIndex = 39;
+            this.txtKomentarKvar.TabIndex = 2;
             this.txtKomentarKvar.UseSelectable = true;
             this.txtKomentarKvar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKomentarKvar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -115,7 +115,7 @@
             this.btnPosalji.Location = new System.Drawing.Point(358, 281);
             this.btnPosalji.Name = "btnPosalji";
             this.btnPosalji.Size = new System.Drawing.Size(121, 23);
-            this.btnPosalji.TabIndex = 40;
+            this.btnPosalji.TabIndex = 4;
             this.btnPosalji.Text = "Posalji";
             this.btnPosalji.UseSelectable = true;
             this.btnPosalji.Click += new System.EventHandler(this.btnPosalji_Click);
@@ -145,7 +145,7 @@
             this.txtNazivKvara.SelectionStart = 0;
             this.txtNazivKvara.ShortcutsEnabled = true;
             this.txtNazivKvara.Size = new System.Drawing.Size(191, 23);
-            this.txtNazivKvara.TabIndex = 41;
+            this.txtNazivKvara.TabIndex = 1;
             this.txtNazivKvara.UseSelectable = true;
             this.txtNazivKvara.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNazivKvara.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -178,7 +178,7 @@
             this.comboBoxRadionica.Location = new System.Drawing.Point(159, 231);
             this.comboBoxRadionica.Name = "comboBoxRadionica";
             this.comboBoxRadionica.Size = new System.Drawing.Size(205, 29);
-            this.comboBoxRadionica.TabIndex = 60;
+            this.comboBoxRadionica.TabIndex = 3;
             this.comboBoxRadionica.UseSelectable = true;
             // 
             // metroLabel4

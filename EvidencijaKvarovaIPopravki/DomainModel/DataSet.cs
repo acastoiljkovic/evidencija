@@ -23,6 +23,10 @@ using Neo4jClient.Cypher;
 //  - pametno bi bilo da se izbace delovi !!!!!
 //  - dugme i forma za izmeni radionicus
 //  - funkcija vratiRadionicuNaziv da se sredi da vraca i kvarove radionice i delove
+//
+//  ------------------KVAR POPRAVKA -----------
+//  - komentari i saveti da se prikazuju u neki dataGrid ili tako nesto
+//
 
 
 
@@ -72,7 +76,8 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 {
                     var query = new Neo4jClient.Cypher.CypherQuery(
                         "match (n:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth:Autentifikacija{korisnickoIme:'" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})" +
-                        "CREATE(k:Kvar{naziv:'" + k.naziv + "',komentar:[" +
+                        "CREATE(k:Kvar{sifraKvara:'" + DateTime.Now.Ticks.ToString() + "'" +
+                        ",vremePrijaveKvara:'" + DateTime.Now.ToString()+"',naziv:'" + k.naziv + "',komentari:[" +
                         komentari +
                         "]})" +
                         "CREATE(n)-[kr:IMA_KVAR]->(k) RETURN n", new Dictionary<string, object>(), CypherResultMode.Set);
@@ -84,7 +89,8 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                         "match (n:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth:Autentifikacija{korisnickoIme:'" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})" +
                         ", (r:Radionica{naziv:'" + k.Radionica.naziv + "'})-[rel:NALAZI_SE]->" +
                         "(adresa:Adresa{UlicaIBroj:'" + k.Radionica.Adresa.UlicaIBroj + "',Grad:'" + k.Radionica.Adresa.Grad + "'})" +
-                        "CREATE(k:Kvar{naziv:'" + k.naziv + "',komentar:[" +
+                        "CREATE(k:Kvar{sifraKvara:'"+DateTime.Now.Ticks.ToString()+"'" +
+                        ",vremePrijaveKvara:'" + DateTime.Now.ToString() + "',naziv:'" + k.naziv + "',komentari:[" +
                         komentari +
                         "]})" +
                         "CREATE(n)-[:IMA_KVAR]->(k) " +
@@ -153,9 +159,22 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match (n)-[k:IMA_KVAR]->(kvar) return kvar",
+                var query = new Neo4jClient.Cypher.CypherQuery("match (n)-[k:IMA_KVAR]->(kvar) return kvar",
                                                                 new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Kvar> kvarovi = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList();
+                foreach (Kvar k in kvarovi)
+                {
+
+                    query = new Neo4jClient.Cypher.CypherQuery("match (k:Kvar{sifraKvara:'"+k.sifraKvara+"'})<-[:IMA_KVAR]-(korisnik) return ID(korisnik)",
+                                                                    new Dictionary<string, object>(), CypherResultMode.Set);
+                    int id = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).ToList()[0];
+                    k.Korisnik = vratiOsobu(id);
+                    query = new Neo4jClient.Cypher.CypherQuery("match (k:Kvar{sifraKvara:'" + k.sifraKvara + "'})<-[:U_RADIONICI]-(radionica) return radionica",
+                                                                    new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<Radionica> r =((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+                    if (r.Count > 0)
+                        k.Radionica = r[0];
+                }
                 return kvarovi;
             }
             catch(Exception e)
@@ -164,6 +183,20 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
+        public Kvar vratiKvarSifra(string sifra)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("match (n:Kvar{sifraKvara:'"+ sifra + "'}) return n",
+                                                                new Dictionary<string, object>(), CypherResultMode.Set);
+                Kvar k = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList()[0];
+                return k;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
         public List<Radionica> vratiSveRadionice()
         {
             try
@@ -194,7 +227,9 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                var query = new Neo4jClient.Cypher.CypherQuery("match(a:Autentifikacija{korisnickoIme: '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})<-[m:MOJA_AUTENTIFIKACIJA]-(korisnik)-[r:RADI_U]->(radionica) delete r",
+                var query = new Neo4jClient.Cypher.CypherQuery(
+                    "match(a:Autentifikacija{korisnickoIme: '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})" +
+                    "<-[m:MOJA_AUTENTIFIKACIJA]-(korisnik)-[r:RADI_U]->(radionica) delete r",
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 ((IRawGraphClient)client).ExecuteCypher(query);
 
@@ -390,7 +425,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             {
                 var query = new Neo4jClient.Cypher.CypherQuery("match (r:Zaposleni)-[a:MOJA_AUTENTIFIKACIJA]->(auth)" +
                     " where (auth.korisnickoIme = '"+r.authPodaci.korisnickoIme+"' ) " +
-                    "match (r)-[RADI_U]->(radionica) return radionica", new Dictionary<string,object>(),CypherResultMode.Set);
+                    "match (r)-[:RADI_U]->(radionica) return radionica", new Dictionary<string,object>(),CypherResultMode.Set);
                 List<Radionica> rad = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
                 foreach(Radionica ra in rad){
                     if (ra.naziv != null)
@@ -412,7 +447,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 Radionica rad = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList()[0];
 
-                query = new Neo4jClient.Cypher.CypherQuery("match (r:Radionica {naziv: '" + naziv + "'})-[NALAZI_SE]->(adr) return adr",
+                query = new Neo4jClient.Cypher.CypherQuery("match (r:Radionica {naziv: '" + naziv + "'})-[:NALAZI_SE]->(adr) return adr",
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 Adresa adr = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList()[0];
                 rad.Adresa = adr;

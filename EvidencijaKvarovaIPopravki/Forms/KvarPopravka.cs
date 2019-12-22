@@ -25,6 +25,10 @@ namespace EvidencijaKvarovaIPopravki.Forms
             txtVremePopravke.Text = k.vremeIspravkeKvara;
             txtModelVozila.Text = k.modelVozila;
             txtOcena.Text = k.ocena.ToString();
+            foreach(string kom in k.komentari)
+            {
+                MessageBox.Show(kom);
+            }
         }
     }
 }

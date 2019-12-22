@@ -8,7 +8,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 {
     public class Kvar
     {
-        public int sifraKvara { get; set; }//unique
+        public string sifraKvara { get; set; }//unique
         public string naziv { get; set; }//unique - u cilju lakse pretrage
         //public string zahtevnostPopravke { get; set; }//u smislu dodatnih objasnjenja, pored samih, novih delova
         public string vremePrijaveKvara { get; set; }
