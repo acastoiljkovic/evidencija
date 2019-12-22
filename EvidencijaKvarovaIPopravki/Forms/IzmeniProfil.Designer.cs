@@ -50,11 +50,15 @@
             this.tbEmail = new MetroFramework.Controls.MetroTextBox();
             this.tbUlicaIBroj = new MetroFramework.Controls.MetroTextBox();
             this.btnPotvrdi = new MetroFramework.Controls.MetroButton();
+            this.slikaRadionica = new System.Windows.Forms.PictureBox();
+            this.lblRadionica = new MetroFramework.Controls.MetroLabel();
+            this.comboRadionica = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slikaRadionica)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -175,7 +179,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(7, 231);
+            this.pictureBox6.Location = new System.Drawing.Point(7, 224);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(41, 31);
             this.pictureBox6.TabIndex = 32;
@@ -411,7 +415,7 @@
             // 
             // btnPotvrdi
             // 
-            this.btnPotvrdi.Location = new System.Drawing.Point(287, 279);
+            this.btnPotvrdi.Location = new System.Drawing.Point(287, 300);
             this.btnPotvrdi.Name = "btnPotvrdi";
             this.btnPotvrdi.Size = new System.Drawing.Size(121, 23);
             this.btnPotvrdi.TabIndex = 61;
@@ -419,11 +423,45 @@
             this.btnPotvrdi.UseSelectable = true;
             this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
             // 
+            // slikaRadionica
+            // 
+            this.slikaRadionica.Image = ((System.Drawing.Image)(resources.GetObject("slikaRadionica.Image")));
+            this.slikaRadionica.Location = new System.Drawing.Point(7, 261);
+            this.slikaRadionica.Name = "slikaRadionica";
+            this.slikaRadionica.Size = new System.Drawing.Size(41, 31);
+            this.slikaRadionica.TabIndex = 62;
+            this.slikaRadionica.TabStop = false;
+            // 
+            // lblRadionica
+            // 
+            this.lblRadionica.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblRadionica.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblRadionica.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblRadionica.Location = new System.Drawing.Point(54, 261);
+            this.lblRadionica.Name = "lblRadionica";
+            this.lblRadionica.Size = new System.Drawing.Size(118, 21);
+            this.lblRadionica.TabIndex = 63;
+            this.lblRadionica.Text = "Radionica:";
+            this.lblRadionica.UseStyleColors = true;
+            // 
+            // comboRadionica
+            // 
+            this.comboRadionica.FormattingEnabled = true;
+            this.comboRadionica.ItemHeight = 23;
+            this.comboRadionica.Location = new System.Drawing.Point(261, 261);
+            this.comboRadionica.Name = "comboRadionica";
+            this.comboRadionica.Size = new System.Drawing.Size(147, 29);
+            this.comboRadionica.TabIndex = 64;
+            this.comboRadionica.UseSelectable = true;
+            // 
             // IzmeniProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 346);
+            this.Controls.Add(this.comboRadionica);
+            this.Controls.Add(this.lblRadionica);
+            this.Controls.Add(this.slikaRadionica);
             this.Controls.Add(this.btnPotvrdi);
             this.Controls.Add(this.tbUlicaIBroj);
             this.Controls.Add(this.tbEmail);
@@ -452,6 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slikaRadionica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,5 +518,8 @@
         private MetroFramework.Controls.MetroTextBox tbEmail;
         private MetroFramework.Controls.MetroTextBox tbUlicaIBroj;
         private MetroFramework.Controls.MetroButton btnPotvrdi;
+        private System.Windows.Forms.PictureBox slikaRadionica;
+        private MetroFramework.Controls.MetroLabel lblRadionica;
+        private MetroFramework.Controls.MetroComboBox comboRadionica;
     }
 }

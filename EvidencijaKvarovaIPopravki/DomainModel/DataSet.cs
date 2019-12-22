@@ -178,11 +178,68 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
-
-        public string IzmeniKorisnikovProfil(string ime, string prezime, string email, string telefon, string datumRodjenja, string grad, string ulicaIBroj)
+        public bool RadnikNeRadiViseUTrenutnojRadionici()
         {
             try
             {
+                var query = new Neo4jClient.Cypher.CypherQuery("match(a:Autentifikacija{korisnickoIme: '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})<-[m:MOJA_AUTENTIFIKACIJA]-(korisnik)-[r:RADI_U]->(radionica) delete r",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                ((IRawGraphClient)client).ExecuteCypher(query);
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool PrijaviRadnikaRadionica(string radionicaNaziv)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery(
+                "match(a:Autentifikacija{korisnickoIme: '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})<-[m:MOJA_AUTENTIFIKACIJA]-(korisnik) " +
+                "match (rad1:Radionica {naziv : '" + radionicaNaziv + "'}) " +
+                "create(korisnik) -[ru:RADI_U]->(rad1) RETURN rad1 ",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Radionica> r = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
+
+                if (r[0].naziv.Equals(radionicaNaziv))
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public string IzmeniRadnikovuRadionicu(string radionica)
+        {
+            try
+            {
+                if (RadnikNeRadiViseUTrenutnojRadionici() && PrijaviRadnikaRadionica(radionica))
+                    return "Uspesna izmena radnikove radionice!";
+                else
+                    return "Neuspesna izmena radnikove radionice!";
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public string IzmeniKorisnikovProfil(string ime, string prezime, string email, string telefon, string datumRodjenja, string grad, string ulicaIBroj, string radionica)
+        {
+            try
+            {
+                Radionica r = vratiRadionicuRadnik(PrijavljenKorisnik);
+                if (PrijavljenKorisnik.indikator.Equals("zaposleni") && !r.naziv.Equals(radionica) && !IzmeniRadnikovuRadionicu(radionica).Equals("Uspesna izmena radnikove radionice!"))
+                {
+                    return "Neuspesna izmena radnikove radionice!";
+                }
                 if (IzmeniAutentifikaciju(email).Equals("Uspesno promenjen email!"))
                 {
                     if (IzmeniKorisnikovePodatke(ime, prezime, telefon, grad, ulicaIBroj, datumRodjenja).Equals("Uspesno promenjeni podaci!"))
@@ -205,7 +262,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         {
             try
             {
-                if (!proveraDaLiPostojiEmail(email) || PrijavljenKorisnik.authPodaci.email.Equals(email))
+                if (!proveraDaLiPostojiEmail(email))
                 {
                     var query = new Neo4jClient.Cypher.CypherQuery("match(k:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth) where (auth.korisnickoIme = '" + PrijavljenKorisnik.authPodaci.korisnickoIme + "') set auth.email = '" + email + "' return auth",
                         new Dictionary<string, object>(), CypherResultMode.Set);
@@ -218,7 +275,11 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 }
                 else
                 {
-                    return "Nalog s tim email-om je vec kreiran!";
+                    if (!PrijavljenKorisnik.authPodaci.email.Equals(email))
+                        return "Nalog s tim email-om je vec kreiran!";
+                    else
+                        return "Uspesno promenjen email!";
+                    //ne menjamo stvarno email, ali vracamo ovu proveru, zbog dalje provere
                 }
             }
             catch (Exception e)
