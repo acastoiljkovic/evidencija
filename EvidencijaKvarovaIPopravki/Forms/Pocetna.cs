@@ -48,7 +48,6 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void PrikaziSakrij()
         {
-            gridPopravke.Columns[0].Visible = false;
             if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
                 if (DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator == "zaposleni")
@@ -79,9 +78,27 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         public void ucitajGridData()
         {
-            gridPopravke.DataSource = DomainModel.DataSet.Instace.vratiSveKvarove();
+            List<Kvar> kvarovi = DomainModel.DataSet.Instace.vratiSveKvarove();
+            gridPopravke.DataSource = kvarovi;
             gridRadionice.DataSource = DomainModel.DataSet.Instace.vratiSveRadionice();
             gridRadionice.Columns[0].Visible = false;
+            gridPopravke.Columns[0].Visible = false;
+            gridPopravke.Columns[1].Visible = false;
+            // TODO da se vidi ime i prezime korisnika i da se vidi radionica u kojoj je kvar
+            //gridPopravke.Columns[7].Visible = false;
+            //gridPopravke.Columns[8].Visible = false;
+            //gridPopravke.Columns.Add("kor", "Korisnik");
+            //gridPopravke.Columns.Add("rad", "Radionica");
+            //int i = 0;
+            //foreach (Kvar k in kvarovi)
+            //{
+            //    if (k != null)
+            //    {
+            //        //gridPopravke.Rows[i].Cells[6].Value = k.Korisnik.podaci.ime + k.Korisnik.podaci.prezime;
+            //        gridPopravke.Rows[i].Cells[6].Value = k.Radionica.naziv;
+            //    }
+            //    i++;
+            //}
         }
         private void Pocetna_Load(object sender, EventArgs e)
         {
@@ -179,6 +196,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new RadionicaPrikaz((Radionica)gridRadionice.Rows[e.RowIndex].DataBoundItem);
             Forma.ShowDialog();
+        }
+
+        private void Pocetna_Activated(object sender, EventArgs e)
+        {
+            ucitajGridData();
         }
     }
 }

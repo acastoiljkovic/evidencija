@@ -15,10 +15,7 @@ using Neo4jClient.Cypher;
 //  - kada si prijavljen kao zaposleni umesto taba radionice napraviti tab nesvrstani kvarovi koji izlistava sve kvarove koji nemaju radionice
 //  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
-//
-//  ------------------- PRIJAVI KVAR -------
-//  - selekcija da li korisnik oce da bira radionicu ili da radionice biraju njega
-//  - ukoliko odabere radionicu skripta pravi odmah vezu izmedju kvara i radionice  
+//  - da se vidi radionica u kojoj je kvar i da se vidi ime i prezime korisnika ciji je kvar
 //
 //  ------------------- RADIONICA ------------
 //  - u radionicu treba lista kvarova koja nema zaposlenog da radi na kvaru
@@ -62,7 +59,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 
         }
 
-        public bool dodajKvarKorisniku(Kvar k)
+        public bool dodajKvarKorisnikuRadionici(Kvar k)
         {
             try
             {
@@ -71,14 +68,29 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 {
                     komentari += "'" + kom + "'";
                 }
-
-                var query = new Neo4jClient.Cypher.CypherQuery(
-                    "match (n:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth:Autentifikacija{korisnickoIme:'"+PrijavljenKorisnik.authPodaci.korisnickoIme+"'})" +
-                    "CREATE(k:Kvar{naziv:'"+k.naziv+"',komentar:[" +
-                    komentari +
-                    "]})" +
-                    "CREATE(n)-[kr:IMA_KVAR]->(k) RETURN n", new Dictionary<string, object>(), CypherResultMode.Set);
-                ((IRawGraphClient)client).ExecuteGetCypherResults<Osoba>(query);
+                if (k.Radionica == null)
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery(
+                        "match (n:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth:Autentifikacija{korisnickoIme:'" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})" +
+                        "CREATE(k:Kvar{naziv:'" + k.naziv + "',komentar:[" +
+                        komentari +
+                        "]})" +
+                        "CREATE(n)-[kr:IMA_KVAR]->(k) RETURN n", new Dictionary<string, object>(), CypherResultMode.Set);
+                    ((IRawGraphClient)client).ExecuteGetCypherResults<Osoba>(query);
+                }
+                else
+                {
+                    var query = new Neo4jClient.Cypher.CypherQuery(
+                        "match (n:Korisnik)-[a:MOJA_AUTENTIFIKACIJA]->(auth:Autentifikacija{korisnickoIme:'" + PrijavljenKorisnik.authPodaci.korisnickoIme + "'})" +
+                        ", (r:Radionica{naziv:'" + k.Radionica.naziv + "'})-[rel:NALAZI_SE]->" +
+                        "(adresa:Adresa{UlicaIBroj:'" + k.Radionica.Adresa.UlicaIBroj + "',Grad:'" + k.Radionica.Adresa.Grad + "'})" +
+                        "CREATE(k:Kvar{naziv:'" + k.naziv + "',komentar:[" +
+                        komentari +
+                        "]})" +
+                        "CREATE(n)-[:IMA_KVAR]->(k) " +
+                        "CREATE(r)-[:U_RADIONICI]->(k) RETURN k", new Dictionary<string, object>(), CypherResultMode.Set);
+                    ((IRawGraphClient)client).ExecuteGetCypherResults<Osoba>(query);
+                }
                 return true;
             }
             catch(Exception e)

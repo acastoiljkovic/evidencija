@@ -37,8 +37,12 @@
             this.txtNazivKvara = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxRadionica = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.slikaRadionica = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slikaRadionica)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -59,11 +63,11 @@
             this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel3.Location = new System.Drawing.Point(57, 94);
+            this.metroLabel3.Location = new System.Drawing.Point(57, 93);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(209, 21);
             this.metroLabel3.TabIndex = 38;
-            this.metroLabel3.Text = "Vise o tome:";
+            this.metroLabel3.Text = "Vise o tome :";
             this.metroLabel3.UseStyleColors = true;
             // 
             // pictureBox4
@@ -90,7 +94,7 @@
             this.txtKomentarKvar.CustomButton.UseSelectable = true;
             this.txtKomentarKvar.CustomButton.Visible = false;
             this.txtKomentarKvar.Lines = new string[0];
-            this.txtKomentarKvar.Location = new System.Drawing.Point(57, 125);
+            this.txtKomentarKvar.Location = new System.Drawing.Point(57, 117);
             this.txtKomentarKvar.MaxLength = 32767;
             this.txtKomentarKvar.Multiline = true;
             this.txtKomentarKvar.Name = "txtKomentarKvar";
@@ -108,7 +112,7 @@
             // 
             // btnPosalji
             // 
-            this.btnPosalji.Location = new System.Drawing.Point(336, 251);
+            this.btnPosalji.Location = new System.Drawing.Point(358, 281);
             this.btnPosalji.Name = "btnPosalji";
             this.btnPosalji.Size = new System.Drawing.Size(121, 23);
             this.btnPosalji.TabIndex = 40;
@@ -131,7 +135,7 @@
             this.txtNazivKvara.CustomButton.UseSelectable = true;
             this.txtNazivKvara.CustomButton.Visible = false;
             this.txtNazivKvara.Lines = new string[0];
-            this.txtNazivKvara.Location = new System.Drawing.Point(159, 63);
+            this.txtNazivKvara.Location = new System.Drawing.Point(159, 60);
             this.txtNazivKvara.MaxLength = 32767;
             this.txtNazivKvara.Name = "txtNazivKvara";
             this.txtNazivKvara.PasswordChar = '\0';
@@ -155,7 +159,7 @@
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(96, 21);
             this.metroLabel2.TabIndex = 42;
-            this.metroLabel2.Text = "Naziv kvara:";
+            this.metroLabel2.Text = "Naziv kvara :";
             this.metroLabel2.UseStyleColors = true;
             // 
             // pictureBox1
@@ -167,11 +171,45 @@
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
             // 
+            // comboBoxRadionica
+            // 
+            this.comboBoxRadionica.FormattingEnabled = true;
+            this.comboBoxRadionica.ItemHeight = 23;
+            this.comboBoxRadionica.Location = new System.Drawing.Point(159, 231);
+            this.comboBoxRadionica.Name = "comboBoxRadionica";
+            this.comboBoxRadionica.Size = new System.Drawing.Size(205, 29);
+            this.comboBoxRadionica.TabIndex = 60;
+            this.comboBoxRadionica.UseSelectable = true;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.metroLabel4.Location = new System.Drawing.Point(57, 231);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(96, 21);
+            this.metroLabel4.TabIndex = 61;
+            this.metroLabel4.Text = "Radionica :";
+            this.metroLabel4.UseStyleColors = true;
+            // 
+            // slikaRadionica
+            // 
+            this.slikaRadionica.Image = ((System.Drawing.Image)(resources.GetObject("slikaRadionica.Image")));
+            this.slikaRadionica.Location = new System.Drawing.Point(10, 229);
+            this.slikaRadionica.Name = "slikaRadionica";
+            this.slikaRadionica.Size = new System.Drawing.Size(41, 31);
+            this.slikaRadionica.TabIndex = 62;
+            this.slikaRadionica.TabStop = false;
+            // 
             // PrijavaKvara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 298);
+            this.ClientSize = new System.Drawing.Size(502, 327);
+            this.Controls.Add(this.slikaRadionica);
+            this.Controls.Add(this.metroLabel4);
+            this.Controls.Add(this.comboBoxRadionica);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtNazivKvara);
@@ -181,8 +219,11 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.metroLabel1);
             this.Name = "PrijavaKvara";
+            this.Activated += new System.EventHandler(this.PrijavaKvara_Activated);
+            this.Load += new System.EventHandler(this.PrijavaKvara_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slikaRadionica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +238,8 @@
         private MetroFramework.Controls.MetroTextBox txtNazivKvara;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroComboBox comboBoxRadionica;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private System.Windows.Forms.PictureBox slikaRadionica;
     }
 }
