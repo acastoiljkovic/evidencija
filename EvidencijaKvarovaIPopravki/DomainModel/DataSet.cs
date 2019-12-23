@@ -15,13 +15,11 @@ using Neo4jClient.Cypher;
 //  - kada si prijavljen kao zaposleni umesto taba radionice napraviti tab nesvrstani kvarovi koji izlistava sve kvarove koji nemaju radionice
 //  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
-//  - da se vidi radionica u kojoj je kvar i da se vidi ime i prezime korisnika ciji je kvar
 //
 //  ------------------- RADIONICA ------------
 //  - u radionicu treba lista kvarova koja nema zaposlenog da radi na kvaru
-//  - lista kvarova koji se trenutno popravljaju
-//  - pametno bi bilo da se izbace delovi !!!!!
-//  - funkcija vratiRadionicuNaziv da se sredi da vraca i kvarove radionice i delove
+//  - funkcija vratiRadionicuNaziv da se sredi da vraca i kvarove radionice
+//  - kad se ona sredi onda i gridovi drugacije da se pune, iz tih listi radionice a ne ovako preko funkcija
 //
 //  ------------------KVAR POPRAVKA -----------
 //  - komentari i saveti da se prikazuju u neki dataGrid ili tako nesto
@@ -182,6 +180,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
+
         public Kvar vratiKvarSifra(string sifra)
         {
             try
@@ -215,6 +214,29 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 }
 
                 return radionice;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public List<Osoba> vratiSveRadnikeRadionice(Radionica rad)
+        {
+            List<Osoba> radnici = new List<Osoba>();
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("match (n:Zaposleni)-[:RADI_U]-(radionica:Radionica{naziv:'"+rad.naziv+"'}) return ID(n)",
+                                                                new Dictionary<string, object>(), CypherResultMode.Set);
+                List<int> radniciID = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).ToList();
+
+                foreach(int i in radniciID)
+                {
+                    Osoba o = vratiOsobu(i);
+                    if (o != null)
+                        radnici.Add(o);
+                }
+                return radnici;
             }
             catch(Exception e)
             {

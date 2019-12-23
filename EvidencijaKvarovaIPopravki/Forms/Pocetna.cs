@@ -53,10 +53,14 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 if (DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator == "zaposleni")
                 {
                     btnRadionica.Visible = true;
+                    tabKvarovi.TabPages.Remove(tabRadionice);
+                    tabKvarovi.TabPages.Add(tabNoviKvarovi);
                 }
                 else
                 {
                     btnRadionica.Visible = false;
+                    tabKvarovi.TabPages.Remove(tabNoviKvarovi);
+                    tabKvarovi.TabPages.Add(tabRadionice);
                 }
                 btnProfil.Visible = true;
                 btnKreirajNalog.Visible = false;
@@ -91,42 +95,45 @@ namespace EvidencijaKvarovaIPopravki.Forms
             gridPopravke.Columns[6].Name = "SifraKvara";
             //gridPopravke.Columns[6].Visible = false;
             gridPopravke.Rows.Clear();
-            foreach (Kvar k in kvarovi)
+            if (kvarovi != null)
             {
-                if (k != null)
+                foreach (Kvar k in kvarovi)
                 {
-                    string[] row = new string[7];
-                    if (k.naziv != null)
-                        row[0] = k.naziv;
-                    else
-                        row[0] = "";
-                    if (k.vremePrijaveKvara != null)
-                        row[1] = k.vremePrijaveKvara;
-                    else
-                        row[1] = "";
-                    if (k.vremeIspravkeKvara != null)
-                        row[2] = k.vremeIspravkeKvara;
-                    else
-                        row[2] = "";
-                    if (k.ocena != null)
-                        row[3] = k.ocena.ToString();
-                    else
-                        row[3] = "";
-                    if (k.Korisnik != null)
-                        row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
-                    else
-                        row[4] = "";
-                    if (k.Radionica != null)
-                        row[5] = k.Radionica.naziv;
-                    else
-                        row[5] = "";
-                    if (k.sifraKvara != null)
-                        row[6] = k.sifraKvara;
-                    else
-                        row[6] = "";
+                    if (k != null)
+                    {
+                        string[] row = new string[7];
+                        if (k.naziv != null)
+                            row[0] = k.naziv;
+                        else
+                            row[0] = "";
+                        if (k.vremePrijaveKvara != null)
+                            row[1] = k.vremePrijaveKvara;
+                        else
+                            row[1] = "";
+                        if (k.vremeIspravkeKvara != null)
+                            row[2] = k.vremeIspravkeKvara;
+                        else
+                            row[2] = "";
+                        if (k.ocena != null)
+                            row[3] = k.ocena.ToString();
+                        else
+                            row[3] = "";
+                        if (k.Korisnik != null)
+                            row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
+                        else
+                            row[4] = "";
+                        if (k.Radionica != null)
+                            row[5] = k.Radionica.naziv;
+                        else
+                            row[5] = "";
+                        if (k.sifraKvara != null)
+                            row[6] = k.sifraKvara;
+                        else
+                            row[6] = "";
 
 
-                    gridPopravke.Rows.Add(row);
+                        gridPopravke.Rows.Add(row);
+                    }
                 }
             }
 
@@ -134,21 +141,24 @@ namespace EvidencijaKvarovaIPopravki.Forms
             gridRadionice.Columns[0].Name = "Naziv";
             gridRadionice.Columns[1].Name = "Adresa";
             gridRadionice.Rows.Clear();
-            foreach (Radionica r in radionice)
+            if (radionice != null)
             {
-                if (r!= null)
+                foreach (Radionica r in radionice)
                 {
-                    string[] row = new string[2];
+                    if (r != null)
+                    {
+                        string[] row = new string[2];
 
-                    if (r.naziv != null)
-                        row[0] = r.naziv;
-                    else
-                        row[0] = "";
-                    if (r.Adresa != null)
-                        row[1] = r.Adresa.UlicaIBroj + ", " + r.Adresa.Grad;
-                    else
-                        row[1] = "";
-                    gridRadionice.Rows.Add(row);
+                        if (r.naziv != null)
+                            row[0] = r.naziv;
+                        else
+                            row[0] = "";
+                        if (r.Adresa != null)
+                            row[1] = r.Adresa.UlicaIBroj + ", " + r.Adresa.Grad;
+                        else
+                            row[1] = "";
+                        gridRadionice.Rows.Add(row);
+                    }
                 }
             }
 
@@ -156,7 +166,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void Pocetna_Load(object sender, EventArgs e)
         {
             PrikaziSakrij();
-            metroTabControl1.SelectedTab = TabPopravke;
+            tabKvarovi.SelectedTab = tabPopravke;
             ucitajGridData();
             
         }

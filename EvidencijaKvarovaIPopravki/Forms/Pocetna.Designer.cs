@@ -35,9 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.TabPopravke = new MetroFramework.Controls.MetroTabPage();
+            this.tabKvarovi = new MetroFramework.Controls.MetroTabControl();
+            this.tabPopravke = new MetroFramework.Controls.MetroTabPage();
             this.gridPopravke = new MetroFramework.Controls.MetroGrid();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -53,14 +56,21 @@
             this.btnPrijaviKvar = new MetroFramework.Controls.MetroButton();
             this.btnOdjaviSe = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroTabControl1.SuspendLayout();
-            this.TabPopravke.SuspendLayout();
+            this.tabNoviKvarovi = new MetroFramework.Controls.MetroTabPage();
+            this.gridNoviKvarovi = new MetroFramework.Controls.MetroGrid();
+            this.tbNoviKvaroviPretraga = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.tabKvarovi.SuspendLayout();
+            this.tabPopravke.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabRadionice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridRadionice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabNoviKvarovi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridNoviKvarovi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -76,34 +86,35 @@
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroLabel1.UseStyleColors = true;
             // 
-            // metroTabControl1
+            // tabKvarovi
             // 
-            this.metroTabControl1.Controls.Add(this.TabPopravke);
-            this.metroTabControl1.Controls.Add(this.tabRadionice);
-            this.metroTabControl1.Location = new System.Drawing.Point(22, 93);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(800, 500);
-            this.metroTabControl1.TabIndex = 1;
-            this.metroTabControl1.UseSelectable = true;
+            this.tabKvarovi.Controls.Add(this.tabPopravke);
+            this.tabKvarovi.Controls.Add(this.tabRadionice);
+            this.tabKvarovi.Controls.Add(this.tabNoviKvarovi);
+            this.tabKvarovi.Location = new System.Drawing.Point(22, 93);
+            this.tabKvarovi.Name = "tabKvarovi";
+            this.tabKvarovi.SelectedIndex = 2;
+            this.tabKvarovi.Size = new System.Drawing.Size(800, 500);
+            this.tabKvarovi.TabIndex = 1;
+            this.tabKvarovi.UseSelectable = true;
             // 
-            // TabPopravke
+            // tabPopravke
             // 
-            this.TabPopravke.Controls.Add(this.gridPopravke);
-            this.TabPopravke.Controls.Add(this.pictureBox2);
-            this.TabPopravke.Controls.Add(this.txtPretragaPopravke);
-            this.TabPopravke.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabPopravke.HorizontalScrollbarBarColor = true;
-            this.TabPopravke.HorizontalScrollbarHighlightOnWheel = false;
-            this.TabPopravke.HorizontalScrollbarSize = 10;
-            this.TabPopravke.Location = new System.Drawing.Point(4, 38);
-            this.TabPopravke.Name = "TabPopravke";
-            this.TabPopravke.Size = new System.Drawing.Size(792, 458);
-            this.TabPopravke.TabIndex = 0;
-            this.TabPopravke.Text = "Popravke";
-            this.TabPopravke.VerticalScrollbarBarColor = true;
-            this.TabPopravke.VerticalScrollbarHighlightOnWheel = false;
-            this.TabPopravke.VerticalScrollbarSize = 10;
+            this.tabPopravke.Controls.Add(this.gridPopravke);
+            this.tabPopravke.Controls.Add(this.pictureBox2);
+            this.tabPopravke.Controls.Add(this.txtPretragaPopravke);
+            this.tabPopravke.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPopravke.HorizontalScrollbarBarColor = true;
+            this.tabPopravke.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabPopravke.HorizontalScrollbarSize = 10;
+            this.tabPopravke.Location = new System.Drawing.Point(4, 38);
+            this.tabPopravke.Name = "tabPopravke";
+            this.tabPopravke.Size = new System.Drawing.Size(792, 458);
+            this.tabPopravke.TabIndex = 0;
+            this.tabPopravke.Text = "Popravke";
+            this.tabPopravke.VerticalScrollbarBarColor = true;
+            this.tabPopravke.VerticalScrollbarHighlightOnWheel = false;
+            this.tabPopravke.VerticalScrollbarSize = 10;
             // 
             // gridPopravke
             // 
@@ -366,6 +377,105 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // tabNoviKvarovi
+            // 
+            this.tabNoviKvarovi.Controls.Add(this.pictureBox4);
+            this.tabNoviKvarovi.Controls.Add(this.tbNoviKvaroviPretraga);
+            this.tabNoviKvarovi.Controls.Add(this.gridNoviKvarovi);
+            this.tabNoviKvarovi.HorizontalScrollbarBarColor = true;
+            this.tabNoviKvarovi.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabNoviKvarovi.HorizontalScrollbarSize = 10;
+            this.tabNoviKvarovi.Location = new System.Drawing.Point(4, 38);
+            this.tabNoviKvarovi.Name = "tabNoviKvarovi";
+            this.tabNoviKvarovi.Size = new System.Drawing.Size(792, 458);
+            this.tabNoviKvarovi.TabIndex = 2;
+            this.tabNoviKvarovi.Text = "Novi Kvarovi";
+            this.tabNoviKvarovi.VerticalScrollbarBarColor = true;
+            this.tabNoviKvarovi.VerticalScrollbarHighlightOnWheel = false;
+            this.tabNoviKvarovi.VerticalScrollbarSize = 10;
+            // 
+            // gridNoviKvarovi
+            // 
+            this.gridNoviKvarovi.AllowUserToResizeRows = false;
+            this.gridNoviKvarovi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridNoviKvarovi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridNoviKvarovi.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridNoviKvarovi.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridNoviKvarovi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridNoviKvarovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridNoviKvarovi.DefaultCellStyle = dataGridViewCellStyle8;
+            this.gridNoviKvarovi.EnableHeadersVisualStyles = false;
+            this.gridNoviKvarovi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gridNoviKvarovi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridNoviKvarovi.Location = new System.Drawing.Point(25, 86);
+            this.gridNoviKvarovi.Name = "gridNoviKvarovi";
+            this.gridNoviKvarovi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridNoviKvarovi.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridNoviKvarovi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridNoviKvarovi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridNoviKvarovi.Size = new System.Drawing.Size(725, 351);
+            this.gridNoviKvarovi.TabIndex = 2;
+            // 
+            // tbNoviKvaroviPretraga
+            // 
+            // 
+            // 
+            // 
+            this.tbNoviKvaroviPretraga.CustomButton.Image = null;
+            this.tbNoviKvaroviPretraga.CustomButton.Location = new System.Drawing.Point(68, 1);
+            this.tbNoviKvaroviPretraga.CustomButton.Name = "";
+            this.tbNoviKvaroviPretraga.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tbNoviKvaroviPretraga.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbNoviKvaroviPretraga.CustomButton.TabIndex = 1;
+            this.tbNoviKvaroviPretraga.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbNoviKvaroviPretraga.CustomButton.UseSelectable = true;
+            this.tbNoviKvaroviPretraga.CustomButton.Visible = false;
+            this.tbNoviKvaroviPretraga.Lines = new string[0];
+            this.tbNoviKvaroviPretraga.Location = new System.Drawing.Point(626, 22);
+            this.tbNoviKvaroviPretraga.MaxLength = 32767;
+            this.tbNoviKvaroviPretraga.Name = "tbNoviKvaroviPretraga";
+            this.tbNoviKvaroviPretraga.PasswordChar = '\0';
+            this.tbNoviKvaroviPretraga.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbNoviKvaroviPretraga.SelectedText = "";
+            this.tbNoviKvaroviPretraga.SelectionLength = 0;
+            this.tbNoviKvaroviPretraga.SelectionStart = 0;
+            this.tbNoviKvaroviPretraga.ShortcutsEnabled = true;
+            this.tbNoviKvaroviPretraga.Size = new System.Drawing.Size(90, 23);
+            this.tbNoviKvaroviPretraga.TabIndex = 3;
+            this.tbNoviKvaroviPretraga.UseSelectable = true;
+            this.tbNoviKvaroviPretraga.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbNoviKvaroviPretraga.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(722, 22);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(28, 30);
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
             // Pocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,21 +486,24 @@
             this.Controls.Add(this.btnRadionica);
             this.Controls.Add(this.btnKreirajNalog);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.metroTabControl1);
+            this.Controls.Add(this.tabKvarovi);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnUlogujSe);
             this.Controls.Add(this.btnProfil);
             this.Name = "Pocetna";
             this.Activated += new System.EventHandler(this.Pocetna_Activated);
             this.Load += new System.EventHandler(this.Pocetna_Load);
-            this.metroTabControl1.ResumeLayout(false);
-            this.TabPopravke.ResumeLayout(false);
+            this.tabKvarovi.ResumeLayout(false);
+            this.tabPopravke.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabRadionice.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridRadionice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabNoviKvarovi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridNoviKvarovi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,8 +511,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage TabPopravke;
+        private MetroFramework.Controls.MetroTabControl tabKvarovi;
+        private MetroFramework.Controls.MetroTabPage tabPopravke;
         private MetroFramework.Controls.MetroTabPage tabRadionice;
         private MetroFramework.Controls.MetroButton btnUlogujSe;
         private MetroFramework.Controls.MetroButton btnKreirajNalog;
@@ -415,5 +528,9 @@
         private MetroFramework.Controls.MetroButton btnRadionica;
         private MetroFramework.Controls.MetroButton btnPrijaviKvar;
         private MetroFramework.Controls.MetroButton btnOdjaviSe;
+        private MetroFramework.Controls.MetroTabPage tabNoviKvarovi;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private MetroFramework.Controls.MetroTextBox tbNoviKvaroviPretraga;
+        private MetroFramework.Controls.MetroGrid gridNoviKvarovi;
     }
 }
