@@ -12,7 +12,6 @@ using Neo4jClient.Cypher;
 //  ------------------ POCETNA ---------------------
 //  - filter za kvarove i za radionice
 //  - pametno trazenje, dok se kuca on da trazi ( trazenje u dataGrdiView , a ne iz baze )
-//  - kada si prijavljen kao zaposleni umesto taba radionice napraviti tab nesvrstani kvarovi koji izlistava sve kvarove koji nemaju radionice
 //  - selekcijom na neki kvar izlazi forma dodaj kvar koja se trenutno nalazi na dugmetu dodaj kvar
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
 //
