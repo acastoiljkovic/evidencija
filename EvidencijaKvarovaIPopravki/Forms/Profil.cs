@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EvidencijaKvarovaIPopravki.DomainModel;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -32,6 +33,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 txtGrad.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.Grad;
                 txtUlicaIBroj.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.UlicaIBroj;
                 txtEmail.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.authPodaci.email;
+            }
+            if(DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi != null)
+            {
+                foreach (Kvar k in DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi)
+                    MessageBox.Show(k.naziv);
             }
             gridPopravkeKorisnika.DataSource = DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi;
         }

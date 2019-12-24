@@ -11,11 +11,6 @@ using Neo4jClient.Cypher;
 //  ------------------ POCETNA ---------------------
 //  - filter za kvarove i za radionice
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
-//
-//  ------------------- RADIONICA ------------
-//  - funkcija vratiRadionicuNaziv da se sredi da vraca i kvarove radionice
-//  - kad se ona sredi onda i gridovi drugacije da se pune, iz tih listi radionice a ne ovako preko funkcija
-//
 
 
 
@@ -113,11 +108,11 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 Autentifikacija auth = ((IRawGraphClient)client).ExecuteGetCypherResults<Autentifikacija>(query).ToList()[0];
 
 
-                query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + id + ") match (n)<-[k:IMA_KVAR]-(kvar)<-[r:U_RADIONICI]-(radionica) return radionica",
+                query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + id + ") match (n)-[k:IMA_KVAR]->(kvar)<-[r:U_RADIONICI]-(radionica) return radionica",
                                                                 new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Radionica> radionice = ((IRawGraphClient)client).ExecuteGetCypherResults<Radionica>(query).ToList();
 
-                query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + id + ") match (n)<-[k:IMA_KVAR]-(kvar) return kvar",
+                query = new Neo4jClient.Cypher.CypherQuery("start n=node(" + id + ") match (n)-[k:IMA_KVAR]->(kvar) return kvar",
                                                                 new Dictionary<string, object>(), CypherResultMode.Set);
                 List<Kvar> kvarovi = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList();
 
@@ -127,12 +122,9 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 
                 k.authPodaci = auth;
                 k.podaci = podaci;
-                int i = 0;
                 foreach (Kvar kv in kvarovi)
                 {
-                    kv.Radionica = radionice[i];
                     k.kvarovi.Add(kv);
-                    i++;
                 }
 
                 return k;
@@ -231,6 +223,22 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                 return radnici;
             }
             catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public List<Kvar> vratiSveKvaroveRadionice(Radionica rad)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("match (n:Kvar)<-[:U_RADIONICI]-(radionica:Radionica{naziv:'" + rad.naziv + "'}) return n",
+                                                                new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Kvar> kvarovi = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList();
+
+                return kvarovi;
+            }
+            catch (Exception e)
             {
                 return null;
             }
@@ -473,6 +481,8 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                     new Dictionary<string, object>(), CypherResultMode.Set);
                 Adresa adr = ((IRawGraphClient)client).ExecuteGetCypherResults<Adresa>(query).ToList()[0];
                 rad.Adresa = adr;
+                rad.Kvarovi = vratiSveKvaroveRadionice(rad);
+                rad.Zaposleni = vratiSveRadnikeRadionice(rad);
                 return rad;
             }
             catch (Exception e)

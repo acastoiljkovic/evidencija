@@ -38,7 +38,6 @@ namespace EvidencijaKvarovaIPopravki.Forms
             {
                 btnIzmeniRadionicu.Visible = false;
             }
-            List<Kvar> kvarovi = DomainModel.DataSet.Instace.vratiSveKvarove();
 
             gridPopravkeRadionice.ColumnCount = 7;
             gridPopravkeRadionice.Columns[0].Name = "Naziv";
@@ -50,11 +49,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
             gridPopravkeRadionice.Columns[6].Name = "SifraKvara";
             //gridPopravkeRadionice.Columns[6].Visible = false;
             gridPopravkeRadionice.Rows.Clear();
-            if (kvarovi != null)
+            if (r.Kvarovi != null)
             {
-                foreach (Kvar k in kvarovi)
+                foreach (Kvar k in r.Kvarovi)
                 {
-                    if (k != null && k.Radionica != null && k.Radionica.naziv == r.naziv)
+                    if (k != null)
                     {
                         string[] row = new string[7];
                         if (k.naziv != null)
@@ -93,7 +92,6 @@ namespace EvidencijaKvarovaIPopravki.Forms
             }
 
 
-            List<Osoba> radnici = DomainModel.DataSet.Instace.vratiSveRadnikeRadionice(r);
             gridZaposleniRadionica.ColumnCount = 5;
             gridZaposleniRadionica.Columns[0].Name = "Ime";
             gridZaposleniRadionica.Columns[1].Name = "Prezime";
@@ -101,9 +99,9 @@ namespace EvidencijaKvarovaIPopravki.Forms
             gridZaposleniRadionica.Columns[3].Name = "Telefon";
             gridZaposleniRadionica.Columns[4].Name = "Adresa";
             gridZaposleniRadionica.Rows.Clear();
-            if (radnici != null)
+            if (r.Zaposleni != null)
             {
-                foreach (Osoba o in radnici)
+                foreach (Osoba o in r.Zaposleni)
                 {
                     string[] row = new string[5];
                     if (o.podaci.ime != null)
