@@ -25,10 +25,29 @@ namespace EvidencijaKvarovaIPopravki.Forms
             txtVremePopravke.Text = k.vremeIspravkeKvara;
             txtModelVozila.Text = k.modelVozila;
             txtOcena.Text = k.ocena.ToString();
-            foreach(string kom in k.komentari)
+            gridKomentari.Rows.Clear();
+            if (k.komentari != null)
             {
-                MessageBox.Show(kom);
+                foreach (string kom in k.komentari)
+                {
+                    gridKomentari.ColumnCount = 1;
+                    gridKomentari.Columns[0].Name = "Komentar";
+                    if (kom != null)
+                        gridKomentari.Rows.Add(kom);
+                }
             }
+            gridSaveti.Rows.Clear();
+            if (k.saveti != null)
+            {
+                foreach (string sav in k.saveti)
+                {
+                    gridSaveti.ColumnCount = 1;
+                    gridSaveti.Columns[0].Name = "Savet";
+                    if (sav != null)
+                        gridKomentari.Rows.Add(sav);
+                }
+            }
+
         }
     }
 }

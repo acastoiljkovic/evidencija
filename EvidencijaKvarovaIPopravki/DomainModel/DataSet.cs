@@ -7,19 +7,14 @@ using Neo4jClient;
 using Neo4jClient.Cypher;
 
 // TODO :
-// 1. Da se disableju dugmici u zavisnosti od toga ko je prijavljen
 //
 //  ------------------ POCETNA ---------------------
 //  - filter za kvarove i za radionice
-//  - pametno trazenje, dok se kuca on da trazi ( trazenje u dataGrdiView , a ne iz baze )
 //  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
 //
 //  ------------------- RADIONICA ------------
 //  - funkcija vratiRadionicuNaziv da se sredi da vraca i kvarove radionice
 //  - kad se ona sredi onda i gridovi drugacije da se pune, iz tih listi radionice a ne ovako preko funkcija
-//
-//  ------------------KVAR POPRAVKA -----------
-//  - komentari i saveti da se prikazuju u neki dataGrid ili tako nesto
 //
 
 
