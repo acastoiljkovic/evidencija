@@ -13,11 +13,17 @@ namespace EvidencijaKvarovaIPopravki.Forms
 {
     public partial class NoviKvar : MetroFramework.Forms.MetroForm
     {
+        Kvar kvar;
         public NoviKvar()
         {
             InitializeComponent();
         }
 
+        public NoviKvar(Kvar k)
+        {
+            InitializeComponent();
+            this.kvar = k;
+        }
         private void chkRadnici_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -46,6 +52,12 @@ namespace EvidencijaKvarovaIPopravki.Forms
             {
                 lblNazivModela.Visible = true;
                 txtNazivModela.Visible = true;
+            }
+            if(kvar != null)
+            {
+                txtNazivKvara.Text = kvar.naziv;
+                txtSifraKvara.Text = kvar.sifraKvara;
+                txtPredvidjenoVreme.Text = kvar.komentari[0];
             }
         }
 

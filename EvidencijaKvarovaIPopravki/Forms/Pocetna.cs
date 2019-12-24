@@ -314,5 +314,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             ucitajGridData();
         }
+
+        private void gridNoviKvarovi_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var formNoviKvar = new NoviKvar(DomainModel.DataSet.Instace.vratiKvarSifra(gridNoviKvarovi.Rows[e.RowIndex].Cells[6].Value.ToString()));
+            formNoviKvar.ShowDialog();
+        }
     }
 }
