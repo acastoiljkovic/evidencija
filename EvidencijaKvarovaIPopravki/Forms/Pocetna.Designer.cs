@@ -50,8 +50,6 @@
             this.txtPretragaRadionica = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabNoviKvarovi = new MetroFramework.Controls.MetroTabPage();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tbNoviKvaroviPretraga = new MetroFramework.Controls.MetroTextBox();
             this.gridNoviKvarovi = new MetroFramework.Controls.MetroGrid();
             this.btnRadionica = new MetroFramework.Controls.MetroButton();
             this.btnProfil = new MetroFramework.Controls.MetroButton();
@@ -60,6 +58,8 @@
             this.btnPrijaviKvar = new MetroFramework.Controls.MetroButton();
             this.btnOdjaviSe = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabKvarovi.SuspendLayout();
             this.tabPopravke.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridPopravke)).BeginInit();
@@ -68,9 +68,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridRadionice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabNoviKvarovi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoviKvarovi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -310,8 +310,8 @@
             // 
             // tabNoviKvarovi
             // 
+            this.tabNoviKvarovi.Controls.Add(this.metroTextBox1);
             this.tabNoviKvarovi.Controls.Add(this.pictureBox4);
-            this.tabNoviKvarovi.Controls.Add(this.tbNoviKvaroviPretraga);
             this.tabNoviKvarovi.Controls.Add(this.gridNoviKvarovi);
             this.tabNoviKvarovi.HorizontalScrollbarBarColor = true;
             this.tabNoviKvarovi.HorizontalScrollbarHighlightOnWheel = false;
@@ -324,45 +324,6 @@
             this.tabNoviKvarovi.VerticalScrollbarBarColor = true;
             this.tabNoviKvarovi.VerticalScrollbarHighlightOnWheel = false;
             this.tabNoviKvarovi.VerticalScrollbarSize = 10;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(722, 22);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 30);
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // tbNoviKvaroviPretraga
-            // 
-            // 
-            // 
-            // 
-            this.tbNoviKvaroviPretraga.CustomButton.Image = null;
-            this.tbNoviKvaroviPretraga.CustomButton.Location = new System.Drawing.Point(68, 1);
-            this.tbNoviKvaroviPretraga.CustomButton.Name = "";
-            this.tbNoviKvaroviPretraga.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tbNoviKvaroviPretraga.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tbNoviKvaroviPretraga.CustomButton.TabIndex = 1;
-            this.tbNoviKvaroviPretraga.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tbNoviKvaroviPretraga.CustomButton.UseSelectable = true;
-            this.tbNoviKvaroviPretraga.CustomButton.Visible = false;
-            this.tbNoviKvaroviPretraga.Lines = new string[0];
-            this.tbNoviKvaroviPretraga.Location = new System.Drawing.Point(626, 22);
-            this.tbNoviKvaroviPretraga.MaxLength = 32767;
-            this.tbNoviKvaroviPretraga.Name = "tbNoviKvaroviPretraga";
-            this.tbNoviKvaroviPretraga.PasswordChar = '\0';
-            this.tbNoviKvaroviPretraga.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tbNoviKvaroviPretraga.SelectedText = "";
-            this.tbNoviKvaroviPretraga.SelectionLength = 0;
-            this.tbNoviKvaroviPretraga.SelectionStart = 0;
-            this.tbNoviKvaroviPretraga.ShortcutsEnabled = true;
-            this.tbNoviKvaroviPretraga.Size = new System.Drawing.Size(90, 23);
-            this.tbNoviKvaroviPretraga.TabIndex = 3;
-            this.tbNoviKvaroviPretraga.UseSelectable = true;
-            this.tbNoviKvaroviPretraga.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbNoviKvaroviPretraga.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // gridNoviKvarovi
             // 
@@ -391,7 +352,7 @@
             this.gridNoviKvarovi.EnableHeadersVisualStyles = false;
             this.gridNoviKvarovi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridNoviKvarovi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridNoviKvarovi.Location = new System.Drawing.Point(25, 86);
+            this.gridNoviKvarovi.Location = new System.Drawing.Point(15, 60);
             this.gridNoviKvarovi.Name = "gridNoviKvarovi";
             this.gridNoviKvarovi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -477,6 +438,45 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // metroTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(124, 1);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(594, 19);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(146, 23);
+            this.metroTextBox1.TabIndex = 9;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(746, 13);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
             // Pocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,9 +502,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridRadionice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabNoviKvarovi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoviKvarovi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,8 +530,8 @@
         private MetroFramework.Controls.MetroButton btnPrijaviKvar;
         private MetroFramework.Controls.MetroButton btnOdjaviSe;
         private MetroFramework.Controls.MetroTabPage tabNoviKvarovi;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private MetroFramework.Controls.MetroTextBox tbNoviKvaroviPretraga;
         private MetroFramework.Controls.MetroGrid gridNoviKvarovi;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

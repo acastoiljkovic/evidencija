@@ -226,6 +226,7 @@
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.metroLabel2);
             this.Name = "IzmeniRadionicu";
+            this.Activated += new System.EventHandler(this.IzmeniRadionicu_Activated);
             this.Load += new System.EventHandler(this.IzmeniRadionicu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -25,10 +25,6 @@ namespace EvidencijaKvarovaIPopravki.Forms
             InitializeComponent();
             r = rad;
 
-            lblNazivRadionice.Text = r.naziv;
-
-            txtGrad.Text = r.Adresa.Grad;
-            txtUlicaIBroj.Text = r.Adresa.UlicaIBroj;
 
             if(DomainModel.DataSet.Instace.DaLiJeToRadnikovaRadionica(r.naziv))
             {
@@ -130,6 +126,14 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new IzmeniRadionicu(r);
             Forma.ShowDialog();
+        }
+
+        private void RadionicaPrikaz_Activated(object sender, EventArgs e)
+        {
+            lblNazivRadionice.Text = r.naziv;
+
+            txtGrad.Text = r.Adresa.Grad;
+            txtUlicaIBroj.Text = r.Adresa.UlicaIBroj;
         }
     }
 }

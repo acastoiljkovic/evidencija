@@ -30,6 +30,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
             MetroMessageBox.Show(this, DomainModel.DataSet.Instace.izmeniRadionicu(radionica.naziv, txtNaziv.Text, txtGrad.Text, txtUlica.Text), "Obavestenje");
+            this.Close();
         }
 
         private void IzmeniRadionicu_Load(object sender, EventArgs e)
@@ -37,6 +38,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
             txtNaziv.Text = radionica.naziv;
             txtGrad.Text = radionica.Adresa.Grad;
             txtUlica.Text = radionica.Adresa.UlicaIBroj;
+        }
+
+        private void IzmeniRadionicu_Activated(object sender, EventArgs e)
+        {
+
         }
     }
 }

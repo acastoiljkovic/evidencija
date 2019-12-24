@@ -56,11 +56,13 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 {
                     btnRadionica.Visible = true;
                     tabKvarovi.TabPages.Add(tabNoviKvarovi);
+                    btnPrijaviKvar.Visible = false;
                 }
                 else
                 {
                     btnRadionica.Visible = false;
                     tabKvarovi.TabPages.Add(tabRadionice);
+                    btnPrijaviKvar.Visible = true;
                 }
                 btnProfil.Visible = true;
                 btnKreirajNalog.Visible = false;

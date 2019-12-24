@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EvidencijaKvarovaIPopravki.DomainModel;
+using MetroFramework;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -36,28 +37,16 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void NoviKvar_Load(object sender, EventArgs e)
         {
-            chkModel.Checked = false;
-
             PrikaziSakrij();
         }
 
         private void PrikaziSakrij()
         {
-            if(!chkModel.Checked)
-            {
-                lblNazivModela.Visible = false;
-                txtNazivModela.Visible = false;
-            }
-            else
-            {
-                lblNazivModela.Visible = true;
-                txtNazivModela.Visible = true;
-            }
             if(kvar != null)
             {
                 txtNazivKvara.Text = kvar.naziv;
                 txtSifraKvara.Text = kvar.sifraKvara;
-                txtPredvidjenoVreme.Text = kvar.komentari[0];
+                txtZahtevnostPopravke.Text = kvar.komentari[0];
             }
         }
 
@@ -68,6 +57,19 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
+            if (kvar != null)
+            {
+                kvar.naziv = txtNazivKvara.Text;
+                //kvar.sifraKvara = txtSifraKvara.Text;
+                //kvar.komentari[0] = txtZahtevnostPopravke.Text;
+                kvar.vremePrijaveKvara = dateVremePopravke.Value.ToString();
+                kvar.vremeIspravkeKvara = dateVremePopravke.Value.ToString();
+
+                if (DomainModel.DataSet.Instace.IzmeniKvar(kvar))
+                    MetroMessageBox.Show(this, "Uspesno!", "Obavestenje");
+
+                this.Close();
+            }
 
         }
     }

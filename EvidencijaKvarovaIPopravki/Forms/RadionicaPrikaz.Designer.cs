@@ -308,6 +308,7 @@
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.lblNazivRadionice);
             this.Name = "RadionicaPrikaz";
+            this.Activated += new System.EventHandler(this.RadionicaPrikaz_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

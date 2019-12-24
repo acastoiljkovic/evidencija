@@ -10,7 +10,6 @@ using Neo4jClient.Cypher;
 //
 //  ------------------ POCETNA ---------------------
 //  - filter za kvarove i za radionice
-//  - ukoliko se doda kvar se dodaje radionici i zaposlenom koji ga je dodao radionici
 
 
 
@@ -872,6 +871,40 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
                     return false;
                 }
                 
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool IzmeniKvar(Kvar k)
+        {
+            try
+            {//create(k)<-[ur:U_RADIONICI]-(rad1) return k
+                var query = new Neo4jClient.Cypher.CypherQuery("match(rad1:Radionica{naziv:'"+vratiRadionicuRadnik(PrijavljenKorisnik).naziv+"'})"+
+                    "match(k:Kvar{sifraKvara: '"+k.sifraKvara+"'}) set k.naziv = '"+k.naziv+"'"+
+                    ", k.vremePrijaveKvara = '"+k.vremePrijaveKvara+"', k.vremeIspravkeKvara = '"+k.vremeIspravkeKvara+"'"+
+                    "create(k)<-[ur:U_RADIONICI]-(rad1) return k",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                List<Kvar> kvarovi = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList();
+
+                return DodajKvarRadnikovojRadionici(kvarovi[0]);
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool DodajKvarRadnikovojRadionici(Kvar k)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("match(k:Kvar{sifraKvara: '" + k.sifraKvara + "'}) set k.naziv = '" + k.naziv + "'" +
+                    ", k.vremePrijaveKvara = '" + k.vremePrijaveKvara + "', k.vremeIspravkeKvara = '" + k.vremeIspravkeKvara + "' return k",
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                return true;
             }
             catch(Exception e)
             {
