@@ -21,7 +21,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void Profil_Load(object sender, EventArgs e)
         {
 
-            if(DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
+            if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
                 //ne bi trebalo da dodje do ove forme ako je null
                 PrikaziSakrij();
@@ -34,13 +34,60 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 txtUlicaIBroj.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.podaci.Adresa.UlicaIBroj;
                 txtEmail.Text = DomainModel.DataSet.Instace.PrijavljenKorisnik.authPodaci.email;
             }
-            if(DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi != null)
+            if (DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi != null)
             {
+                gridPopravkeKorisnika.ColumnCount = 7;
+                gridPopravkeKorisnika.Columns[0].Name = "Naziv";
+                gridPopravkeKorisnika.Columns[1].Name = "Vreme Prijave";
+                gridPopravkeKorisnika.Columns[2].Name = "Vreme Popravke";
+                gridPopravkeKorisnika.Columns[3].Name = "Ocena";
+                gridPopravkeKorisnika.Columns[4].Name = "Korisnik";
+                gridPopravkeKorisnika.Columns[5].Name = "Radionica";
+                gridPopravkeKorisnika.Columns[6].Name = "SifraKvara";
+                gridPopravkeKorisnika.Columns[6].Visible = false;
+                gridPopravkeKorisnika.Rows.Clear();
                 foreach (Kvar k in DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi)
-                    MessageBox.Show(k.naziv);
+                {
+                    if (k != null)
+                    {
+                        string[] row = new string[7];
+                        if (k.naziv != null)
+                            row[0] = k.naziv;
+                        else
+                            row[0] = "";
+                        if (k.vremePrijaveKvara != null)
+                            row[1] = k.vremePrijaveKvara;
+                        else
+                            row[1] = "";
+                        if (k.vremeIspravkeKvara != null)
+                            row[2] = k.vremeIspravkeKvara;
+                        else
+                            row[2] = "";
+                        if (k.ocena != null)
+                            row[3] = k.ocena.ToString();
+                        else
+                            row[3] = "";
+                        if (k.Korisnik != null)
+                            row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
+                        else
+                            row[4] = "";
+                        if (k.Radionica != null)
+                            row[5] = k.Radionica.naziv;
+                        else
+                            row[5] = "";
+                        if (k.sifraKvara != null)
+                            row[6] = k.sifraKvara;
+                        else
+                            row[6] = "";
+
+
+                        gridPopravkeKorisnika.Rows.Add(row);
+                    }
+
+                }
             }
-            gridPopravkeKorisnika.DataSource = DomainModel.DataSet.Instace.PrijavljenKorisnik.kvarovi;
         }
+        
 
         private void PrikaziSakrij()
         {

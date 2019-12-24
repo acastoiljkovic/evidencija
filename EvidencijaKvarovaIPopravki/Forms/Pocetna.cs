@@ -93,7 +93,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
             gridPopravke.Columns[4].Name = "Korisnik";
             gridPopravke.Columns[5].Name = "Radionica";
             gridPopravke.Columns[6].Name = "SifraKvara";
-            //gridPopravke.Columns[6].Visible = false;
+            gridPopravke.Columns[6].Visible = false;
             gridPopravke.Rows.Clear();
             if (kvarovi != null)
             {
