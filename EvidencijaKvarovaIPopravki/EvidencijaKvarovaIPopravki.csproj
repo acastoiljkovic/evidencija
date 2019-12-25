@@ -83,6 +83,12 @@
     <Compile Include="Forms\DodajDeo.Designer.cs">
       <DependentUpon>DodajDeo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DodajKomentarSavet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodajKomentarSavet.Designer.cs">
+      <DependentUpon>DodajKomentarSavet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DodajRadionicu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DodajDeo.resx">
       <DependentUpon>DodajDeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodajKomentarSavet.resx">
+      <DependentUpon>DodajKomentarSavet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DodajRadionicu.resx">
       <DependentUpon>DodajRadionicu.cs</DependentUpon>

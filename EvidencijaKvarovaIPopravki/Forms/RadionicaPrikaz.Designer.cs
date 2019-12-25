@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnDelovi = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -66,16 +65,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(41, 31);
             this.pictureBox3.TabIndex = 40;
             this.pictureBox3.TabStop = false;
-            // 
-            // btnDelovi
-            // 
-            this.btnDelovi.Location = new System.Drawing.Point(713, 70);
-            this.btnDelovi.Name = "btnDelovi";
-            this.btnDelovi.Size = new System.Drawing.Size(128, 23);
-            this.btnDelovi.TabIndex = 39;
-            this.btnDelovi.Text = "Delovi";
-            this.btnDelovi.UseSelectable = true;
-            this.btnDelovi.Click += new System.EventHandler(this.btnDelovi_Click);
             // 
             // metroLabel3
             // 
@@ -296,7 +285,6 @@
             this.Controls.Add(this.txtGrad);
             this.Controls.Add(this.txtUlicaIBroj);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.btnDelovi);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox2);
@@ -322,7 +310,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox3;
-        private MetroFramework.Controls.MetroButton btnDelovi;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox pictureBox2;

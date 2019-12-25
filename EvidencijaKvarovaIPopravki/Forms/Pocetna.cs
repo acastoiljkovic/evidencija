@@ -264,16 +264,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (
-            DomainModel.DataSet.Instace.dodajAutentifikaciju(new Autentifikacija() { 
-                email="mail@mail",
-                korisnickoIme = "korisnik1",
-                sifra="asd"
-            })
-                )
-                MessageBox.Show("Uspesno dodata autentifikacija");
-            else
-                MessageBox.Show("Neuspesno dodati podaci");
+
 
         }
 
@@ -344,6 +335,11 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void txtPretragaRadionica_TextChanged(object sender, EventArgs e)
         {
             ucitajGridRadionice(txtPretragaRadionica.Text);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

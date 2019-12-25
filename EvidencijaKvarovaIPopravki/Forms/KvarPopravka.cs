@@ -13,13 +13,17 @@ namespace EvidencijaKvarovaIPopravki.Forms
 {
     public partial class KvarPopravka : MetroFramework.Forms.MetroForm
     {
+        Kvar k;
+
         public KvarPopravka()
         {
             InitializeComponent();
         }
 
-        public KvarPopravka(Kvar k)
+        public KvarPopravka(Kvar kv)
         {
+            k = kv;
+
             InitializeComponent();
             txtVremePrijave.Text = k.vremePrijaveKvara;
             txtVremePopravke.Text = k.vremeIspravkeKvara;
@@ -48,6 +52,40 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 }
             }
 
+        }
+
+        private void PrikaziSakrij()
+        {
+            if(DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
+            {
+                if(DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator.Equals("zaposleni"))
+                {
+                    btnKomentar.Visible = false;
+                    btnSavet.Visible = true;
+                }
+                else
+                {
+                    btnKomentar.Visible = true;
+                    btnSavet.Visible = false;
+                }
+            }
+        }
+
+        private void KvarPopravka_Activated(object sender, EventArgs e)
+        {
+            PrikaziSakrij();
+        }
+
+        private void btnKomentar_Click(object sender, EventArgs e)
+        {
+            var Forma = new DodajKomentarSavet(k);
+            Forma.ShowDialog();
+        }
+
+        private void btnSavet_Click(object sender, EventArgs e)
+        {
+            var Forma = new DodajKomentarSavet(k);
+            Forma.ShowDialog();
         }
     }
 }

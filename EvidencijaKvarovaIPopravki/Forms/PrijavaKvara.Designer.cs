@@ -112,7 +112,7 @@
             // 
             // btnPosalji
             // 
-            this.btnPosalji.Location = new System.Drawing.Point(358, 281);
+            this.btnPosalji.Location = new System.Drawing.Point(358, 287);
             this.btnPosalji.Name = "btnPosalji";
             this.btnPosalji.Size = new System.Drawing.Size(121, 23);
             this.btnPosalji.TabIndex = 4;
@@ -175,7 +175,7 @@
             // 
             this.comboBoxRadionica.FormattingEnabled = true;
             this.comboBoxRadionica.ItemHeight = 23;
-            this.comboBoxRadionica.Location = new System.Drawing.Point(159, 231);
+            this.comboBoxRadionica.Location = new System.Drawing.Point(159, 241);
             this.comboBoxRadionica.Name = "comboBoxRadionica";
             this.comboBoxRadionica.Size = new System.Drawing.Size(205, 29);
             this.comboBoxRadionica.TabIndex = 3;
@@ -186,7 +186,7 @@
             this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.metroLabel4.Location = new System.Drawing.Point(57, 231);
+            this.metroLabel4.Location = new System.Drawing.Point(57, 241);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(96, 21);
             this.metroLabel4.TabIndex = 61;
@@ -196,7 +196,7 @@
             // slikaRadionica
             // 
             this.slikaRadionica.Image = ((System.Drawing.Image)(resources.GetObject("slikaRadionica.Image")));
-            this.slikaRadionica.Location = new System.Drawing.Point(10, 229);
+            this.slikaRadionica.Location = new System.Drawing.Point(10, 239);
             this.slikaRadionica.Name = "slikaRadionica";
             this.slikaRadionica.Size = new System.Drawing.Size(41, 31);
             this.slikaRadionica.TabIndex = 62;

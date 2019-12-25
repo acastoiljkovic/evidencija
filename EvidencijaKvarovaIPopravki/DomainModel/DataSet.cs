@@ -7,8 +7,13 @@ using Neo4jClient;
 using Neo4jClient.Cypher;
 
 // TODO :
-//
-
+//1. Da imamo pretrage po svemu (misleci na potege). Ne bas ovako kako smo radili
+//   jer smo radili po cvoru, to jest nazivu (unesemo ulicu, on vrati sve korisnike koji zive u toj ulici i imaju kvarove 
+//   ili od tih korisnika ko ima najvise kvarova u toj ulici, slicno za grad, radionicu...)
+//   glavna ideja je da tu prosecnu ocenu ne racunamo mi vec neo4j!
+//   kako bismo iskoristili sve mogucnosti neo4j na najbolji moguci nacin i da iskoristimo njegovu brzinu na primeru
+//2. Savet, kvar
+//3. Ocena da se sredi
 
 
 namespace EvidencijaKvarovaIPopravki.DomainModel
@@ -161,6 +166,42 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
         }
 
+        public bool dodajKomentarSavet(Kvar k)
+        {
+            try
+            {
+                String upit = "match(k:Kvar{naziv:'"+k.naziv+"'}) set";
+                String komentariSaveti = "";
+
+                if (PrijavljenKorisnik.indikator.Equals("korisnik"))
+                {
+                    komentariSaveti+="k.komentari=[";
+                    foreach (String kom in k.komentari)
+                    {
+                        komentariSaveti += "'" + kom + "'";
+                    }
+                }
+                else
+                {
+                    komentariSaveti+="k.saveti=[";
+                    foreach (String savet in k.saveti)
+                    {
+                        komentariSaveti += "'" + savet + "'";
+                    }
+                }
+
+                upit += komentariSaveti;
+                upit += "] return k";
+                var query = new Neo4jClient.Cypher.CypherQuery(upit, new Dictionary<string, object>(), CypherResultMode.Set);
+                Kvar kvar = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList()[0];
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
 
         public Kvar vratiKvarSifra(string sifra)
         {
