@@ -84,8 +84,15 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         public void ucitajGridData()
         {
+            ucitajGridPopravke(null);
+            ucitajGridRadionice(null);
+            ucitajGridNoviKvarovi(null);
+
+        }
+
+        public void ucitajGridPopravke(string text)
+        {
             List<Kvar> kvarovi = DomainModel.DataSet.Instace.vratiSveKvarove();
-            List<Radionica> radionice = DomainModel.DataSet.Instace.vratiSveRadionice();
 
             gridPopravke.ColumnCount = 7;
             gridPopravke.Columns[0].Name = "Naziv";
@@ -103,42 +110,110 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 {
                     if (k != null)
                     {
-                        string[] row = new string[7];
-                        if (k.naziv != null)
-                            row[0] = k.naziv;
-                        else
-                            row[0] = "";
-                        if (k.vremePrijaveKvara != null)
-                            row[1] = k.vremePrijaveKvara;
-                        else
-                            row[1] = "";
-                        if (k.vremeIspravkeKvara != null)
-                            row[2] = k.vremeIspravkeKvara;
-                        else
-                            row[2] = "";
-                        if (k.ocena != null)
-                            row[3] = k.ocena.ToString();
-                        else
-                            row[3] = "";
-                        if (k.Korisnik != null)
-                            row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
-                        else
-                            row[4] = "";
-                        if (k.Radionica != null)
-                            row[5] = k.Radionica.naziv;
-                        else
-                            row[5] = "";
-                        if (k.sifraKvara != null)
-                            row[6] = k.sifraKvara;
-                        else
-                            row[6] = "";
+                        if (text == null || k.naziv.Contains(text))
+                        {
+                            string[] row = new string[7];
+                            if (k.naziv != null)
+                                row[0] = k.naziv;
+                            else
+                                row[0] = "";
+                            if (k.vremePrijaveKvara != null)
+                                row[1] = k.vremePrijaveKvara;
+                            else
+                                row[1] = "";
+                            if (k.vremeIspravkeKvara != null)
+                                row[2] = k.vremeIspravkeKvara;
+                            else
+                                row[2] = "";
+                            if (k.ocena != null)
+                                row[3] = k.ocena.ToString();
+                            else
+                                row[3] = "";
+                            if (k.Korisnik != null)
+                                row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
+                            else
+                                row[4] = "";
+                            if (k.Radionica != null)
+                                row[5] = k.Radionica.naziv;
+                            else
+                                row[5] = "";
+                            if (k.sifraKvara != null)
+                                row[6] = k.sifraKvara;
+                            else
+                                row[6] = "";
 
 
-                        gridPopravke.Rows.Add(row);
+                            gridPopravke.Rows.Add(row);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void ucitajGridNoviKvarovi(string text)
+        {
+            List<Kvar> kvarovi = DomainModel.DataSet.Instace.vratiSveKvarove();
+
+            gridNoviKvarovi.ColumnCount = 7;
+            gridNoviKvarovi.Columns[0].Name = "Naziv";
+            gridNoviKvarovi.Columns[1].Name = "Vreme Prijave";
+            gridNoviKvarovi.Columns[2].Name = "Vreme Popravke";
+            gridNoviKvarovi.Columns[3].Name = "Ocena";
+            gridNoviKvarovi.Columns[4].Name = "Korisnik";
+            gridNoviKvarovi.Columns[5].Name = "Radionica";
+            gridNoviKvarovi.Columns[6].Name = "SifraKvara";
+            gridNoviKvarovi.Columns[6].Visible = false;
+            gridNoviKvarovi.Rows.Clear();
+            if (kvarovi != null)
+            {
+                foreach (Kvar k in kvarovi)
+                {
+                    if (k != null)
+                    {
+                        if (text == null || k.naziv.Contains(text))
+                        {
+                            string[] row = new string[7];
+                            if (k.naziv != null)
+                                row[0] = k.naziv;
+                            else
+                                row[0] = "";
+                            if (k.vremePrijaveKvara != null)
+                                row[1] = k.vremePrijaveKvara;
+                            else
+                                row[1] = "";
+                            if (k.vremeIspravkeKvara != null)
+                                row[2] = k.vremeIspravkeKvara;
+                            else
+                                row[2] = "";
+                            if (k.ocena != null)
+                                row[3] = k.ocena.ToString();
+                            else
+                                row[3] = "";
+                            if (k.Korisnik != null)
+                                row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
+                            else
+                                row[4] = "";
+                            if (k.Radionica != null)
+                                row[5] = k.Radionica.naziv;
+                            else
+                                row[5] = "";
+                            if (k.sifraKvara != null)
+                                row[6] = k.sifraKvara;
+                            else
+                                row[6] = "";
+
+
+                            gridNoviKvarovi.Rows.Add(row);
+                        }
                     }
                 }
             }
 
+        }
+
+        public void ucitajGridRadionice(string text)
+        { 
+            List<Radionica> radionice = DomainModel.DataSet.Instace.vratiSveRadionice();
             gridRadionice.ColumnCount = 2;
             gridRadionice.Columns[0].Name = "Naziv";
             gridRadionice.Columns[1].Name = "Adresa";
@@ -149,74 +224,23 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 {
                     if (r != null)
                     {
-                        string[] row = new string[2];
+                        if (text == null || r.naziv.Contains(text))
+                        {
+                            string[] row = new string[2];
 
-                        if (r.naziv != null)
-                            row[0] = r.naziv;
-                        else
-                            row[0] = "";
-                        if (r.Adresa != null)
-                            row[1] = r.Adresa.UlicaIBroj + ", " + r.Adresa.Grad;
-                        else
-                            row[1] = "";
-                        gridRadionice.Rows.Add(row);
+                            if (r.naziv != null)
+                                row[0] = r.naziv;
+                            else
+                                row[0] = "";
+                            if (r.Adresa != null)
+                                row[1] = r.Adresa.UlicaIBroj + ", " + r.Adresa.Grad;
+                            else
+                                row[1] = "";
+                            gridRadionice.Rows.Add(row);
+                        }
                     }
                 }
             }
-
-
-            gridNoviKvarovi.ColumnCount = 7;
-            gridNoviKvarovi.Columns[0].Name = "Naziv";
-            gridNoviKvarovi.Columns[1].Name = "Vreme Prijave";
-            gridNoviKvarovi.Columns[2].Name = "Vreme Popravke";
-            gridNoviKvarovi.Columns[3].Name = "Ocena";
-            gridNoviKvarovi.Columns[4].Name = "Korisnik";
-            gridNoviKvarovi.Columns[5].Name = "Radionica";
-            gridNoviKvarovi.Columns[6].Name = "SifraKvara";
-            //gridPopravke.Columns[6].Visible = false;
-            gridNoviKvarovi.Rows.Clear();
-            if (kvarovi != null)
-            {
-                foreach (Kvar k in kvarovi)
-                {
-                    if (k != null && k.Radionica == null)
-                    {
-                        string[] row = new string[7];
-                        if (k.naziv != null)
-                            row[0] = k.naziv;
-                        else
-                            row[0] = "";
-                        if (k.vremePrijaveKvara != null)
-                            row[1] = k.vremePrijaveKvara;
-                        else
-                            row[1] = "";
-                        if (k.vremeIspravkeKvara != null)
-                            row[2] = k.vremeIspravkeKvara;
-                        else
-                            row[2] = "";
-                        if (k.ocena != null)
-                            row[3] = k.ocena.ToString();
-                        else
-                            row[3] = "";
-                        if (k.Korisnik != null)
-                            row[4] = k.Korisnik.podaci.ime + " " + k.Korisnik.podaci.prezime;
-                        else
-                            row[4] = "";
-                        if (k.Radionica != null)
-                            row[5] = k.Radionica.naziv;
-                        else
-                            row[5] = "";
-                        if (k.sifraKvara != null)
-                            row[6] = k.sifraKvara;
-                        else
-                            row[6] = "";
-
-
-                        gridNoviKvarovi.Rows.Add(row);
-                    }
-                }
-            }
-
         }
         private void Pocetna_Load(object sender, EventArgs e)
         {
@@ -240,23 +264,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            //foreach(Kvar k in DomainModel.DataSet.Instace.GetKorisnik(92).kvarovi)
-            //{
-            //    MessageBox.Show(k.Radionica.ToString());
-            //}
-
-            //MessageBox.Show(DomainModel.DataSet.Instace.GetKorisnik(92).kvarovi[0].ToString());
-            //MessageBox.Show(DomainModel.DataSet.Instace.GetKorisnik(92).ToString());
-
             if (
-            //DomainModel.DataSet.Instace.dodajLicnePodatke
-            //    ( new LicniPodaci() {
-            //        Adresa = new Adresa() { Grad = "Nis", UlicaIBroj = "MIlojka Radovica 12", id = Guid.NewGuid() },
-            //        ime = "Nikola",
-            //        prezime = "Nikolic",
-            //        datumRodjenja = "5.2.1999",
-            //        telefon = "018/123-551"
-            //    })
             DomainModel.DataSet.Instace.dodajAutentifikaciju(new Autentifikacija() { 
                 email="mail@mail",
                 korisnickoIme = "korisnik1",
@@ -321,6 +329,21 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var formNoviKvar = new NoviKvar(DomainModel.DataSet.Instace.vratiKvarSifra(gridNoviKvarovi.Rows[e.RowIndex].Cells[6].Value.ToString()));
             formNoviKvar.ShowDialog();
+        }
+
+        private void metroTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            ucitajGridNoviKvarovi(metroTextBox1.Text);
+        }
+
+        private void txtPretragaPopravke_TextChanged(object sender, EventArgs e)
+        {
+            ucitajGridPopravke(txtPretragaPopravke.Text);
+        }
+
+        private void txtPretragaRadionica_TextChanged(object sender, EventArgs e)
+        {
+            ucitajGridRadionice(txtPretragaRadionica.Text);
         }
     }
 }

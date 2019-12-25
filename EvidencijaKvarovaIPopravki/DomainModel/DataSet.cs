@@ -8,8 +8,6 @@ using Neo4jClient.Cypher;
 
 // TODO :
 //
-//  ------------------ POCETNA ---------------------
-//  - filter za kvarove i za radionice
 
 
 
