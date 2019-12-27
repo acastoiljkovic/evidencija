@@ -54,18 +54,23 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             if(DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
-                if(DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator.Equals("zaposleni"))
+                if(!DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator.Equals("zaposleni"))
                 {
                     k.komentari.Add(txtKomentarSavet.Text);
                     if(DomainModel.DataSet.Instace.dodajKomentarSavet(k))
                         MetroMessageBox.Show(this, "Uspesno!", "Obavestenje");
+                    else
+                        MetroMessageBox.Show(this, "Greska!", "Obavestenje");
+
                 }
                 else
                 {
                     k.saveti.Add(txtKomentarSavet.Text);
                     if (DomainModel.DataSet.Instace.dodajKomentarSavet(k))
                         MetroMessageBox.Show(this, "Uspesno!", "Obavestenje");
-                         
+                    else
+                        MetroMessageBox.Show(this, "Greska!", "Obavestenje");
+
                 }
             }
             this.Close();

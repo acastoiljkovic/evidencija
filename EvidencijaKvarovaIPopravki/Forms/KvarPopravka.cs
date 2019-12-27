@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EvidencijaKvarovaIPopravki.DomainModel;
+using MetroFramework;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -48,7 +49,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                     gridSaveti.ColumnCount = 1;
                     gridSaveti.Columns[0].Name = "Savet";
                     if (sav != null)
-                        gridKomentari.Rows.Add(sav);
+                        gridSaveti.Rows.Add(sav);
                 }
             }
 
@@ -86,6 +87,16 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new DodajKomentarSavet(k);
             Forma.ShowDialog();
+        }
+
+        private void btnOceni_Click(object sender, EventArgs e)
+        {
+            k.ocena = Int32.Parse(txtOcena.Text);
+            if(DomainModel.DataSet.Instace.oceniKvar(k))
+                MetroMessageBox.Show(this, "Uspesno!", "Obavestenje");
+            else
+                MetroMessageBox.Show(this, "Greska!", "Obavestenje");
+
         }
     }
 }

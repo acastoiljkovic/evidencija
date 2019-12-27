@@ -12,8 +12,6 @@ using Neo4jClient.Cypher;
 //   ili od tih korisnika ko ima najvise kvarova u toj ulici, slicno za grad, radionicu...)
 //   glavna ideja je da tu prosecnu ocenu ne racunamo mi vec neo4j!
 //   kako bismo iskoristili sve mogucnosti neo4j na najbolji moguci nacin i da iskoristimo njegovu brzinu na primeru
-//2. Savet, kvar
-//3. Ocena da se sredi
 
 
 namespace EvidencijaKvarovaIPopravki.DomainModel
@@ -175,22 +173,22 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 
                 if (PrijavljenKorisnik.indikator.Equals("korisnik"))
                 {
-                    komentariSaveti+="k.komentari=[";
+                    komentariSaveti+=" k.komentari=[";
                     foreach (String kom in k.komentari)
                     {
-                        komentariSaveti += "'" + kom + "'";
+                        komentariSaveti += "'" + kom + "' ,";
                     }
                 }
                 else
                 {
-                    komentariSaveti+="k.saveti=[";
+                    komentariSaveti+=" k.saveti=[";
                     foreach (String savet in k.saveti)
                     {
-                        komentariSaveti += "'" + savet + "'";
+                        komentariSaveti += "'" + savet + "' ,";
                     }
                 }
-
-                upit += komentariSaveti;
+                
+                upit += komentariSaveti.Remove(komentariSaveti.Length - 2, 2); ;
                 upit += "] return k";
                 var query = new Neo4jClient.Cypher.CypherQuery(upit, new Dictionary<string, object>(), CypherResultMode.Set);
                 Kvar kvar = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList()[0];
@@ -201,6 +199,23 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             {
                 return false;
             }
+        }
+
+        public bool oceniKvar(Kvar k)
+        {
+            try
+            {
+                String upit = "match(k:Kvar{naziv:'" + k.naziv + "'}) set k.ocena="+k.ocena+" return k";
+                var query = new Neo4jClient.Cypher.CypherQuery(upit, new Dictionary<string, object>(), CypherResultMode.Set);
+                Kvar kvar = ((IRawGraphClient)client).ExecuteGetCypherResults<Kvar>(query).ToList()[0];
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
         }
 
         public Kvar vratiKvarSifra(string sifra)

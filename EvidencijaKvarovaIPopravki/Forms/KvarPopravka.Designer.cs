@@ -42,7 +42,6 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.txtOcena = new MetroFramework.Controls.MetroLabel();
             this.txtPopust = new MetroFramework.Controls.MetroLabel();
             this.txtVremePopravke = new MetroFramework.Controls.MetroLabel();
             this.txtVremePrijave = new MetroFramework.Controls.MetroLabel();
@@ -60,6 +59,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtOcena = new MetroFramework.Controls.MetroTextBox();
+            this.btnOceni = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridKomentari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSaveti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -156,19 +157,6 @@
             this.metroLabel2.TabIndex = 46;
             this.metroLabel2.Text = "Ocena:";
             this.metroLabel2.UseStyleColors = true;
-            // 
-            // txtOcena
-            // 
-            this.txtOcena.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtOcena.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.txtOcena.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtOcena.Location = new System.Drawing.Point(263, 214);
-            this.txtOcena.Name = "txtOcena";
-            this.txtOcena.Size = new System.Drawing.Size(224, 21);
-            this.txtOcena.Style = MetroFramework.MetroColorStyle.Silver;
-            this.txtOcena.TabIndex = 51;
-            this.txtOcena.Text = "Ocena";
-            this.txtOcena.UseStyleColors = true;
             // 
             // txtPopust
             // 
@@ -412,16 +400,57 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // txtOcena
+            // 
+            // 
+            // 
+            // 
+            this.txtOcena.CustomButton.Image = null;
+            this.txtOcena.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.txtOcena.CustomButton.Name = "";
+            this.txtOcena.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtOcena.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtOcena.CustomButton.TabIndex = 1;
+            this.txtOcena.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtOcena.CustomButton.UseSelectable = true;
+            this.txtOcena.CustomButton.Visible = false;
+            this.txtOcena.Lines = new string[0];
+            this.txtOcena.Location = new System.Drawing.Point(263, 210);
+            this.txtOcena.MaxLength = 32767;
+            this.txtOcena.Name = "txtOcena";
+            this.txtOcena.PasswordChar = '\0';
+            this.txtOcena.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtOcena.SelectedText = "";
+            this.txtOcena.SelectionLength = 0;
+            this.txtOcena.SelectionStart = 0;
+            this.txtOcena.ShortcutsEnabled = true;
+            this.txtOcena.Size = new System.Drawing.Size(75, 23);
+            this.txtOcena.TabIndex = 56;
+            this.txtOcena.UseSelectable = true;
+            this.txtOcena.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtOcena.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnOceni
+            // 
+            this.btnOceni.Location = new System.Drawing.Point(369, 210);
+            this.btnOceni.Name = "btnOceni";
+            this.btnOceni.Size = new System.Drawing.Size(75, 23);
+            this.btnOceni.TabIndex = 57;
+            this.btnOceni.Text = "Oceni";
+            this.btnOceni.UseSelectable = true;
+            this.btnOceni.Click += new System.EventHandler(this.btnOceni_Click);
+            // 
             // KvarPopravka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 474);
+            this.Controls.Add(this.btnOceni);
+            this.Controls.Add(this.txtOcena);
             this.Controls.Add(this.btnSavet);
             this.Controls.Add(this.btnKomentar);
             this.Controls.Add(this.gridSaveti);
             this.Controls.Add(this.gridKomentari);
-            this.Controls.Add(this.txtOcena);
             this.Controls.Add(this.txtPopust);
             this.Controls.Add(this.txtModelVozila);
             this.Controls.Add(this.txtVremePopravke);
@@ -474,7 +503,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel txtOcena;
         private MetroFramework.Controls.MetroLabel txtPopust;
         private MetroFramework.Controls.MetroLabel txtVremePopravke;
         private MetroFramework.Controls.MetroLabel txtVremePrijave;
@@ -485,5 +513,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private MetroFramework.Controls.MetroButton btnKomentar;
         private MetroFramework.Controls.MetroButton btnSavet;
+        private MetroFramework.Controls.MetroTextBox txtOcena;
+        private MetroFramework.Controls.MetroButton btnOceni;
     }
 }
