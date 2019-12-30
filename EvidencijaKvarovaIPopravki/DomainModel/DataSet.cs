@@ -37,11 +37,11 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         private DataSet()
         {
             PrijavljenKorisnik = null;
-            client = new GraphClient(new Uri("http://localhost:7474/db/data"), "neo4j", "123456");
+            client = new GraphClient(new Uri("http://localhost:7474/db/data"), "admin", "admin");
             
             try
             {
-                client.Connect();
+                client.Connect();   
             }
             catch (Exception exc)
             {
@@ -50,6 +50,21 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
 
         }
       
+        public bool obrisiKvarSifra(string sifra)
+        {
+            try
+            {
+                var query = new Neo4jClient.Cypher.CypherQuery("match(n:Kvar{sifraKvara:'"+sifra+"'}) detach delete n"
+                    ,new Dictionary<string, object>(),CypherResultMode.Set);
+                ((IRawGraphClient)client).ExecuteCypher(query);
+                    return true;
+                }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
         public bool dodajKvarKorisnikuRadionici(Kvar k)
         {
             try

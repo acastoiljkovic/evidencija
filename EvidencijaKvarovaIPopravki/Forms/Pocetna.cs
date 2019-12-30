@@ -231,7 +231,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
                 {
                     if (k != null)
                     {
-                        if (text == null || k.naziv.Contains(text))
+                        if ((text == null || k.naziv.Contains(text)) && k.Radionica == null)
                         {
                             string[] row = new string[7];
                             if (k.naziv != null)

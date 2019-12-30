@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EvidencijaKvarovaIPopravki.DomainModel;
+using MetroFramework;
 
 namespace EvidencijaKvarovaIPopravki.Forms
 {
@@ -91,6 +92,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
 
         private void PrikaziSakrij()
         {
+            DomainModel.DataSet.Instace.prijavaKorisnika(DomainModel.DataSet.Instace.PrijavljenKorisnik);
             if (DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator.Equals("zaposleni"))
             {
                 slikaRadionica.Visible = true;
@@ -117,6 +119,24 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             var Forma = new IzmeniSifru();
             Forma.ShowDialog();
+        }
+
+        private void gridPopravkeKorisnika_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DialogResult dr = MetroMessageBox.Show(this, "\n\nDa li sigurno zelite da obrisete kvar?", "BRISANJE KVARA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                if (DomainModel.DataSet.Instace.obrisiKvarSifra(gridPopravkeKorisnika.Rows[e.RowIndex].Cells[6].Value.ToString()))
+                {
+                    MetroMessageBox.Show(this, "\nUspesno obrisan kvar!", "Obavestenje");
+                    this.Close();
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "\nGreska prilikom brisanja kvara!", "Obavestenje");
+                    this.Close();
+                }
+            }
         }
     }
 }
