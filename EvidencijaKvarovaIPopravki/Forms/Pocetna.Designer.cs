@@ -38,6 +38,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tabKvarovi = new MetroFramework.Controls.MetroTabControl();
             this.tabPopravke = new MetroFramework.Controls.MetroTabPage();
@@ -53,6 +59,17 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.gridNoviKvarovi = new MetroFramework.Controls.MetroGrid();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.lblGrad = new MetroFramework.Controls.MetroLabel();
+            this.txtGrad = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.gridKorisnici = new MetroFramework.Controls.MetroGrid();
+            this.tabRadnici = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.txtRadionicaKontaktirajteRadnike = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.gridRadnici = new MetroFramework.Controls.MetroGrid();
             this.btnRadionica = new MetroFramework.Controls.MetroButton();
             this.btnProfil = new MetroFramework.Controls.MetroButton();
             this.btnUlogujSe = new MetroFramework.Controls.MetroButton();
@@ -70,6 +87,12 @@
             this.tabNoviKvarovi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoviKvarovi)).BeginInit();
+            this.metroTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridKorisnici)).BeginInit();
+            this.tabRadnici.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRadnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,9 +114,11 @@
             this.tabKvarovi.Controls.Add(this.tabPopravke);
             this.tabKvarovi.Controls.Add(this.tabRadionice);
             this.tabKvarovi.Controls.Add(this.tabNoviKvarovi);
+            this.tabKvarovi.Controls.Add(this.metroTabPage1);
+            this.tabKvarovi.Controls.Add(this.tabRadnici);
             this.tabKvarovi.Location = new System.Drawing.Point(22, 93);
             this.tabKvarovi.Name = "tabKvarovi";
-            this.tabKvarovi.SelectedIndex = 1;
+            this.tabKvarovi.SelectedIndex = 4;
             this.tabKvarovi.Size = new System.Drawing.Size(800, 500);
             this.tabKvarovi.TabIndex = 1;
             this.tabKvarovi.UseSelectable = true;
@@ -343,7 +368,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(594, 19);
+            this.metroTextBox1.Location = new System.Drawing.Point(594, 16);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -362,7 +387,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(746, 13);
+            this.pictureBox4.Location = new System.Drawing.Point(746, 10);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(33, 33);
             this.pictureBox4.TabIndex = 10;
@@ -395,7 +420,7 @@
             this.gridNoviKvarovi.EnableHeadersVisualStyles = false;
             this.gridNoviKvarovi.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridNoviKvarovi.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridNoviKvarovi.Location = new System.Drawing.Point(15, 60);
+            this.gridNoviKvarovi.Location = new System.Drawing.Point(15, 57);
             this.gridNoviKvarovi.Name = "gridNoviKvarovi";
             this.gridNoviKvarovi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -411,6 +436,237 @@
             this.gridNoviKvarovi.Size = new System.Drawing.Size(725, 351);
             this.gridNoviKvarovi.TabIndex = 2;
             this.gridNoviKvarovi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridNoviKvarovi_CellDoubleClick);
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.lblGrad);
+            this.metroTabPage1.Controls.Add(this.txtGrad);
+            this.metroTabPage1.Controls.Add(this.pictureBox5);
+            this.metroTabPage1.Controls.Add(this.gridKorisnici);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(792, 458);
+            this.metroTabPage1.TabIndex = 3;
+            this.metroTabPage1.Text = "Korisnici sa najvise popravki";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // lblGrad
+            // 
+            this.lblGrad.AutoSize = true;
+            this.lblGrad.Location = new System.Drawing.Point(386, 15);
+            this.lblGrad.Name = "lblGrad";
+            this.lblGrad.Size = new System.Drawing.Size(201, 19);
+            this.lblGrad.TabIndex = 14;
+            this.lblGrad.Text = "Unesite grad u kom pretrazujete:";
+            // 
+            // txtGrad
+            // 
+            // 
+            // 
+            // 
+            this.txtGrad.CustomButton.Image = null;
+            this.txtGrad.CustomButton.Location = new System.Drawing.Point(124, 1);
+            this.txtGrad.CustomButton.Name = "";
+            this.txtGrad.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtGrad.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtGrad.CustomButton.TabIndex = 1;
+            this.txtGrad.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtGrad.CustomButton.UseSelectable = true;
+            this.txtGrad.CustomButton.Visible = false;
+            this.txtGrad.Lines = new string[0];
+            this.txtGrad.Location = new System.Drawing.Point(593, 15);
+            this.txtGrad.MaxLength = 32767;
+            this.txtGrad.Name = "txtGrad";
+            this.txtGrad.PasswordChar = '\0';
+            this.txtGrad.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtGrad.SelectedText = "";
+            this.txtGrad.SelectionLength = 0;
+            this.txtGrad.SelectionStart = 0;
+            this.txtGrad.ShortcutsEnabled = true;
+            this.txtGrad.Size = new System.Drawing.Size(146, 23);
+            this.txtGrad.TabIndex = 12;
+            this.txtGrad.UseSelectable = true;
+            this.txtGrad.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtGrad.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(745, 9);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // gridKorisnici
+            // 
+            this.gridKorisnici.AllowUserToResizeRows = false;
+            this.gridKorisnici.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridKorisnici.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridKorisnici.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridKorisnici.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridKorisnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.gridKorisnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridKorisnici.DefaultCellStyle = dataGridViewCellStyle11;
+            this.gridKorisnici.EnableHeadersVisualStyles = false;
+            this.gridKorisnici.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gridKorisnici.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridKorisnici.Location = new System.Drawing.Point(14, 56);
+            this.gridKorisnici.Name = "gridKorisnici";
+            this.gridKorisnici.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridKorisnici.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.gridKorisnici.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridKorisnici.Size = new System.Drawing.Size(725, 351);
+            this.gridKorisnici.TabIndex = 11;
+            // 
+            // tabRadnici
+            // 
+            this.tabRadnici.Controls.Add(this.metroLabel3);
+            this.tabRadnici.Controls.Add(this.metroLabel2);
+            this.tabRadnici.Controls.Add(this.txtRadionicaKontaktirajteRadnike);
+            this.tabRadnici.Controls.Add(this.pictureBox6);
+            this.tabRadnici.Controls.Add(this.gridRadnici);
+            this.tabRadnici.HorizontalScrollbarBarColor = true;
+            this.tabRadnici.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabRadnici.HorizontalScrollbarSize = 10;
+            this.tabRadnici.Location = new System.Drawing.Point(4, 38);
+            this.tabRadnici.Name = "tabRadnici";
+            this.tabRadnici.Size = new System.Drawing.Size(792, 458);
+            this.tabRadnici.TabIndex = 4;
+            this.tabRadnici.Text = "Kontaktirajte radnike";
+            this.tabRadnici.VerticalScrollbarBarColor = true;
+            this.tabRadnici.VerticalScrollbarHighlightOnWheel = false;
+            this.tabRadnici.VerticalScrollbarSize = 10;
+            this.tabRadnici.Click += new System.EventHandler(this.tabRadnici_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(518, 14);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel3.TabIndex = 19;
+            this.metroLabel3.Text = "Radionica:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(14, 14);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(425, 19);
+            this.metroLabel2.TabIndex = 18;
+            this.metroLabel2.Text = "Prikazani su radnici koji rade u radionicama u kojima ste imali kvarove. ";
+            // 
+            // txtRadionicaKontaktirajteRadnike
+            // 
+            // 
+            // 
+            // 
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Image = null;
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Location = new System.Drawing.Point(124, 1);
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Name = "";
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.TabIndex = 1;
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.UseSelectable = true;
+            this.txtRadionicaKontaktirajteRadnike.CustomButton.Visible = false;
+            this.txtRadionicaKontaktirajteRadnike.Lines = new string[0];
+            this.txtRadionicaKontaktirajteRadnike.Location = new System.Drawing.Point(593, 14);
+            this.txtRadionicaKontaktirajteRadnike.MaxLength = 32767;
+            this.txtRadionicaKontaktirajteRadnike.Name = "txtRadionicaKontaktirajteRadnike";
+            this.txtRadionicaKontaktirajteRadnike.PasswordChar = '\0';
+            this.txtRadionicaKontaktirajteRadnike.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtRadionicaKontaktirajteRadnike.SelectedText = "";
+            this.txtRadionicaKontaktirajteRadnike.SelectionLength = 0;
+            this.txtRadionicaKontaktirajteRadnike.SelectionStart = 0;
+            this.txtRadionicaKontaktirajteRadnike.ShortcutsEnabled = true;
+            this.txtRadionicaKontaktirajteRadnike.Size = new System.Drawing.Size(146, 23);
+            this.txtRadionicaKontaktirajteRadnike.TabIndex = 16;
+            this.txtRadionicaKontaktirajteRadnike.UseSelectable = true;
+            this.txtRadionicaKontaktirajteRadnike.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtRadionicaKontaktirajteRadnike.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(745, 8);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // gridRadnici
+            // 
+            this.gridRadnici.AllowUserToResizeRows = false;
+            this.gridRadnici.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridRadnici.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridRadnici.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.gridRadnici.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridRadnici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.gridRadnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridRadnici.DefaultCellStyle = dataGridViewCellStyle14;
+            this.gridRadnici.EnableHeadersVisualStyles = false;
+            this.gridRadnici.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.gridRadnici.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridRadnici.Location = new System.Drawing.Point(14, 55);
+            this.gridRadnici.Name = "gridRadnici";
+            this.gridRadnici.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridRadnici.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.gridRadnici.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.gridRadnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridRadnici.Size = new System.Drawing.Size(725, 351);
+            this.gridRadnici.TabIndex = 15;
             // 
             // btnRadionica
             // 
@@ -508,6 +764,14 @@
             this.tabNoviKvarovi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNoviKvarovi)).EndInit();
+            this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridKorisnici)).EndInit();
+            this.tabRadnici.ResumeLayout(false);
+            this.tabRadnici.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridRadnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -537,5 +801,16 @@
         private MetroFramework.Controls.MetroGrid gridNoviKvarovi;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MetroFramework.Controls.MetroLabel lblGrad;
+        private MetroFramework.Controls.MetroTextBox txtGrad;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private MetroFramework.Controls.MetroGrid gridKorisnici;
+        private MetroFramework.Controls.MetroTabPage tabRadnici;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox txtRadionicaKontaktirajteRadnike;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private MetroFramework.Controls.MetroGrid gridRadnici;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

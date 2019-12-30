@@ -50,6 +50,7 @@ namespace EvidencijaKvarovaIPopravki.Forms
         {
             tabKvarovi.TabPages.Remove(tabRadionice);
             tabKvarovi.TabPages.Remove(tabNoviKvarovi);
+            tabKvarovi.TabPages.Remove(tabRadnici);
             if (DomainModel.DataSet.Instace.PrijavljenKorisnik != null)
             {
                 if (DomainModel.DataSet.Instace.PrijavljenKorisnik.indikator == "zaposleni")
@@ -57,11 +58,13 @@ namespace EvidencijaKvarovaIPopravki.Forms
                     btnRadionica.Visible = true;
                     tabKvarovi.TabPages.Add(tabNoviKvarovi);
                     btnPrijaviKvar.Visible = false;
+                    
                 }
                 else
                 {
                     btnRadionica.Visible = false;
                     tabKvarovi.TabPages.Add(tabRadionice);
+                    tabKvarovi.TabPages.Add(tabRadnici);
                     btnPrijaviKvar.Visible = true;
                 }
                 btnProfil.Visible = true;
@@ -87,7 +90,65 @@ namespace EvidencijaKvarovaIPopravki.Forms
             ucitajGridPopravke(null);
             ucitajGridRadionice(null);
             ucitajGridNoviKvarovi(null);
+            ucitajGridKorisnici(DomainModel.DataSet.Instace.NadjiPrvihPetKorisnika(""));
+            ucitajGridRadnici(DomainModel.DataSet.Instace.VratiPodatkeRadnikaKorisnikovihKvarova(""));
+            
+        }
 
+        public void ucitajGridRadnici(List<LicniPodaci> podaciRadnika)
+        {
+            gridRadnici.ColumnCount = 3;
+            gridRadnici.Columns[0].Name = "Ime";
+            gridRadnici.Columns[1].Name = "Prezime";
+            gridRadnici.Columns[2].Name = "Kontakt telefon";
+            gridRadnici.Rows.Clear();
+            if (podaciRadnika != null)
+            {
+                foreach (LicniPodaci lp in podaciRadnika)
+                {
+                    string[] row = new string[3];
+                    if (lp.ime != null)
+                        row[0] = lp.ime;
+                    if (lp.prezime != null)
+                        row[1] = lp.prezime;
+                    if (lp.telefon != null)
+                        row[2] = lp.telefon;
+                    gridRadnici.Rows.Add(row);
+
+                }
+            }
+        }
+        public void ucitajGridKorisnici(List<Osoba> korisnici)
+        {
+            gridKorisnici.ColumnCount = 6;
+            gridKorisnici.Columns[0].Name = "Ime";
+            gridKorisnici.Columns[1].Name = "Prezime";
+            gridKorisnici.Columns[2].Name = "Email";
+            gridKorisnici.Columns[3].Name = "Telefon";
+            gridKorisnici.Columns[4].Name = "Adresa";
+            gridKorisnici.Columns[5].Name = "Broj popravki";
+            gridKorisnici.Rows.Clear();
+            if (korisnici != null)
+            {
+                foreach (Osoba o in korisnici)
+                {
+                    string[] row = new string[6];
+                    if (o.podaci.ime != null)
+                        row[0] = o.podaci.ime;
+                    if (o.podaci.prezime != null)
+                        row[1] = o.podaci.prezime;
+                    if (o.authPodaci.email != null)
+                        row[2] = o.authPodaci.email;
+                    if (o.podaci.telefon != null)
+                        row[3] = o.podaci.telefon;
+                    if (o.podaci.Adresa.Grad != null && o.podaci.Adresa.UlicaIBroj != null)
+                        row[4] = o.podaci.Adresa.UlicaIBroj + " " + o.podaci.Adresa.Grad;
+                    if (o.kvarovi != null)
+                        row[5] = o.kvarovi.Count.ToString();
+                    gridKorisnici.Rows.Add(row);
+
+                }
+            }
         }
 
         public void ucitajGridPopravke(string text)
@@ -340,6 +401,30 @@ namespace EvidencijaKvarovaIPopravki.Forms
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            List<Osoba> korisnici = DomainModel.DataSet.Instace.NadjiPrvihPetKorisnika(txtGrad.Text);
+            if(korisnici != null)
+            {
+                ucitajGridKorisnici(korisnici);
+            }
+            else
+            {
+                MetroMessageBox.Show(this, "Greska", "Obavestenje");
+            }
+
+        }
+
+        private void tabRadnici_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            ucitajGridRadnici(DomainModel.DataSet.Instace.VratiPodatkeRadnikaKorisnikovihKvarova(txtRadionicaKontaktirajteRadnike.Text));
         }
     }
 }

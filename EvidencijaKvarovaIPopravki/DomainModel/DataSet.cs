@@ -14,6 +14,8 @@ using Neo4jClient.Cypher;
 //   kako bismo iskoristili sve mogucnosti neo4j na najbolji moguci nacin i da iskoristimo njegovu brzinu na primeru
 
 
+
+
 namespace EvidencijaKvarovaIPopravki.DomainModel
 {
     public class DataSet
@@ -35,7 +37,8 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
         private DataSet()
         {
             PrijavljenKorisnik = null;
-            client = new GraphClient(new Uri("http://localhost:7474/db/data"), "admin", "admin");
+            client = new GraphClient(new Uri("http://localhost:7474/db/data"), "neo4j", "123456");
+            
             try
             {
                 client.Connect();
@@ -46,7 +49,7 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             }
 
         }
-
+      
         public bool dodajKvarKorisnikuRadionici(Kvar k)
         {
             try
@@ -963,6 +966,66 @@ namespace EvidencijaKvarovaIPopravki.DomainModel
             catch(Exception e)
             {
                 return false;
+            }
+        }
+
+        public List<Osoba> NadjiPrvihPetKorisnika(string grad)
+        {
+            try
+            {
+                string upit = "match(a:Adresa";
+
+                if (!grad.Equals(""))
+                    upit += "{Grad: '" + grad + "'}";
+
+                upit += ")<-[:NALAZI_SE]-(licniPodaci)<-[:MOJI_PODACI]-(korisnik)-[ik:IMA_KVAR]->(radionica)" +
+                    " with korisnik, count(ik) as broj order by broj desc limit 5 return ID(korisnik)";
+
+                List<Osoba> korisnici = new List<Osoba>();
+                var query = new Neo4jClient.Cypher.CypherQuery(upit,
+                new Dictionary<string, object>(), CypherResultMode.Set);
+                List<int> korisniciID = ((IRawGraphClient)client).ExecuteGetCypherResults<int>(query).ToList();
+
+                if (korisniciID != null)
+                    for (int i = 0; i < korisniciID.Count; i++)
+                        korisnici.Add(vratiOsobu(korisniciID[i]));
+
+                return korisnici;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public List<LicniPodaci> VratiPodatkeRadnikaKorisnikovihKvarova(string radionicaNaziv)
+        {
+            try
+            {
+                if (PrijavljenKorisnik != null && PrijavljenKorisnik.indikator.Equals("korisnik"))
+                {
+                    string upit = "match(auth:Autentifikacija{korisnickoIme:'"+PrijavljenKorisnik.authPodaci.korisnickoIme+
+                        "'})<-[:MOJA_AUTENTIFIKACIJA]-(korisnik)-[:IMA_KVAR]->(kvar)<-[:U_RADIONICI]-(radionica";
+
+                    if (!radionicaNaziv.Equals(""))
+                        upit += ":Radionica{naziv: '" + radionicaNaziv + "'}";
+
+                    upit += ")<-[:RADI_U]-(zaposleni)-[:MOJI_PODACI]->(podaci) return podaci";
+
+                    var query = new Neo4jClient.Cypher.CypherQuery(upit,
+                    new Dictionary<string, object>(), CypherResultMode.Set);
+                    List<LicniPodaci> radniciPodaci = ((IRawGraphClient)client).ExecuteGetCypherResults<LicniPodaci>(query).ToList();
+
+                    return radniciPodaci;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
 
