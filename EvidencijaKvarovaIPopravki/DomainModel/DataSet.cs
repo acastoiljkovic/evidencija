@@ -6,14 +6,6 @@ using System.Threading.Tasks;
 using Neo4jClient;
 using Neo4jClient.Cypher;
 
-// TODO :
-//1. Da imamo pretrage po svemu (misleci na potege). Ne bas ovako kako smo radili
-//   jer smo radili po cvoru, to jest nazivu (unesemo ulicu, on vrati sve korisnike koji zive u toj ulici i imaju kvarove 
-//   ili od tih korisnika ko ima najvise kvarova u toj ulici, slicno za grad, radionicu...)
-//   glavna ideja je da tu prosecnu ocenu ne racunamo mi vec neo4j!
-//   kako bismo iskoristili sve mogucnosti neo4j na najbolji moguci nacin i da iskoristimo njegovu brzinu na primeru
-
-
 
 
 namespace EvidencijaKvarovaIPopravki.DomainModel
