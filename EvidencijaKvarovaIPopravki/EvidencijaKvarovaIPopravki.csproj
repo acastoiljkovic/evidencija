@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2381D19-1EA6-481C-8D92-710A59C64C18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvidencijaKvarovaIPopravki</RootNamespace>
+    <AssemblyName>EvidencijaKvarovaIPopravki</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Neo4j.Driver, Version=1.7.91.0, Culture=neutral, PublicKeyToken=c08b0bc1c355082b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Neo4j.Driver.Signed.1.7.0\lib\net452\Neo4j.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Neo4jClient, Version=3.1.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Neo4jClient.3.1.0.6\lib\net46\Neo4jClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainModel\Adresa.cs" />
+    <Compile Include="DomainModel\Autentifikacija.cs" />
+    <Compile Include="DomainModel\DataSet.cs" />
+    <Compile Include="DomainModel\LicniPodaci.cs" />
+    <Compile Include="DomainModel\Osoba.cs" />
+    <Compile Include="DomainModel\Kvar.cs" />
+    <Compile Include="DomainModel\Deo.cs" />
+    <Compile Include="DomainModel\Radionica.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DodajDeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodajDeo.Designer.cs">
+      <DependentUpon>DodajDeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DodajKomentarSavet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodajKomentarSavet.Designer.cs">
+      <DependentUpon>DodajKomentarSavet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DodajRadionicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DodajRadionicu.Designer.cs">
+      <DependentUpon>DodajRadionicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DostupniDelovi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DostupniDelovi.Designer.cs">
+      <DependentUpon>DostupniDelovi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IzmeniProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IzmeniProfil.Designer.cs">
+      <DependentUpon>IzmeniProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IzmeniRadionicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IzmeniRadionicu.Designer.cs">
+      <DependentUpon>IzmeniRadionicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IzmeniSifru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IzmeniSifru.Designer.cs">
+      <DependentUpon>IzmeniSifru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KvarPopravka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KvarPopravka.Designer.cs">
+      <DependentUpon>KvarPopravka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NoviKvar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NoviKvar.Designer.cs">
+      <DependentUpon>NoviKvar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pocetna.Designer.cs">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prijava.Designer.cs">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrijavaKvara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrijavaKvara.Designer.cs">
+      <DependentUpon>PrijavaKvara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profil.Designer.cs">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RadionicaPrikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RadionicaPrikaz.Designer.cs">
+      <DependentUpon>RadionicaPrikaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Registracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Registracija.Designer.cs">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodajDeo.resx">
+      <DependentUpon>DodajDeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodajKomentarSavet.resx">
+      <DependentUpon>DodajKomentarSavet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DodajRadionicu.resx">
+      <DependentUpon>DodajRadionicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DostupniDelovi.resx">
+      <DependentUpon>DostupniDelovi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IzmeniProfil.resx">
+      <DependentUpon>IzmeniProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IzmeniRadionicu.resx">
+      <DependentUpon>IzmeniRadionicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IzmeniSifru.resx">
+      <DependentUpon>IzmeniSifru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KvarPopravka.resx">
+      <DependentUpon>KvarPopravka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NoviKvar.resx">
+      <DependentUpon>NoviKvar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pocetna.resx">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prijava.resx">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrijavaKvara.resx">
+      <DependentUpon>PrijavaKvara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profil.resx">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RadionicaPrikaz.resx">
+      <DependentUpon>RadionicaPrikaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Registracija.resx">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\car-logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
